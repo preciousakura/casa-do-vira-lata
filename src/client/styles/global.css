@@ -2,35 +2,28 @@
   --primary-color: #87cf36;
   --secondary-color: #4d5566;
   --text-color: #4d5566;
-  --background-color: #e2e2e2;
+  --background-color: #FFF8F2;
 }
 
 .dark {
   --primary-color: #87cf36;
   --secondary-color: #4d5566;
   --text-color: #4d5566;
-  --background-color: #e2e2e2;
+  --background-color: #FFF8F2;
 }
 
 html {
   font-size: 60%;
+  font-family: Work Sans; 
 }
 
-@media (max-width: 1080px) {
-  html {
-    font-size: 93%;
-  }
-}
 
-@media (max-width: 720px) {
-  html {
-    font-size: 67.5%;
-  }
-}
 
 body {
   background-color: var(--background-color);
   color: var(--text-color);
+  margin: 0;
+  padding: 0;
 }
 
 a {
