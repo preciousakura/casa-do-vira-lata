@@ -1,0 +1,23 @@
+header nav {
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+.ul-menu {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  height: 65px;
+}
+
+.ul-menu__item a {
+  font-size: 1.8rem;
+  color: var(--secondary-color);
+  text-transform: uppercase;
+  font-weight: 600;
+  line-height: 150%; 
+}
+
+.ul-menu__item a:hover {
+  color: var(--secondary-color-foreign);
+}

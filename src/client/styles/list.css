@@ -1,0 +1,110 @@
+.main {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding-top: 5rem;
+}
+
+.title h2 {
+  color: var(--secondary-color);
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 600;
+  letter-spacing: 0.96px;
+}
+
+.title p {
+  color: var(--secondary-color);
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 0.44px;
+  text-align: justify;
+  margin-top: 3rem;
+}
+
+.title h2 span {
+  color: var(--primary-color);
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.filters--group-select {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.filters__select {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.filters__right button,
+.filters__checkbox label {
+  color: var(--black);
+  font-size: 1.5rem;
+  line-height: 125%; /* 21.25px */
+  letter-spacing: 0.34px;
+}
+
+.filters__right button {
+  cursor: pointer;
+
+  background-color: var(--primary-color);
+  padding: 1.5rem 2rem;
+  border-radius: 16px;
+
+  font-weight: 600;
+}
+
+.filters__right button:hover {
+  background-color: var(--primary-color-foreign);
+}
+
+.filters__checkbox {
+  display: flex;
+  gap: 2rem;
+}
+
+.filters__checkbox label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 3rem;
+}
+
+.list__item {
+  border-radius: 16px;
+  background: var(--item-background);
+  border: 1px solid var(--item-background-foreign);
+  padding: 2.5rem;
+}
+
+.list__item__image {
+  width: 400px;
+  height: 250px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.list__item__image img {
+  width: 100%;
+}
+
+.list__item__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+

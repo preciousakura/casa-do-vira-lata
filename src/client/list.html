@@ -1,10 +1,98 @@
-<html lang="en" style="color-scheme: light;">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en" style="color-scheme: light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" href="styles/menu.css" />
+    <link rel="stylesheet" href="styles/list.css" />
+    <link rel="stylesheet" href="styles/form.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <title>Casa do Vira-Lata</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul class="ul-menu">
+          <li class="ul-menu__item"><a href="index.html">Página Inicial</a></li>
+          <li class="ul-menu__item"><a href="list.html">Pets da Casa</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main">
+      <section class="title">
+        <h2>Todo animal merece um lar amoroso.</h2>
+        <h2><span>Adote</span> um pet hoje.</h2>
+        <p>
+          Navegue pelos nossos animais disponíveis e saiba mais sobre o processo
+          de adoção. Juntos, podemos resgatar, reabilitar e realojar animais de
+          estimação necessitados. Obrigado por apoiar nossa missão de levar
+          alegria às famílias por meio da adoção de animais de estimação.
+        </p>
+      </section>
+      <section class="filters">
+        <div class="filters--group-select">
+          <div class="filters__select">
+            <select class="filters__select__type">
+              <option value="" selected disabled hidden>
+                Selecione o tipo do pet
+              </option>
+              <option>Gato</option>
+              <option>Cachorro</option>
+            </select>
+            <select class="filters__select__size">
+              <option value="" selected disabled hidden>
+                Selecione o porte
+              </option>
+              <option>Pequeno</option>
+              <option>Médio</option>
+              <option>Grande</option>
+            </select>
+            <select class="filters__select__gender">
+              <option value="" selected disabled hidden>
+                Selecione o sexo
+              </option>
+              <option>Fêmea</option>
+              <option>Macho</option>
+            </select>
+          </div>
+          <div class="filters__right">
+            <input type="text" placeholder="Buscar" />
+            <button>Buscar pet</button>
+          </div>
+        </div>
+
+        <div class="filters__checkbox">
+          <label><input type="checkbox" />Castrado</label>
+          <label><input type="checkbox" />Vacinado</label>
+          <label><input type="checkbox" />Vermificado</label>
+        </div>
+      </section>
+      <section class="list">
+        <div class="list__item">
+          <div class="list__item__image">
+            <img
+              src="https://instagram.ffor23-1.fna.fbcdn.net/v/t39.30808-6/362270106_18244440727201094_2410619210203397529_n.jpg?stp=dst-jpg_e15&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xNDQweDE0NDAuc2RyIn0&_nc_ht=instagram.ffor23-1.fna.fbcdn.net&_nc_cat=102&_nc_ohc=MoZxIGpWeNQAX-VI9jj&edm=ACWDqb8AAAAA&ccb=7-5&ig_cache_key=MzE1OTk4NjM4MzE4MzczOTM5NQ%3D%3D.2-ccb7-5&oh=00_AfDTif7Jq1vdYCo0E_WP2fQFioWLhOzwNPJeqThihsEylw&oe=6523CC42&_nc_sid=ee9879"
+              alt="Imagem do pet"
+            />
+          </div>
+          <div class="list__item__header">
+            <h2>Dina</h2>
+            <i class="ph-fill ph-heart"></i>
+          </div>
+          <div class="list__item__description">
+            <p><b>Idade:</b> 1 ano</p>
+            <p><b>Sexo:</b> Fêmea</p>
+          </div>
+          <div class="list__item__tags">
+            <span>Castrado</span>
+            <span>Vacinado</span>
+            <span>Vermificado</span>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>

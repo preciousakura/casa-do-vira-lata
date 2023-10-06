@@ -1,23 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 :root {
   --primary-color: #87cf36;
+  --primary-color-foreign: #6ab425;
+
   --secondary-color: #4d5566;
+  --secondary-color-foreign: #3e4452;
+
   --text-color: #4d5566;
-  --background-color: #FFF8F2;
+  --background-color: #fff8f2;
+
+  --item-background: #fff;
+  --item-background-foreign: #E2E2E2;
+
+  --white: #fff;
+  --black: #000;
 }
 
 .dark {
   --primary-color: #87cf36;
+  --primary-color-foreign: #6ab425;
+
   --secondary-color: #4d5566;
+  --secondary-color-foreign: #3e4452;
+
   --text-color: #4d5566;
-  --background-color: #FFF8F2;
+  --background-color: #fff8f2;
+
+  --item-background: #fff;
+  --item-background-foreign: #E2E2E2;
+
+  --white: #fff;
+  --black: #000;
 }
 
 html {
   font-size: 60%;
-  font-family: Work Sans; 
+  font-family: "Work Sans", sans-serif;
 }
-
-
 
 body {
   background-color: var(--background-color);
@@ -49,6 +69,8 @@ button {
 h1,
 h2,
 h3,
-h4 {
+h4,
+p {
   margin: 0;
+  padding: 0;
 }
