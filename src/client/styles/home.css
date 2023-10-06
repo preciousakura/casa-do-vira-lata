@@ -258,3 +258,52 @@ width: 100%;
 .next-button {
   right: 0px;
 }
+/* estilos da sessao 4 */
+.section-4 {
+  display: flex;
+ justify-content: space-between;
+  padding: 100px 32px;
+  max-width: 850px;
+  width: 100%;
+  position: relative;
+}
+.section-4__left {
+  display: flex;
+  flex-direction: column;
+  height: 70%;
+  justify-content: space-between;
+}
+.social-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.social-list__item {
+  display: flex;
+  align-items: center;
+}
+.social-list__item > a {
+  color: var(--text-color);
+  margin: 0;
+  margin-left: 10px;
+  
+}
+.section-4__right {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+}
+
+.section-4__qr-code {
+  margin-top: 10px;
+}
+
+.section-4__cat-center {
+  position: absolute;
+  bottom: 0;
+  left: 30%;
+}
