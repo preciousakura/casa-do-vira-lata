@@ -25,7 +25,7 @@
     padding: 0 10px;
 }
 
-.content-adm-users__title { /* Classe mais específica */
+.content-adm-users__title {
     font-size: 3rem;
     font-style: normal;
     font-weight: 600;
