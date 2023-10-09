@@ -22,7 +22,7 @@
     width: 100%;
 
     max-width: 1150px;
-    padding: 0 10px;
+    padding: 0 20px;
 }
 
 .content-adm-users__title { 
@@ -70,6 +70,7 @@
     gap: 10px; 
     border-radius: 16px;
     background: var(--primary-color );
+    font-size: 1.2rem;
 }
 .table-actions {
     display: flex;

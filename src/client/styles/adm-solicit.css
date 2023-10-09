@@ -22,7 +22,7 @@
     width: 100%;
 
     max-width: 1150px;
-    padding: 0 10px;
+    padding: 0 20px;
 }
 
 .content-adm-users__title { 
@@ -71,6 +71,7 @@
     border-radius: 16px;
     background: #CF363F; 
     color: #fff;
+   
 }
 .filters__left--button{ 
     display: flex;
