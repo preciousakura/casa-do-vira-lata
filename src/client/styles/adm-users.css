@@ -70,6 +70,13 @@
     gap: 10px; 
     border-radius: 16px;
     background: var(--primary-color );
+    font-size: 1.2rem;
+
+}
+.filters__right--button > img{ 
+    width: 13px;
+    height: 13px;
+
 }
 .table-actions {
     display: flex;
