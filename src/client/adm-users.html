@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" style="color-scheme: light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" href="styles/menu.css" />
+    <link rel="stylesheet" href="styles/footer.css" />
+    <link rel="stylesheet" href="styles/form.css" />
+    <link rel="stylesheet" href="styles/adm-users.css" />
+    <!-- Adicione um arquivo CSS para esta página -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <title>Casa do Vira-Lata - Administração de Usuários</title>
+  </head>
+  <body class="body-adm-users">
+    <header class="header-content">
+      <nav>
+        <ul class="ul-menu">
+          <li class="ul-menu__item"><a href="index.html">Página Inicial</a></li>
+          <li class="ul-menu__item"><a href="list.html">Pets da Casa</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="content-adm-users">
+      <div class="content-adm-users--max">
+        <h1 class="content-adm-users__title">Usuários</h1>
+        <div class="content-adm-users__search-form">
+          <div class="filters--group-select">
+            <div class="filters__select">
+              <select class="filters__select__type">
+                <option value="" selected disabled hidden>
+                  Selecione o tipo do pet
+                </option>
+                <option>Gato</option>
+                <option>Cachorro</option>
+              </select>
+            </div>
+            <div class="filters__right">
+              <input type="text" placeholder="Buscar" />
+              <button class="filters__right--button">Buscar pet</button>
+            </div>
+          </div>
+        </div>
+  
+        <table class="content-adm-users__table">
+          <thead>
+            <tr>
+              <th class="table-header">Nome</th>
+              <th class="table-header">Email</th>
+              <th class="table-header">Telefone</th>
+              <th class="table-header">Usuário</th>
+              <th class="table-header"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Exemplo Nome</td>
+              <td>exemplo@email.com</td>
+              <td>(123) 456-7890</td>
+              <td>exemplo_usuario</td>
+              <td class="table-actions">
+                <button class="edit-button">Editar</button>
+                <button class="delete-button">Excluir</button>
+              </td>
+            </tr>
+            <!-- Adicione mais linhas aqui conforme necessário -->
+          </tbody>
+        </table>
+      </div>
+ 
+    </main>
+
+    <footer class="footer">
+      <p>
+        Desenvolvido com ❤ por
+        <span class="footer__author">Isabel Cristina</span> e
+        <span class="footer__author">Cinthia Andrade</span> <br />
+        Todos os direitos reservados
+      </p>
+    </footer>
+  </body>
+</html>
