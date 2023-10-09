@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="styles/menu.css" />
     <link rel="stylesheet" href="styles/footer.css" />
     <link rel="stylesheet" href="styles/form.css" />
-    <link rel="stylesheet" href="styles/adm-users.css" />
+    <link rel="stylesheet" href="styles/adm-pets.css" />
     <!-- Adicione um arquivo CSS para esta página -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    <title>Casa do Vira-Lata - Administração de Usuários</title>
+    <title>Casa do Vira-Lata - Administração de Pets</title>
   </head>
   <body class="body-adm-users">
     <header class="header-content">
@@ -27,21 +27,39 @@
 
     <main class="content-adm-users">
       <div class="content-adm-users--max">
-        <h1 class="content-adm-users__title">Usuários</h1>
+        <h1 class="content-adm-users__title">Pets</h1>
         <div class="content-adm-users__search-form">
           <div class="filters--group-select">
             <div class="filters__select">
               <select class="filters__select__type">
                 <option value="" selected disabled hidden>
-                  Tipos de usuário
+                  Selecione o tipo de animal
                 </option>
-                <option>Intermediador</option>
-                <option>Comum</option>
+                <option>Gato</option>
+                <option>Cachorro</option>
+              </select>
+            </div>
+            <div class="filters__select">
+              <select class="filters__select__type">
+                <option value="" selected disabled hidden>
+                  Selecione o porte
+                </option>
+                <option>Grande</option>
+                <option>Médio</option>
+                <option>Pequeno</option>
+              </select>
+            </div>
+            <div class="filters__select">
+              <select class="filters__select__type">
+                <option value="" selected disabled hidden>
+                  Selecione o sexo
+                </option>
+                <option>Fêmea</option>
+                <option>Macho</option>
               </select>
             </div>
             <div class="filters__right">
-              <input type="text" placeholder="Buscar" />
-              <button class="filters__right--button">Buscar</button>
+              <button class="filters__right--button">Aplicar filtros</button>
             </div>
           </div>
         </div>
@@ -50,18 +68,18 @@
           <thead>
             <tr>
               <th class="table-header">Nome</th>
-              <th class="table-header">Email</th>
-              <th class="table-header">Telefone</th>
-              <th class="table-header">Usuário</th>
+              <th class="table-header">Tipo</th>
+              <th class="table-header">Sexo</th>
+              <th class="table-header">Tamanho</th>
               <th class="table-header"></th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>Exemplo Nome</td>
-              <td>exemplo@email.com</td>
-              <td>(123) 456-7890</td>
-              <td>exemplo_usuario</td>
+              <td>Gato</td>
+              <td>Femea</td>
+              <td>Grande</td>
               <td class="table-actions">
                 <button class="edit-button">Editar</button>
                 <button class="delete-button">Excluir</button>
