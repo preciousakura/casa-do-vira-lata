@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" style="color-scheme: light">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/menu.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/form.css">
+    <link rel="stylesheet" href="styles/modal-confirm.css">
+
+    <link rel="stylesheet" href="styles/adm-infos-users.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <title>Casa do Vira-Lata - Administração do usuário</title>
+  </head>
+  <body class="body-adm-infos-users">
+    <header class="header-content">
+      <nav>
+        <ul class="ul-menu">
+          <li class="ul-menu__item"><a href="index.html">Página Inicial</a></li>
+          <li class="ul-menu__item"><a href="list.html">Pets da Casa</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="content-adm-infos-users">
+      <div class="content-infos-user--max">
+        <h1>Informações do usuário</h1>
+        
+        <p>Colaborador</p>
+        <div class="content-adm-infos-users__card-infos">
+          <div class="content-adm-infos-users__card-info">
+            <span class="content-adm-infos-users__label">Nome do usuário</span>
+            <span class="content-adm-infos-users__value">Isabel Cristina</span>
+        </div>
+          <div class="content-adm-infos-users__card-info">
+              <span class="content-adm-infos-users__label">Telefone:</span>
+              <span class="content-adm-infos-users__value">123-456-7890</span>
+          </div>
+          <div class="content-adm-infos-users__card-info">
+              <span class="content-adm-infos-users__label">Email:</span>
+              <span class="content-adm-infos-users__value">usuario@email.com</span>
+          </div>
+          <div class="content-adm-infos-users__role">
+              <button class="content-adm-infos-users__btn content-adm-infos-users__btn--remove">Remover Acesso</button>
+          </div>
+      </div>
+      
+        </div>
+        <div id="deleteConfirmationModal" class="modal">
+          <div class="modal-content">
+              <h2>Confirmação remoção de acesso</h2>
+              <p>Tem certeza de que deseja remover o acesso desse usuário?</p>
+              <p>Se você confirmar, esse usuário se tornará usuário comum, não tendo mais acesso ao perfil de colaborador.</p>
+
+              <div class="modal-buttons">
+                  <button id="cancelBtn">Cancelar</button>
+                  <button id="confirmDeleteBtn">Confirmar Remoção</button>
+              </div>
+          </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+      <p>
+        Desenvolvido com ❤ por
+        <span class="footer__author">Isabel Cristina</span> e
+        <span class="footer__author">Cinthia Andrade</span> <br>
+        Todos os direitos reservados
+      </p>
+    </footer>
+  </body>
+</html>

@@ -12,6 +12,10 @@
 }
 
 .modal-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: #fff;
     padding: 25px;
     border-radius: 5px;
@@ -20,6 +24,7 @@
 }
 .modal-content > p {
     font-size: 1.5rem;
+    width: 55%;
 }
 
 .modal h2 {
