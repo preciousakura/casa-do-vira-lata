@@ -40,6 +40,7 @@
     border-collapse: collapse;
     background-color: #fff; 
     margin-top: 25px;
+    color: var(---text-color);
 }
 
 .content-adm-users__table th,
@@ -48,6 +49,7 @@
     text-align: left;
     border-bottom: 1px solid #E2E2E2; 
     font-size: 1.5rem;
+    color: var(---text-color);
 }
 .content-adm-users__search-form > .filters--group-select{
     display: flex;
