@@ -23,12 +23,12 @@ header nav {
 
 .ul-menu__item a {
   font-size: 1.8rem;
-  color: var(--secondary-color);
+  color: var(--text-color);
   text-transform: uppercase;
   font-weight: 600;
   line-height: 150%; 
 }
 
 .ul-menu__item a:hover {
-  color: var(--secondary-color-foreign);
+  color: var(--text-color);
 }

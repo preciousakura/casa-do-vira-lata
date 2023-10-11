@@ -51,6 +51,9 @@
     font-size: 1.5rem;
     color: var(---text-color);
 }
+.content-adm-users__table a {
+    color: var(---text-color);
+}
 .content-adm-users__search-form > .filters--group-select{
     display: flex;
     flex-direction: row;
