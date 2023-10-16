@@ -11,15 +11,17 @@
   --background-color: #fff8f2;
 
   --item-background: #fff;
-  --item-background-foreign: #E2E2E2;
+  --item-background-foreign: #fff8f2;
+
+  --border-color: #fff8f2;
 
   --white: #fff;
   --black: #000;
 }
 
 .dark  {
-  --primary-color: #073a07;
-  --primary-color-foreign: #073507;
+  --primary-color: #87cf36;
+  --primary-color-foreign: #6ab425;
 
   --secondary-color: #000000;
   --secondary-color-foreign: #202020;
@@ -29,6 +31,8 @@
 
   --item-background: #333333;
   --item-background-foreign: #111111;
+
+  --border-color: #6e6e6e;
 
   --white: #ffffff;
   --black: #000000;

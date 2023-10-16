@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 100vw;
+    
     min-height: 100vh;
 }
 .content-adm-home {
@@ -53,8 +53,8 @@
 .card-adm{
     flex: 1; 
     border-radius: 16px;
-    border: 1px solid #E2E2E2;
-    background: #FFF; 
+    border: 1px solid var(--border-color);
+    background: var(--item-background); 
     padding: 16px 15px;
     height: 60px; 
     max-width: 370px;
@@ -101,4 +101,8 @@
     line-height: 125%; /* 17.5px */
     letter-spacing: 0.28px; 
    
+}
+
+i {
+    color: white;
 }

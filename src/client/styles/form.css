@@ -3,7 +3,7 @@ input[type="text"] {
   padding: 1.3rem 5rem 1.3rem 1.3rem;
   background: var(--item-background);
   border-radius: 16px;
-  border: 1px solid var(--item-background-foreign);
+  border: 1px solid var(--border-color);
 
   color: var(--secunday-color);
   font-size: 1.3rem;

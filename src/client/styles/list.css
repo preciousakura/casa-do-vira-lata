@@ -87,7 +87,7 @@
 .list__item {
   border-radius: 16px;
   background: var(--item-background);
-  border: 1px solid var(--item-background-foreign);
+  border: 1px solid var(--border-color);
   padding: 2.5rem;
 }
 
@@ -109,3 +109,15 @@
   padding: 1rem 0;
 }
 
+.list__item__tags {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.list__item__tags span {
+  background: var(--primary-color);
+  padding: 0.5rem 1rem;
+  border-radius: 16px;
+  font-weight: 600;
+}

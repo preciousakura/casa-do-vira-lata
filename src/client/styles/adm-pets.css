@@ -4,7 +4,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 100vw;
+    
     min-height: 100vh;
 }
 
@@ -38,7 +38,7 @@
 .content-adm-users__table {
     width: 100%;
     border-collapse: collapse;
-    background-color: #fff; 
+    background-color: var(--item-background); 
     margin-top: 25px;
 }
 
@@ -46,7 +46,7 @@
 .content-adm-users__table td {
     padding: 10px 1%;
     text-align: left;
-    border-bottom: 1px solid #E2E2E2; 
+    border-bottom: 1px solid var(--border-color); 
     font-size: 1.5rem;
 }
 .content-adm-users__search-form > .filters--group-select{
