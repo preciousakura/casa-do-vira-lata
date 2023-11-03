@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" style="color-scheme: light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles/global.css">
+  <link rel="stylesheet" href="/styles/menu.css">
+  <link rel="stylesheet" href="/styles/footer.css">
+  <link rel="stylesheet" href="/styles/form.css">
+  <link rel="stylesheet" href="/styles/adm-pets.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <title>Casa do Vira-Lata - Administração de Pets</title>
+</head>
+<body class="body-adm-users">
+  <%- include('partials/acessibility-bar') %>
+
+  <!-- Navbar -->
+  <%- include('partials/header') %>
+
+  <main class="content-adm-users">
+    <div class="content-adm-users--max">
+      <h1 class="content-adm-users__title">Pets</h1>
+      <div class="content-adm-users__search-form">
+        <div class="filters--group-select">
+          <div class="filters__select">
+            <select class="filters__select__type">
+              <option value="" selected disabled hidden>
+                Selecione o tipo de animal
+              </option>
+              <option>Gato</option>
+              <option>Cachorro</option>
+            </select>
+          </div>
+          <div class="filters__select">
+            <select class="filters__select__type">
+              <option value="" selected disabled hidden>
+                Selecione o porte
+              </option>
+              <option>Grande</option>
+              <option>Médio</option>
+              <option>Pequeno</option>
+            </select>
+          </div>
+          <div class="filters__select">
+            <select class="filters__select__type">
+              <option value="" selected disabled hidden>
+                Selecione o sexo
+              </option>
+              <option>Fêmea</option>
+              <option>Macho</option>
+            </select>
+          </div>
+          <div class="filters__right">
+            <button class="filters__right--button">Aplicar filtros</button>
+          </div>
+        </div>
+      </div>
+      <table class="content-adm-users__table">
+        <thead>
+          <tr>
+            <th class="table-header">Nome</th>
+            <th class="table-header">Tipo</th>
+            <th class="table-header">Sexo</th>
+            <th class="table-header">Tamanho</th>
+            <th class="table-header"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% pets.forEach(function(pet) { %>
+            <tr>
+              <td><%= pet.name %></td>
+              <td><%= pet.type %></td>
+              <td><%= pet.gender %></td>
+              <td><%= pet.size %></td>
+              <td class="table-actions">
+                <button class="edit-button">Editar</button>
+                <button class="delete-button">Excluir</button>
+              </td>
+            </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <%- include('partials/footer') %>
+  <script src="/script.js"></script>
+</body>
+</html>

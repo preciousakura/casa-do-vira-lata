@@ -1,0 +1,34 @@
+.header-content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+header nav {
+  max-width: 1150px;
+  padding: 10px 100px;
+  width: 100%;
+
+}
+
+.ul-menu {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  height: 65px;
+  width: 100%;
+ padding: 0;
+  margin: 0;
+ 
+}
+
+.ul-menu__item a {
+  font-size: 1.8rem;
+  color: var(--text-color);
+  text-transform: uppercase;
+  font-weight: 600;
+  line-height: 150%; 
+}
+
+.ul-menu__item a:hover {
+  color: var(--text-color);
+}

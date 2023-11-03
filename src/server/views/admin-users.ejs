@@ -1,0 +1,43 @@
+<%- include('partials/head') %>
+<%- include('partials/acessibility-bar') %>
+
+<!-- Navbar -->
+<%- include('partials/header') %>
+
+<script src="/script.js"></script>
+<main class="content-adm-users">
+  <div class="content-adm-users--max">
+    <h1 class="content-adm-users__title">Usuários</h1>
+    <div class="content-adm-users__search-form">
+      <!-- Seu formulário de busca aqui -->
+    </div>
+
+    <table class="content-adm-users__table">
+      <thead>
+        <tr>
+          <th class="table-header">Nome</th>
+          <th class="table-header">Email</th>
+          <th class="table-header">Telefone</th>
+          <th class="table-header">Usuário</th>
+          <th class="table-header"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% users.forEach(function(user) { %>
+          <tr>
+            <td><a href="/user/<%= user.id %>"><%= user.name %></a></td>
+            <td><%= user.email %></td>
+            <td><%= user.phone %></td>
+            <td><%= user.username %></td>
+            <td class="table-actions">
+              <button class="edit-button">Editar</button>
+              <button class="delete-button">Excluir</button>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+    
+  </div>
+</main>
+<%- include('partials/footer') %>

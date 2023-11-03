@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" style="color-scheme: light">
+  <head>
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <link rel="stylesheet" href="styles/global.css" >
+    <link rel="stylesheet" href="styles/menu.css" >
+    <link rel="stylesheet" href="styles/footer.css" >
+    <link rel="stylesheet" href="styles/form.css" >
+    <link rel="stylesheet" href="styles/adm-solicit.css" >
+    <link rel="stylesheet" href="styles/modal-confirm.css" >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" >
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin >
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <title>Casa do Vira-Lata - Administração de colaboradores</title>
+  </head>
+  <body class="body-adm-users">
+    <%- include('partials/acessibility-bar') %>
+
+    <!-- Navbar -->
+    <%- include('partials/header') %>
+
+    <main class="content-adm-users">
+      <div class="content-adm-users--max">
+        <h1 class="content-adm-users__title">Solicitações de Colaboradores</h1>
+        <div class="content-adm-users__search-form">
+          <div class="filters--group-select">
+            <div class="filters__right">
+              <button class="filters__left--button">Aprovar tudo</button>
+            </div>
+            <div class="filters__right">
+              <button class="filters__right--button">Excluir tudo</button>
+            </div>
+          </div>
+        </div>
+  
+        <table class="content-adm-users__table">
+          <thead>
+            <tr>
+              <th class="table-header">Nome</th>
+              <th class="table-header"></th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Exemplo Nome</td>
+           
+              <td class="table-actions">
+                <button class="edit-button">Aprovar</button>
+                <button class="delete-button">Excluir</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+ 
+    </main>
+    <div id="deleteConfirmationModal" class="modal">
+      <div class="modal-content">
+          <h2>Confirmação de Exclusão</h2>
+          <p>Tem certeza de que deseja excluir todas as solicitações?</p>
+          <div class="modal-buttons">
+              <button id="cancelBtn">Cancelar</button>
+              <button id="confirmDeleteBtn">Confirmar Exclusão</button>
+          </div>
+      </div>
+  </div>
+
+    <footer class="footer">
+      <p>
+        Desenvolvido com ❤ por
+        <span class="footer__author">Isabel Cristina</span> e
+        <span class="footer__author">Cinthia Andrade</span> <br >
+        Todos os direitos reservados
+      </p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
