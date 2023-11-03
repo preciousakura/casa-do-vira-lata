@@ -6,6 +6,7 @@
 }
 
 .section--first {
+  position: relative;
   height: calc(100vh - 86px);
 }
 

@@ -80,3 +80,35 @@ p {
   margin: 0;
   padding: 0;
 }
+
+.acessibilidade-bar {
+  display: flex;
+  flex-direction: row;
+  padding: 4px 25px;
+  background-color: #fff;
+  justify-content: end;
+}
+
+.acessibilidade-buttons {
+  display: flex;
+  gap: 5px; /* Espaçamento entre os botões */
+}
+
+.acessibilidade-buttons button {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/* Estilos ao focar ou passar o mouse sobre os botões */
+.acessibilidade-buttons button:hover,
+.acessibilidade-buttons button:focus {
+  background-color: #e0e0e0;
+}
