@@ -1,0 +1,18 @@
+{
+  "items": [
+    {
+      "id": 0,
+      "name": "Isabel Cristina de Oliveira Lopes",
+      "username": "isabel20",
+      "password": "",
+      "permissions": ["ADMIN"]
+    },
+    {
+      "id": 0,
+      "name": "Cinthia Maria Andrade da Silva",
+      "username": "cinthiagatinha",
+      "password": "",
+      "permissions": ["ADMIN"]
+    }
+  ]
+}

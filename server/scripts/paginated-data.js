@@ -1,6 +1,6 @@
 const fs = require('fs')
 
-function GETPaginatedData(req, res, path) {
+function paginatedData(req, res, path) {
   const page = Number(req.query.page);
   const size = Number(req.query.size);
 
@@ -21,4 +21,4 @@ function GETPaginatedData(req, res, path) {
   });
 }
 
-module.exports = GETPaginatedData;
+module.exports = paginatedData;

@@ -6,11 +6,11 @@ const port = 3000;
 app.use(express.static(path.join(__dirname, "/public")));
 app.set("view engine", "ejs");
 
-app.get("/", function (req, res) {
+app.get("/", (req, res) => {
   res.render("pages/home");
 });
 
-app.get("/pets", async function (req, res) {
+app.get("/pets", async (req, res) => {
   const page = req.query.page ? req.query.page - 1 : 0;
   try {
     const response = await fetch(`http://localhost:3001/pets?page=${page}&size=9`)
@@ -20,6 +20,10 @@ app.get("/pets", async function (req, res) {
     console.error(error);
     res.status(500).send("Erro ao obter dados da API");
   }
+});
+
+app.get("/admin", (req, res) => {
+  res.render("pages/home");
 });
 
 app.listen(port, () => {
