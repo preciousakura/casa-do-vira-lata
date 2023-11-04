@@ -12,8 +12,7 @@ app.get("/", function (req, res) {
 });
 
 app.get("/pets", function (req, res) {
-  const page = req.query.page - 1 ?? 0;
-
+  const page = req.query.page ? req.query.page - 1 : 0;
   axios
     .get(`http://localhost:3001/pets?page=${page}&size=9`)
     .then((response) => {
