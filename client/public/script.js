@@ -41,28 +41,49 @@ function loadFontSizeSetting() {
   }
 }
 
-function saveColorMode() {
-  const html = document.querySelector("html");
-
-  if (html.getAttribute("class")) {
-    html.removeAttribute("class");
-    localStorage.setItem("color-mode", 'light');
-  }
-  else {
-    html.setAttribute("class", "dark");
-    localStorage.setItem("color-mode", 'dark');
+function toggleIcon(theme) {
+  const icon = document.querySelector('#color-mode i');
+  if (theme === 'dark') {
+    icon.classList.remove('ph-sun');
+    icon.classList.add('ph-moon');
+  } else {
+    icon.classList.remove('ph-moon');
+    icon.classList.add('ph-sun');
   }
 }
+
+function saveColorMode() {
+  const html = document.querySelector("html");
+  let theme = '';
+
+  if (html.classList.contains("dark")) {
+    html.classList.remove("dark");
+    theme = 'light';
+  } else {
+    html.classList.add("dark");
+    theme = 'dark';
+  }
+
+  toggleIcon(theme);
+  localStorage.setItem("color-mode", theme);
+}
+
 
 function loadColorMode() {
   const html = document.querySelector("html");
   const cur_color = localStorage.getItem("color-mode");
+  
   if (cur_color) {
-    if (cur_color === "dark") html.setAttribute("class", "dark");
-    else html.removeAttribute("class");
+    if (cur_color === "dark") {
+      html.classList.add("dark");
+      toggleIcon('dark');
+    } else {
+      html.classList.remove("dark");
+      toggleIcon('light');
+    }
   }
-
 }
+
 
 document.addEventListener("DOMContentLoaded", function () {
   const btnAumentar = document.getElementById("aumentar-fonte");
@@ -79,6 +100,6 @@ document.addEventListener("DOMContentLoaded", function () {
   btnReset.addEventListener("click", resetFontSize);
   color.addEventListener("click", saveColorMode);
 
-  loadColorMode();
+  loadColorMode(); 
   loadFontSizeSetting();
 });

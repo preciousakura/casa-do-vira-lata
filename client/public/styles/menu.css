@@ -50,6 +50,8 @@ header nav {
   color: var(--text-color);
   padding: 10px 15px;
   border-radius: 8px;
+  position: absolute;
+  right: 20px;
 }
 
 .user-btn:hover {
