@@ -116,10 +116,23 @@
   "resolved" "https://registry.npmjs.org/content-type/-/content-type-1.0.5.tgz"
   "version" "1.0.5"
 
+"cookie-parser@^1.4.6":
+  "integrity" "sha512-z3IzaNjdwUC2olLIB5/ITd0/setiaFMLYiZJle7xg5Fe9KWAceil7xszYfHHBtDFYLSgJduS2Ty0P1uJdPDJeA=="
+  "resolved" "https://registry.npmjs.org/cookie-parser/-/cookie-parser-1.4.6.tgz"
+  "version" "1.4.6"
+  dependencies:
+    "cookie" "0.4.1"
+    "cookie-signature" "1.0.6"
+
 "cookie-signature@1.0.6":
   "integrity" "sha512-QADzlaHc8icV8I7vbaJXJwod9HWYp8uCqf1xa4OfNu1T7JVxQIrUgOWtHdNDtPiywmFbiS12VjotIXLrKM3orQ=="
   "resolved" "https://registry.npmjs.org/cookie-signature/-/cookie-signature-1.0.6.tgz"
   "version" "1.0.6"
+
+"cookie@0.4.1":
+  "integrity" "sha512-ZwrFkGJxUR3EIoXtO+yVE69Eb7KlixbaeAWfBQB9vVsNn/o+Yw69gBWSSDK825hQNdN+wF8zELf3dFNl/kxkUA=="
+  "resolved" "https://registry.npmjs.org/cookie/-/cookie-0.4.1.tgz"
+  "version" "0.4.1"
 
 "cookie@0.5.0":
   "integrity" "sha512-YZ3GUyn/o8gfKJlnlX7g7xq4gyO6OSuhGPKaaGssGB2qgDUS0gPgtTvoyZLTt9Ab6dC4hfc9dV5arkvc/OCmrw=="
@@ -221,7 +234,7 @@
     "utils-merge" "1.0.1"
     "vary" "~1.1.2"
 
-"fetch-blob@^3.1.2", "fetch-blob@^3.1.4":
+"fetch-blob@^3.1.4":
   "integrity" "sha512-7yAQpD2UMJzLi1Dqv7qFYnPbaPx7ZfFK6PiIxQ4PfkGPyNyl2Ugx+a/umUonmKqjhM4DnfbMvdX6otXq83soQQ=="
   "resolved" "https://registry.npmjs.org/fetch-blob/-/fetch-blob-3.2.0.tgz"
   "version" "3.2.0"
@@ -248,13 +261,6 @@
     "parseurl" "~1.3.3"
     "statuses" "2.0.1"
     "unpipe" "~1.0.0"
-
-"formdata-polyfill@^4.0.10":
-  "integrity" "sha512-buewHzMvYL29jdeQTVILecSaZKnt/RJWjoZCF5OW60Z67/GmSLBkOFM7qh1PI3zFNtJbaZL5eQu1vLfazOwj4g=="
-  "resolved" "https://registry.npmjs.org/formdata-polyfill/-/formdata-polyfill-4.0.10.tgz"
-  "version" "4.0.10"
-  dependencies:
-    "fetch-blob" "^3.1.2"
 
 "forwarded@0.2.0":
   "integrity" "sha512-buRG0fpBtRHSTCOASe6hD258tEubFoRLb4ZNA6NxMVHNw2gOcwHo9wyablzMzOA5z9xA9L1KNjk/Nt6MT9aYow=="

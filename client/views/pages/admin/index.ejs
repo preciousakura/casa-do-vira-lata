@@ -9,7 +9,53 @@
       include('../../partials/header'); %>
     </header>
 
-    <main></main>
+    <main class="main-options">
+      <div class="content-options-home--max">
+        <h1 class="content-options-home__title">Olá, <span>Isabel</span>.</h1>
+        <p class="content-options-home__subtitle">
+          Gerenciamento de usuário e pets. Edite, exclua e adicione novos
+          moderadores.
+        </p>
+
+        <div class="card-container-options">
+          <div class="card-options">
+            <a href="options-users.html">
+              <div class="card-content">
+                <div>
+                  <i class="ph-fill ph-user"></i>
+                  <h2>Usuários</h2>
+                </div>
+                <p>Gerencie os usuários e moderadores</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="card-options">
+            <a href="options-pets.html">
+              <div class="card-content">
+                <div>
+                  <i class="ph-fill ph-paw-print"></i>
+                  <h2>Pets</h2>
+                </div>
+                <p>Gerencie os animais cadastrados para adoção</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="card-options">
+            <a href="options-solicit.html">
+              <div class="card-content">
+                <div>
+                  <i class="ph-fill ph-paw-print"></i>
+                  <h2>Solicitações de Moderadores</h2>
+                </div>
+                <p>Aprove, edite ou exclua solicitações</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
 
     <footer class="footer"><%- include('../../partials/footer'); %></footer>
   </body>

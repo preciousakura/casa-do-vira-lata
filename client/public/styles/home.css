@@ -63,7 +63,7 @@
 }
 
 .section__text {
-  font-size: 1.2rem;
+  font-size: 1.1.8rem;
   font-style: normal;
   font-weight: 500;
 }
@@ -104,7 +104,7 @@
 }
 .section__arrow {
   display: block;
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin: 10px;
   cursor: pointer;
 }
@@ -161,11 +161,10 @@
   font-style: normal;
   font-weight: 700;
   line-height: 125%; /* 50px */
-  letter-spacing: 0.8px;
   margin-bottom: 50px;
 }
 .section-2 > p {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-style: normal;
   font-weight: 500;
   line-height: 150%; /* 31.5px */
@@ -207,11 +206,10 @@
   font-style: normal;
   font-weight: 700;
   line-height: 125%; /* 50px */
-  letter-spacing: 0.8px;
   margin-bottom: 10px;
 }
 .section-3 > p {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-style: normal;
   font-weight: 500;
   line-height: 150%; /* 31.5px */

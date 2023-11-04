@@ -1,0 +1,45 @@
+.not-authorized {
+  min-height: calc(100vh - 131px);
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+
+  padding: 5rem 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+.not-authorized__text {
+  text-align: center;
+}
+.not-authorized__text > h2 {
+  font-size: 6rem;
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+}
+
+.not-authorized__text > p {
+  margin-bottom: 0.5rem;
+}
+
+.not-authorized__icon > i {
+  font-size: 12rem;
+  text-align: center;
+}
+
+.not-authorized__buttons {
+  margin-top: 2rem;
+}
+
+.not-authorized__buttons a {
+  background: var(--contrast-background);
+  border-radius: 8px;
+  padding: 10px 20px;
+  color: var(--contrast-text-color);
+  font-weight: 600;
+}

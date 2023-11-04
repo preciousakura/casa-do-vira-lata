@@ -13,6 +13,9 @@
 
   --white: #fff;
   --black: #000;
+
+  --contrast-background: #000;
+  --contrast-text-color: #fff;
 }
 
 .dark {
@@ -28,6 +31,9 @@
 
   --white: #fff;
   --black: #000;
+
+  --contrast-background: #fff;
+  --contrast-text-color: #000;
 }
 
 html {
