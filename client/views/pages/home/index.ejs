@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../../partials/head'); %>
+  </head>
+  <body class="container">
+    <header class="header-content">
+      <%- include('../../partials/accessibility'); %> <%-
+      include('../../partials/header'); %>
+    </header>
+
+    <main>
+      <section class="section section--green section--first">
+        <div class="section__content section-1">
+          <div class="section__main">
+            <div class="section__main--content">
+              <p class="section__subtitle">
+                Encontre seu <span>melhor</span> amigo pet
+              </p>
+              <p>
+                O Projeto <span>Casa do Vira-lata</span> é um abrigo dedicado a acolher
+                animais resgatados das ruas, oferecendo-lhes a oportunidade de
+                encontrar lares amorosos através da adoção definitiva. Nosso
+                abrigo proporciona cuidados essenciais, como castração,
+                vacinação, vermifugação e assistência médica veterinária,
+                garantindo o bem-estar dos animais. Graças às doações,
+                também fornecemos o combustível necessário para transportar
+                esses animais do abrigo até o lar de seus futuros adotantes.
+              </p>
+              <button class="section__btn">
+                <span>Saiba Mais</span>
+                <i class="ph ph-caret-right"></i>
+              </button>
+            </div>
+            <div class="section__arrows">
+              <i class="ph ph-caret-double-down"></i>
+            </div>
+          </div>
+          <img src="images/cat.png" alt="Gato" class="cat-image" />
+          <img src="images/dog.png" alt="Cachorro" class="dog-image" />
+        </div>
+      </section>
+
+      <section class="section section--light">
+        <div class="section-2">
+          <h2 class="section__title">🐾 O que é a Casa do Vira-Lata?</h2>
+          <p>
+            Gabriel é o fundador da Casa do Vira-Lata, um abrigo que proporciona
+            animais de rua a oportunidade de serem adotados em lares amorosos.
+            Através de doações, oferecem castração, vacinação, cuidados médicos e
+            transporte para a casa dos adotantes.
+            <br >
+            <br >
+            <br >
+            <br >
+            O abrigo já realizou mais de 500 adoções desde 2019 e continua sua
+            missão com o apoio da comunidade.
+          </p>
+          <img
+            src="images/patinhas.png"
+            class="patinhas"
+            alt="patinhas de gato"
+          >
+          <img src="images/cat-2.png" class="cat-2" alt="gato" >
+        </div>
+      </section>
+
+      <section class="section section--green">
+        <div class="section-3">
+          <h2 class="section__title">🐾 Alguns dos nossos amigos</h2>
+          <p>
+            Abrigo não é lar, são animais domésticos e amam pertencer a uma
+            família
+          </p>
+          <div class="carousel-container">
+            <button class="prev-button">
+              <i class="ph-fill ph-caret-circle-left"></i>
+            </button>
+            <div class="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-slide">
+                  <div class="carousel-slide__image">
+                    <img src="images/dina.png" alt="Gato 1" >
+                  </div>
+                  <p>
+                    None, um gato com peculiaridades e problemas de saúde, foi
+                    adotado após viver com mais de 50 gatos. Com 8 anos, encontrou
+                    um lar amoroso onde é mimado e é o rei absoluto da casa,
+                    vivendo com tranquilidade e amor.
+                  </p>
+                </div>
+                <div class="carousel-slide">
+                  <div class="carousel-slide__image">
+                    <img src="images/paola.png" alt="Gato 2" >
+                  </div>
+                  <p>
+                    Paola foi resgatada das ruas com ferimentos graves.
+                    Inicialmente desconfiada, recebeu cuidados amorosos até
+                    confiar. Agora, em seu lar adotivo, ela é amada, segura e
+                    feliz, desfrutando de uma vida que nunca teria nas ruas. A
+                    dedicação da família transformou sua vida para sempre.
+                  </p>
+                </div>
+                <div class="carousel-slide">
+                  <div class="carousel-slide__image">
+                    <img src="images/cat-2.png" alt="Gato 3" >
+                  </div>
+                  <p>Frase 3</p>
+                </div>
+                <!-- Adicione mais slides conforme necessário -->
+              </div>
+            </div>
+            <button class="next-button">
+              <i class="ph-fill ph-caret-circle-right"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--light">
+        <div class="section-4">
+          <div class="section-4__left">
+            <ul class="social-list">
+              <li class="social-list__item social-list__item--instagram">
+                <i class="ph-fill ph-instagram-logo"></i>
+                <a href="#" class="social-list__link">casadoviralata</a>
+              </li>
+              <li class="social-list__item social-list__item--twitter">
+                <i class="ph-fill ph-twitter-logo"></i>
+                <a href="#" class="social-list__link">casadoviralata</a>
+              </li>
+              <li class="social-list__item social-list__item--rifa">
+                <i class="ph-fill ph-hand-coins"></i>
+                <a href="#" class="social-list__link"
+                  >Rifa especial Casa do Vira-Lata</a
+                >
+              </li>
+            </ul>
+            <p>
+              Não existe animais de rua, existem <br >
+              animais nas ruas e eles precisam de nós.
+            </p>
+          </div>
+          <div class="section-4__right">
+            <h2 class="section-4__title">Contribua ❤️</h2>
+            <p>
+              Gabriel Santos Chaves <br >
+              Banco Inter
+            </p>
+            <img
+              src="images/qr-code.png"
+              alt="QR Code"
+              class="section-4__qr-code"
+            >
+          </div>
+          <img
+            src="images/cat-3.png"
+            alt="gato branco"
+            class="section-4__cat-center"
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer"><%- include('../../partials/footer'); %></footer>
+  </body>
+</html>

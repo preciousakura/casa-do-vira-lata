@@ -1,0 +1,7 @@
+<% if(total > 0) { %>
+<div class="pagination">
+  <% for (let i = 1; i <= Math.ceil(total/9); i++) { %>
+  <a href=<%= `pets?page=${i}` %>><%= i %></a>
+  <% } %>
+</div>
+<% } %>

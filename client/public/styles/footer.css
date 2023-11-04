@@ -1,0 +1,33 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  background-color: var(--background-color-foreign);
+  border-top: 1px solid var(--border-color);
+
+  color: var(--secondary-color);
+  width: 100%;
+}
+
+.footer > p {
+  text-align: center;
+  font-family: Work Sans;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 125%;
+  letter-spacing: 0.36px;
+  color: var(--text-color);
+}
+
+.footer > p > a {
+  font-weight: 400;
+  font-style: italic;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+.footer > p > a:hover {
+  color: var(--primary-color);
+}

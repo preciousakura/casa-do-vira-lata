@@ -1,0 +1,38 @@
+.acessibilidade-bar {
+    background-color: var(--background-color-foreign);
+    padding: 10px 100px;
+  }
+  
+  .acessibilidade-buttons {
+    display: flex;
+    gap: 5px; 
+    justify-content: end;
+
+    max-width: 1300px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .acessibilidade-buttons button {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 12px;
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+
+    background: none;
+  }
+  
+  .acessibilidade-buttons button:hover,
+  .acessibilidade-buttons button:focus {
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+  }
+  
