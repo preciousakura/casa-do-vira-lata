@@ -128,11 +128,12 @@
 
 .list__item__tags span {
   background: var(--secundary-color);
-  padding: 0.5rem 1rem;
+  padding: 0.2rem 1rem;
   border-radius: 8px;
   font-weight: 600;
   color: var(--black);
   margin-top: 20px;
+  text-transform: uppercase;
 }
 
 .list__no-result {
