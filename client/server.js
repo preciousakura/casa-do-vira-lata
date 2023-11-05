@@ -30,8 +30,7 @@ app.get("/pets", async (req, res) => {
     const data = await response.json();
     res.render("pages/pets", { data: data.items, total: data.total, current_page: 'pets', size: 9 });
   } catch (error) {
-    console.error(error);
-    res.status(500).send("Erro ao obter dados da API");
+    res.render("pages/pets", { data: [], total: 0, message: "Internal Server Error" });
   }
 });
 
@@ -49,8 +48,7 @@ app.get("/admin/users", (req, res, next) => auth(req, res, next, {allowed: ["ADM
       const data = await response.json();
       res.render("pages/admin/users", { data: data.items, total: data.total, current_page: 'users', size: 10 });
     } catch (error) {
-      console.error(error);
-      res.status(500).send("Erro ao obter dados da API");
+      res.render("pages/admin/users", { data: [], total: 0, message: "Internal Server Error" });
     }
   }
 );
@@ -63,8 +61,7 @@ app.get("/admin/pets", (req, res, next) => auth(req, res, next, {allowed: ["ADMI
       const data = await response.json();
       res.render("pages/admin/pets", { data: data.items, total: data.total, current_page: 'pets', size: 10 });
     } catch (error) {
-      console.error(error);
-      res.status(500).send("Erro ao obter dados da API");
+      res.render("pages/admin/pets", { data: [], total: 0, message: "Internal Server Error" });
     }
   }
 );
@@ -77,8 +74,7 @@ app.get("/admin/solicitations", (req, res, next) => auth(req, res, next, {allowe
       const data = await response.json();
       res.render("pages/admin/solicitations", { data: data.items, total: data.total, current_page: 'pets', size: 10 });
     } catch (error) {
-      console.error(error);
-      res.status(500).send("Erro ao obter dados da API");
+      res.render("pages/admin/solicitations", { data: [], total: 0, message: "Internal Server Error" });
     }
   }
 );

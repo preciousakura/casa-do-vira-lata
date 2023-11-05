@@ -63,7 +63,7 @@
         </table>
         <% } else { %>
         <div class="list__no-result">
-          <p>Sem resultados</p>
+          <p><%= message ? message : "Sem resultados" %></p>
         </div>
         <% } %>
         <div class="content-page-table__pagination">
