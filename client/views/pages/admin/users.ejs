@@ -63,7 +63,7 @@
         </table>
         <% } else { %>
         <div class="list__no-result">
-          <p><%= !(typeof(error) =="undefined") ? message : "Sem resultados" %></p>
+          <p><%= !(typeof(message) === "undefined") ? message : "Sem resultados" %></p>
         </div>
         <% } %>
         <div class="content-page-table__pagination">
