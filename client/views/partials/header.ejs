@@ -7,6 +7,6 @@
   <% if(!(typeof(user) === "undefined")) { %>
     <button class="user-logged"><i class="ph-fill ph-caret-down"></i><%= user.name %></button>
   <% } else { %>
-    <button class="user-btn"><i class="ph-fill ph-user"></i> Entrar</button>
+    <a href="/login" class="user-btn"><i class="ph-fill ph-user"></i> Entrar</a>
   <% } %>
 </nav>
