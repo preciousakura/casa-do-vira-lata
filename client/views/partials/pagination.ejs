@@ -1,7 +1,11 @@
-<% if(total > 0) { %>
+<% if(total > 0 && page <= Math.ceil(total/size)) { %>
 <div class="pagination">
-  <% for (let i = 1; i <= Math.ceil(total/size); i++) { %>
-  <a href=<%= `${current_page}?page=${i}` %>><%= i %></a>
+  <% if(page > 1) { %>
+    <a href=<%= `${current_page}?page=${Number(page)-1}` %>>Anterior</a>
+  <% } %>
+  <p><%= page %> página de <%= Math.ceil(total/size) %></p>
+  <% if(page < Math.ceil(total/size)) { %>
+    <a href=<%= `${current_page}?page=${Number(page)+1}` %>>Próxima</a>
   <% } %>
 </div>
 <% } %>

@@ -11,6 +11,7 @@ function paginatedData(req, res, path) {
       return;
     }
     try {
+      if((page - 1) < 0) return res.json({ items: [], total: 0 });
       const jsonData = JSON.parse(data);
       const result = jsonData.items.slice((page - 1) * size, ((page - 1) * size) + size);
       res.json({ items: result, total: jsonData.items.length });

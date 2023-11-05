@@ -85,7 +85,7 @@
                 </div>
               <% } else { %>
                 <div class="list__no-result">
-                  <p><%= message ? message : "Sem resultados" %></p>
+                  <p><%= !(typeof(error) =="undefined") ? message : "Sem resultados" %></p>
                 </div>
               <% } %>
           </div>
