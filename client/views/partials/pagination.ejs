@@ -1,4 +1,4 @@
-<% if(total > 0 && page <= Math.ceil(total/size)) { %>
+<% if(total > 0 && page <= Math.ceil(total/size) && total > size) { %>
 <div class="pagination">
   <% if(page > 1) { %>
     <a href=<%= `${current_page}?page=${Number(page)-1}` %>>Anterior</a>

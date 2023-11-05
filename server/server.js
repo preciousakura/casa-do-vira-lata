@@ -6,6 +6,6 @@ const paginatedData = require('./scripts/paginated-data')
 
 app.get('/pets', function (req, res) { return paginatedData(req, res, './data/pets/list.json') })
 app.get('/users', function (req, res) { return paginatedData(req, res, './data/users/list.json') })
-app.get('/solicitations', function (req, res) { return res.send({ items: [], total: 0 }) })
+app.get('/solicitations', function (req, res) { return paginatedData(req, res, './data/users/solicitations.json') })
 
 app.listen(port, () => { console.log(`Servidor rodando em http://localhost:${port}`) });

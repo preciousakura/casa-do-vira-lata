@@ -1,7 +1,7 @@
 const fs = require('fs')
 
 function paginatedData(req, res, path) {
-  const page = Number(req.query.page ? req.query.page : 0);
+  const page = Number(req.query.page ? req.query.page : 1);
   const size = Number(req.query.size ? req.query.size : 10);
 
   fs.readFile(path, "utf8", (err, data) => {

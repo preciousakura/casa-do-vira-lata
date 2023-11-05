@@ -10,7 +10,61 @@
     </header>
 
     <main>
+      <div class="content-page-table--max">
+        <h1 class="content-page-table__title">Solicitações de Moderadores</h1>
+        <div class="content-page-table__search-form">
+          <div class="filters--group-select" style="justify-content: space-between;">
+            <div class="filters__right">
+              <input type="text" placeholder="Buscar" />
+              <button class="filters__right--button">Buscar</button>
+            </div>
+            <div class="filters__right">
+              <button class="filters__left--button">Aprovar tudo</button>
+              <button class="filters__right--button">Excluir tudo</button>
+            </div>
+          </div>
+        </div>
 
+        <% if(data.length > 0) { %>
+        <table class="content-page-table__table">
+          <thead>
+            <tr>
+              <th class="table-header">Nome</th>
+              <th class="table-header">Email</th>
+              <th class="table-header">Telefone</th>
+              <th class="table-header">OPÇÕES</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% data.forEach(function(user) { %>
+            <tr>
+              <td><a href="/user/<%= user.id %>"><%= user.name %></a></td>
+              <td><%= user.email %></td>
+              <td><%= user.phone %></td>
+              <td class="table-actions">
+                <button class="edit-button">
+                  <i class="ph-fill ph-check-fat"></i>
+                </button>
+                <button class="delete-button">
+                  <i class="ph ph-trash"></i>
+                </button>
+              </td>
+            </tr>
+            <% }) %>
+          </tbody>
+        </table>
+        <% } else { %>
+        <div class="list__no-result">
+          <p>
+            <%= !(typeof(message) === "undefined") ? message : "Sem resultados"
+            %>
+          </p>
+        </div>
+        <% } %>
+        <div class="content-page-table__pagination">
+          <%- include('../../partials/pagination'); %>
+        </div>
+      </div>
     </main>
 
     <footer class="footer"><%- include('../../partials/footer'); %></footer>
