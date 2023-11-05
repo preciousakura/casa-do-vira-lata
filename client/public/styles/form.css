@@ -20,3 +20,7 @@ select {
   background-position: right 0.7em top 50%, 0 0;
   background-size: 1em auto, 100%;
 }
+
+select:focus, input:focus {
+  border: 1px solid var(--primary-color);
+}
