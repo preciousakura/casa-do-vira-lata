@@ -1,0 +1,117 @@
+.content-page-table--max {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  max-width: 1300px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.content-page-table__title {
+  font-size: 4rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%; /* 60px */
+}
+
+.content-page-table__table {
+  width: 100%;
+  background-color: var(--card-background);
+  margin-top: 25px;
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+}
+
+.content-page-table__table th,
+.content-page-table__table td {
+  text-align: left;
+  font-size: 1.5rem;
+}
+
+.content-page-table__table td {
+  padding: 10px 30px;
+}
+
+.content-page-table__table th {
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  font-size: 12px;
+  border-bottom: 1px solid var(--border-color);
+  padding: 20px 30px;
+}
+
+.content-page-table__table a {
+  color: var(--text-color);
+}
+.content-page-table__search-form > .filters--group-select {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+
+  justify-content: start;
+
+  flex-wrap: wrap;
+}
+
+.content-page-table__search-form .filters__right {
+  display: flex;
+  gap: 10px;
+  height: 45px;
+}
+
+.filters__right--button {
+  display: flex;
+  padding: 20px 22px;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  background: var(--primary-color);
+  font-size: 1.2rem;
+}
+.filters__right--button > img {
+  width: 13px;
+  height: 13px;
+}
+.table-actions {
+  display: flex;
+  justify-content: start;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.edit-button,
+.delete-button {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  font-size: 2rem;
+
+  width: 30px;
+  height: 30px;
+
+  cursor: pointer;
+}
+
+.delete-button {
+  background: var(--delete-background);
+}
+
+.delete-button i {
+  color: var(--white);
+}
+
+.edit-button {
+  background: var(--edit-background);
+}
+
+.edit-button i {
+  color: var(--white);
+}
+
+.edit-button:hover,
+.delete-button:hover {
+  filter: brightness(0.9);
+}

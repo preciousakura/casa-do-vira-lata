@@ -2,17 +2,812 @@
   "items": [
     {
       "id": 0,
-      "name": "Isabel Cristina de Oliveira Lopes",
-      "username": "isabel20",
-      "password": "",
-      "permissions": ["ADMIN"]
+      "name": "Cinthia Maria Andrade da Silva",
+      "email": "cinthiagatinha@gmail.com",
+      "password": "12345678",
+      "role": "ADMIN",
+      "phone": "(85) 9 8965-1350"
+    },
+
+    {
+      "name": "Ana Vit\u00f3ria Rocha",
+      "id": 1,
+      "email": "luiz-otavioferreira@example.org",
+      "phone": "71 9253-4404",
+      "password": "xU#el0As(O1J",
+      "role": "MODERATOR"
     },
     {
-      "id": 0,
-      "name": "Cinthia Maria Andrade da Silva",
-      "username": "cinthiagatinha",
-      "password": "",
-      "permissions": ["ADMIN"]
+      "name": "Sra. Evelyn Novaes",
+      "id": 2,
+      "email": "da-rochathiago@example.net",
+      "phone": "71 6396-8296",
+      "password": "Xt82qTv_v_FN",
+      "role": "ADMIN"
+    },
+    {
+      "name": "Lav\u00ednia Souza",
+      "id": 3,
+      "email": "pietrosantos@example.net",
+      "phone": "(061) 4325 4230",
+      "password": "a^!0LVBeKcrz",
+      "role": "ADMIN"
+    },
+    {
+      "name": "Gabriel Souza",
+      "id": 4,
+      "email": "ada-cruz@example.net",
+      "phone": "(021) 5158 0533",
+      "password": "tRdEm4uT@B7%",
+      "role": "MODERATOR"
+    },
+    {
+      "name": "Catarina Santos",
+      "id": 5,
+      "email": "noahsales@example.net",
+      "phone": "81 0423 8634",
+      "password": "3&dWNHbc+puD",
+      "role": "ADMIN"
+    },
+    {
+      "name": "Renan Rocha",
+      "id": 6,
+      "email": "fernandesheitor@example.net",
+      "phone": "(084) 6251-0686",
+      "password": "Wy1V%oqS+FQe",
+      "role": "MODERATOR"
+    },
+    {
+      "name": "Evelyn da Cruz",
+      "id": 7,
+      "email": "luiz-fernandosilva@example.com",
+      "phone": "61 3688-4558",
+      "password": "n!Y1R#nSuY9u",
+      "role": "MODERATOR"
+    },
+    {
+      "name": "Amanda Correia",
+      "id": 8,
+      "email": "rramos@example.net",
+      "phone": "0800-314-2259",
+      "password": "8bB!&i^q@8Qh",
+      "role": "ADMIN"
+    },
+    {
+      "name": "Dra. Carolina Alves",
+      "id": 9,
+      "email": "stella99@example.net",
+      "phone": "81 5082 8816",
+      "password": "4fOGF1dP_z(C",
+      "role": "USER DEFAULT"
+    },
+    {
+      "name": "Andr\u00e9 Ara\u00fajo",
+      "id": 10,
+      "email": "rebeca45@example.org",
+      "phone": "(084) 4037 6086",
+      "password": "+Z1Nc8oE*ihC",
+      "role": "USER DEFAULT"
+    },
+    {
+      "name": "Henrique Freitas",
+      "id": 11,
+      "email": "souzanicole@example.com",
+      "phone": "(031) 9144-6772",
+      "password": "+7^owzoWyBSM",
+      "role": "USER DEFAULT"
+    },
+    {
+      "name": "Dr. Isaac Jesus",
+      "id": 12,
+      "email": "sabrinacastro@example.com",
+      "phone": "(084) 1141 2686",
+      "password": "%#gLCt$WO2iV",
+      "role": "ADMIN"
+    },
+    {
+      "name": "Davi Ferreira",
+      "id": 13,
+      "email": "qazevedo@example.com",
+      "phone": "0300 799 8974",
+      "password": "$%2mkdX@m94T",
+      "role": "MODERATOR"
+    },
+    {
+      "name": "Evelyn Souza",
+      "id": 14,
+      "email": "abarros@example.com",
+      "phone": "21 2273-6068",
+      "password": "Vz0XoEX4H_7Y",
+      "role": "ADMIN"
+    },
+    {
+      "name": "Sr. Gustavo Henrique Sales",
+      "id": 15,
+      "email": "vitor65@example.com",
+      "phone": "61 0064 6826",
+      "password": "Q%Q1UYOO8k6%",
+      "role": "ADMIN"
+    },
+    {
+      "name": "Noah da Costa",
+      "id": 16,
+      "email": "isabella99@example.com",
+      "phone": "(081) 4208-6773",
+      "password": "^e1fREeUnjtI",
+      "role": "USER DEFAULT"
+    },
+    {
+      "name": "Andr\u00e9 da Mota",
+      "id": 17,
+      "email": "asouza@example.com",
+      "phone": "(061) 9163 1731",
+      "password": "bSiJGctE^+56",
+      "role": "MODERATOR"
+    },
+    {
+      "name": "Luna Moreira",
+      "id": 18,
+      "email": "joaquim21@example.net",
+      "phone": "(011) 2151-1716",
+      "password": "wwJ0yt%vy*3p",
+      "role": "ADMIN"
+    },
+    {
+      "name": "Larissa Mendes",
+      "id": 19,
+      "email": "luigi15@example.org",
+      "phone": "51 9677 9256",
+      "password": "8lX1(tCm*m3Z",
+      "role": "USER DEFAULT"
+    },
+    {
+      "name": "Raquel Souza",
+      "id": 20,
+      "email": "ipires@example.com",
+      "phone": "21 7597-5351",
+      "password": "jib4XxlK(voE",
+      "role": "ADMIN"
+    },
+    {
+      "name": "La\u00eds Monteiro",
+      "id": 21,
+      "email": "da-matavitoria@example.com",
+      "phone": "21 0423 8690",
+      "password": "tb3!V!q2+0ZC",
+      "role": "MODERATOR"
+    },
+    {
+      "name": "Maria Alice Dias",
+      "id": 22,
+      "email": "pintodaniel@example.org",
+      "phone": "(084) 8201-3894",
+      "password": "x+8wZHcPy@p1",
+      "role": "USER DEFAULT"
+    },
+    {
+      "name": "Enzo Gabriel Teixeira",
+      "id": 23,
+      "email": "gustavo-henriquemoura@example.org",
+      "phone": "(081) 8325 6450",
+      "password": ")6oMCfg5xP2o",
+      "role": "ADMIN"
+    },
+    {
+      "name": "Carlos Eduardo Mendes",
+      "id": 24,
+      "email": "fariasraquel@example.com",
+      "phone": "81 9874-5760",
+      "password": "R5MpaHYx(0jB",
+      "role": "USER DEFAULT"
+    },
+    {
+      "name": "Arthur Nascimento",
+      "id": 25,
+      "email": "peixotodiogo@example.net",
+      "phone": "71 4974 3556",
+      "password": "f!SEy1sF5l1B",
+      "role": "USER DEFAULT"
+    },
+    {
+      "name": "Sr. Rafael Gon\u00e7alves",
+      "id": 26,
+      "email": "fariasmelissa@example.org",
+      "phone": "11 0073-3910",
+      "password": "j61zHDmD@TFy",
+      "role": "MODERATOR"
+    },
+    {
+      "name": "Alexia Martins",
+      "id": 27,
+      "email": "da-matamaria-eduarda@example.net",
+      "phone": "84 7703 9637",
+      "password": "08+a2uPf!AC!",
+      "role": "MODERATOR"
+    },
+    {
+      "name": "Paulo Azevedo",
+      "id": 28,
+      "email": "maysaduarte@example.net",
+      "phone": "61 1798-5298",
+      "password": "$NOBpeZKW5QB",
+      "role": "MODERATOR"
+    },
+    {
+      "name": "Mirella das Neves",
+      "id": 29,
+      "email": "davi-lucasda-mata@example.com",
+      "phone": "61 8337-1740",
+      "password": "(S(XZoL)V2sr",
+      "role": "USER DEFAULT"
+    },
+    {
+      "name": "Sra. Eloah Rezende",
+      "id": 30,
+      "email": "gomesrenan@example.com",
+      "phone": "(051) 2010 1142",
+      "password": "(9j@GNTnGwns",
+      "role": "USER DEFAULT"
+    },
+    {
+      "name": "Sr. Kevin Viana",
+      "id": 31,
+      "email": "thalesjesus@example.net",
+      "phone": "(081) 4075 2056",
+      "password": "F6P6$A7V_IWm",
+      "role": "ADMIN"
+    },
+    {
+      "name": "Danilo Ribeiro",
+      "id": 32,
+      "email": "davi-luiz77@example.net",
+      "phone": "(081) 5423 8007",
+      "password": "5NQ3Ee%m_&1o",
+      "role": "USER DEFAULT"
+    },
+    {
+      "name": "Bryan da Rocha",
+      "id": 33,
+      "email": "omoraes@example.net",
+      "phone": "(061) 3966 8583",
+      "password": "_0r*BP%tWt2Z",
+      "role": "USER DEFAULT"
+    },
+    {
+      "name": "Jo\u00e3o Felipe Almeida",
+      "id": 34,
+      "email": "silvaisaac@example.org",
+      "phone": "61 0693-9613",
+      "password": "#72Jmg^x^^#y",
+      "role": "USER DEFAULT"
+    },
+    {
+      "name": "Emilly Arag\u00e3o",
+      "id": 35,
+      "email": "ana-beatriz63@example.net",
+      "phone": "(011) 8292 4363",
+      "password": "i1WGz0Q3wz9%",
+      "role": "ADMIN"
+    },
+    {
+      "name": "Sr. Bryan Martins",
+      "id": 36,
+      "email": "emanuellyramos@example.com",
+      "phone": "61 1611-0636",
+      "password": "L)43NZEfSBbl",
+      "role": "MODERATOR"
+    },
+    {
+      "name": "Sra. Sarah Porto",
+      "id": 37,
+      "email": "emanuellarocha@example.com",
+      "phone": "(011) 5184-9677",
+      "password": "8e93pBepdt&)",
+      "role": "USER DEFAULT"
+    },
+    {
+      "name": "Pedro Barros",
+      "id": 38,
+      "email": "silveiraemanuel@example.org",
+      "phone": "(021) 6378 9932",
+      "password": ")V07jY2qsV)B",
+      "role": "ADMIN"
+    },
+    {
+      "name": "Dr. Vinicius Barbosa",
+      "id": 39,
+      "email": "lazevedo@example.net",
+      "phone": "11 6359-6510",
+      "password": ")A7l$OC+hZVa",
+      "role": "USER DEFAULT"
+    },
+    {
+      "name": "Erick da Cruz",
+      "id": 40,
+      "email": "vicente76@example.org",
+      "phone": "(084) 0363-2545",
+      "password": "^)Krf3)A*n5O",
+      "role": "ADMIN"
+    },
+    {
+      "name": "Dr. Henrique Pires",
+      "id": 41,
+      "email": "hdas-neves@example.org",
+      "phone": "71 0841 6570",
+      "password": "Xhm9Yoxg)j$O",
+      "role": "ADMIN"
+    },
+    {
+      "name": "Eduardo Costa",
+      "id": 42,
+      "email": "diego56@example.com",
+      "phone": "31 8071 2671",
+      "password": "*7IAuXjyqI$3",
+      "role": "USER DEFAULT"
+    },
+    {
+      "name": "Sr. Gustavo Henrique Souza",
+      "id": 43,
+      "email": "vicente80@example.net",
+      "phone": "71 6239-9951",
+      "password": "lmLThz)X@F7d",
+      "role": "USER DEFAULT"
+    },
+    {
+      "name": "Lucca Azevedo",
+      "id": 44,
+      "email": "alexandre55@example.org",
+      "phone": "(071) 8963 3422",
+      "password": "+0DuIup)(q*W",
+      "role": "USER DEFAULT"
+    },
+    {
+      "name": "Bryan Pires",
+      "id": 45,
+      "email": "luanaaraujo@example.com",
+      "phone": "(061) 1230 9030",
+      "password": "%BCuppej8L$R",
+      "role": "ADMIN"
+    },
+    {
+      "name": "Srta. Maria Eduarda das Neves",
+      "id": 46,
+      "email": "cunhaana-luiza@example.net",
+      "phone": "31 7695-6343",
+      "password": "U5scECfx&IqX",
+      "role": "MODERATOR"
+    },
+    {
+      "name": "Jo\u00e3o Rocha",
+      "id": 47,
+      "email": "irodrigues@example.org",
+      "phone": "11 5682-0435",
+      "password": "!4G_dB_bho1T",
+      "role": "USER DEFAULT"
+    },
+    {
+      "name": "Sra. Helena Rodrigues",
+      "id": 48,
+      "email": "aragaomaria-luiza@example.com",
+      "phone": "11 7988-8845",
+      "password": "SA)pX^lsS)C5",
+      "role": "USER DEFAULT"
+    },
+    {
+      "name": "Enzo Silva",
+      "id": 49,
+      "email": "fernandafernandes@example.net",
+      "phone": "(071) 0572 5810",
+      "password": "c4n#WPtcLTxI",
+      "role": "ADMIN"
+    },
+    {
+      "name": "Isaac Lima",
+      "id": 50,
+      "email": "joaosales@example.net",
+      "phone": "(071) 0556-7268",
+      "password": "6eRrti33^SYG",
+      "role": "ADMIN"
+    },
+    {
+      "name": "Vitor Hugo Carvalho",
+      "id": 51,
+      "email": "calebe74@example.com",
+      "phone": "71 8182-7470",
+      "password": ")Z1A!d4cl*o^",
+      "role": "USER DEFAULT"
+    },
+    {
+      "name": "Vit\u00f3ria Ara\u00fajo",
+      "id": 52,
+      "email": "henrique68@example.org",
+      "phone": "(021) 4357 7858",
+      "password": "pqSvyN_t)4@F",
+      "role": "MODERATOR"
+    },
+    {
+      "name": "Thales Lopes",
+      "id": 53,
+      "email": "natalia43@example.net",
+      "phone": "(061) 6815 8413",
+      "password": "&2Q9e@PigQC)",
+      "role": "USER DEFAULT"
+    },
+    {
+      "name": "Alice Silveira",
+      "id": 54,
+      "email": "mouravinicius@example.net",
+      "phone": "(081) 6791 2014",
+      "password": "z5VKcJIp%mm7",
+      "role": "MODERATOR"
+    },
+    {
+      "name": "Dr. Guilherme Silva",
+      "id": 55,
+      "email": "da-cunhaluiz-otavio@example.com",
+      "phone": "51 8540 4007",
+      "password": "2bjp1Jz1m%J5",
+      "role": "USER DEFAULT"
+    },
+    {
+      "name": "Gabriel Cardoso",
+      "id": 56,
+      "email": "xmendes@example.org",
+      "phone": "61 6945 0986",
+      "password": "I^W4zHijuXW^",
+      "role": "USER DEFAULT"
+    },
+    {
+      "name": "Nat\u00e1lia Rocha",
+      "id": 57,
+      "email": "peixotolucca@example.net",
+      "phone": "(081) 2921-6399",
+      "password": "%CqE7Uc(^4s+",
+      "role": "ADMIN"
+    },
+    {
+      "name": "Vitor Gabriel Gon\u00e7alves",
+      "id": 58,
+      "email": "camposmatheus@example.org",
+      "phone": "71 2212 7705",
+      "password": "uqe5Yh_wut+u",
+      "role": "USER DEFAULT"
+    },
+    {
+      "name": "Felipe Azevedo",
+      "id": 59,
+      "email": "laura71@example.net",
+      "phone": "21 1469 3055",
+      "password": "*+8PkuXT(lGB",
+      "role": "MODERATOR"
+    },
+    {
+      "name": "Ian Castro",
+      "id": 60,
+      "email": "silveiralucca@example.com",
+      "phone": "(051) 0663-3485",
+      "password": "F359cpyG$GTZ",
+      "role": "USER DEFAULT"
+    },
+    {
+      "name": "Pietra Castro",
+      "id": 61,
+      "email": "carvalhojuliana@example.net",
+      "phone": "(081) 4938-5236",
+      "password": "#ZngFtsa3da5",
+      "role": "USER DEFAULT"
+    },
+    {
+      "name": "Maria Vit\u00f3ria Cavalcanti",
+      "id": 62,
+      "email": "aliciasantos@example.com",
+      "phone": "(051) 6018 9045",
+      "password": "LIIL1IpmvpS&",
+      "role": "MODERATOR"
+    },
+    {
+      "name": "Stella Rocha",
+      "id": 63,
+      "email": "uoliveira@example.net",
+      "phone": "81 5173-9873",
+      "password": "9HT2%XGs^O0_",
+      "role": "MODERATOR"
+    },
+    {
+      "name": "Rafael Costa",
+      "id": 64,
+      "email": "bruna22@example.org",
+      "phone": "71 5607-4888",
+      "password": "$vHEtfIpKQM7",
+      "role": "MODERATOR"
+    },
+    {
+      "name": "Vinicius Azevedo",
+      "id": 65,
+      "email": "salesemanuelly@example.net",
+      "phone": "21 3875 3728",
+      "password": "+fM_i#Sr66JO",
+      "role": "MODERATOR"
+    },
+    {
+      "name": "Dr. Jo\u00e3o Vitor da Cruz",
+      "id": 66,
+      "email": "rfarias@example.org",
+      "phone": "41 5111-3896",
+      "password": "U^A7Kik%Fi^w",
+      "role": "ADMIN"
+    },
+    {
+      "name": "Marcela da Rocha",
+      "id": 67,
+      "email": "zribeiro@example.net",
+      "phone": "(061) 6860-7614",
+      "password": "SdbwDun7($8v",
+      "role": "MODERATOR"
+    },
+    {
+      "name": "Emanuel Rodrigues",
+      "id": 68,
+      "email": "ceciliada-conceicao@example.org",
+      "phone": "41 0193-8940",
+      "password": "s_97DnK_sIcS",
+      "role": "ADMIN"
+    },
+    {
+      "name": "Gustavo da Costa",
+      "id": 69,
+      "email": "juliaferreira@example.net",
+      "phone": "84 3655-9735",
+      "password": "$^vbmQBl(*8H",
+      "role": "ADMIN"
+    },
+    {
+      "name": "Amanda Oliveira",
+      "id": 70,
+      "email": "franciscolopes@example.org",
+      "phone": "(041) 6710 2516",
+      "password": "h59LOz)P&B(O",
+      "role": "USER DEFAULT"
+    },
+    {
+      "name": "Guilherme Peixoto",
+      "id": 71,
+      "email": "da-matanicolas@example.org",
+      "phone": "(061) 0111-1638",
+      "password": "Se$!3WOh$bhW",
+      "role": "MODERATOR"
+    },
+    {
+      "name": "Sr. Gustavo Henrique Almeida",
+      "id": 72,
+      "email": "eduardocardoso@example.org",
+      "phone": "31 6758-5682",
+      "password": "h7kSCyBS(8E^",
+      "role": "ADMIN"
+    },
+    {
+      "name": "Laura Campos",
+      "id": 73,
+      "email": "danielasilveira@example.org",
+      "phone": "41 0576 8650",
+      "password": "7(#ar1HkjJ0u",
+      "role": "USER DEFAULT"
+    },
+    {
+      "name": "Lara da Rocha",
+      "id": 74,
+      "email": "bryanazevedo@example.org",
+      "phone": "71 9408-8530",
+      "password": "b7je8KjJ%x@^",
+      "role": "USER DEFAULT"
+    },
+    {
+      "name": "Sarah Gomes",
+      "id": 75,
+      "email": "cardosomarcelo@example.net",
+      "phone": "71 7146 0874",
+      "password": "#5AH)WfooOys",
+      "role": "MODERATOR"
+    },
+    {
+      "name": "Vicente Monteiro",
+      "id": 76,
+      "email": "ramospietra@example.net",
+      "phone": "81 7927 9441",
+      "password": "Gs1y$lFz!lze",
+      "role": "USER DEFAULT"
+    },
+    {
+      "name": "Cec\u00edlia Almeida",
+      "id": 77,
+      "email": "sfarias@example.org",
+      "phone": "31 5750-0642",
+      "password": "mK!weJkw+5Xo",
+      "role": "ADMIN"
+    },
+    {
+      "name": "Joaquim Viana",
+      "id": 78,
+      "email": "ana-clara82@example.com",
+      "phone": "31 2996 5018",
+      "password": "GW2tKWl2y+&v",
+      "role": "MODERATOR"
+    },
+    {
+      "name": "Francisco Oliveira",
+      "id": 79,
+      "email": "ananascimento@example.net",
+      "phone": "(011) 6364-1261",
+      "password": "j#y6Y1g71VT$",
+      "role": "ADMIN"
+    },
+    {
+      "name": "Sr. Joaquim da Cunha",
+      "id": 80,
+      "email": "ana-carolinacastro@example.net",
+      "phone": "71 8198-4351",
+      "password": "_%8krQm!Ee6H",
+      "role": "ADMIN"
+    },
+    {
+      "name": "Fernando da Cunha",
+      "id": 81,
+      "email": "vieiraluiz-miguel@example.com",
+      "phone": "(061) 1948-0804",
+      "password": "21Ykj(+4*aPm",
+      "role": "ADMIN"
+    },
+    {
+      "name": "Davi Lucca Nunes",
+      "id": 82,
+      "email": "barrosluiz-gustavo@example.org",
+      "phone": "(081) 4429-1238",
+      "password": "wx2*#Hg1aVUX",
+      "role": "ADMIN"
+    },
+    {
+      "name": "Juliana Pires",
+      "id": 83,
+      "email": "brunoda-luz@example.org",
+      "phone": "(011) 1975 7015",
+      "password": "r&5Py)4hIq3R",
+      "role": "MODERATOR"
+    },
+    {
+      "name": "Maria Fernanda Lima",
+      "id": 84,
+      "email": "yuri73@example.com",
+      "phone": "81 7527 2121",
+      "password": "!1VsNtcPDYzx",
+      "role": "ADMIN"
+    },
+    {
+      "name": "Levi Rocha",
+      "id": 85,
+      "email": "bruna33@example.com",
+      "phone": "51 2588 9151",
+      "password": "A^3e4+atM2QC",
+      "role": "MODERATOR"
+    },
+    {
+      "name": "Breno Foga\u00e7a",
+      "id": 86,
+      "email": "freitasclara@example.com",
+      "phone": "84 9318-4768",
+      "password": "2Avh6zgxY_3^",
+      "role": "ADMIN"
+    },
+    {
+      "name": "Cau\u00ea Silva",
+      "id": 87,
+      "email": "davi-luiz53@example.net",
+      "phone": "(081) 0189-9482",
+      "password": "*2ScrPtWk+hU",
+      "role": "ADMIN"
+    },
+    {
+      "name": "Daniel Moreira",
+      "id": 88,
+      "email": "leonardo85@example.net",
+      "phone": "51 9507 5995",
+      "password": "()9re&hu!6bP",
+      "role": "USER DEFAULT"
+    },
+    {
+      "name": "Leonardo Jesus",
+      "id": 89,
+      "email": "dpinto@example.com",
+      "phone": "0300 590 7552",
+      "password": "vPM04uId@(&^",
+      "role": "MODERATOR"
+    },
+    {
+      "name": "Nat\u00e1lia da Mota",
+      "id": 90,
+      "email": "pedro-lucasalmeida@example.net",
+      "phone": "41 0985 8242",
+      "password": "o3GOhIjj+cU%",
+      "role": "MODERATOR"
+    },
+    {
+      "name": "Rafael da Cunha",
+      "id": 91,
+      "email": "joao-lucasmelo@example.com",
+      "phone": "(084) 2960-2622",
+      "password": "D%U2yz3tMB3Y",
+      "role": "USER DEFAULT"
+    },
+    {
+      "name": "Luna Ribeiro",
+      "id": 92,
+      "email": "erickribeiro@example.com",
+      "phone": "(081) 8632-5036",
+      "password": "@*B(@FMxkd6K",
+      "role": "MODERATOR"
+    },
+    {
+      "name": "Alexia Moraes",
+      "id": 93,
+      "email": "das-nevesfernanda@example.org",
+      "phone": "(031) 0914-4003",
+      "password": "$*Wk1rJ_w56Z",
+      "role": "USER DEFAULT"
+    },
+    {
+      "name": "Ana Clara Duarte",
+      "id": 94,
+      "email": "peixotopedro-henrique@example.org",
+      "phone": "(011) 1733 0115",
+      "password": "_6!8fZDyMh46",
+      "role": "MODERATOR"
+    },
+    {
+      "name": "Murilo Moraes",
+      "id": 95,
+      "email": "da-pazluiz-henrique@example.net",
+      "phone": "(031) 8326 6215",
+      "password": "R6Y%sC96X3Fn",
+      "role": "ADMIN"
+    },
+    {
+      "name": "Nina Pereira",
+      "id": 96,
+      "email": "nicoleda-mata@example.net",
+      "phone": "(051) 3784-0395",
+      "password": "a^7cI#^f*MDw",
+      "role": "MODERATOR"
+    },
+    {
+      "name": "Rebeca Foga\u00e7a",
+      "id": 97,
+      "email": "yasmin53@example.org",
+      "phone": "(031) 4662-0436",
+      "password": ")^7NJDxmf@2_",
+      "role": "ADMIN"
+    },
+    {
+      "name": "Ana J\u00falia Ara\u00fajo",
+      "id": 98,
+      "email": "carlos-eduardomoraes@example.com",
+      "phone": "51 6803 4618",
+      "password": "(CPp&OUtPd4P",
+      "role": "ADMIN"
+    },
+    {
+      "name": "Giovanna Farias",
+      "id": 99,
+      "email": "bporto@example.net",
+      "phone": "61 7876-9656",
+      "password": "%27VmqmpviQx",
+      "role": "MODERATOR"
+    },
+    {
+      "name": "Bruno Pires",
+      "id": 100,
+      "email": "jesusheitor@example.com",
+      "phone": "(084) 5482-5102",
+      "password": "@8cBblo%+hyS",
+      "role": "MODERATOR"
     }
   ]
 }

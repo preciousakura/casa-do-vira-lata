@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../../partials/head'); %>
+  </head>
+  <body class="container">
+    <header class="header-content">
+      <%- include('../../partials/accessibility'); %> <%-
+      include('../../partials/header'); %>
+    </header>
+
+    <main>
+      <div class="content-page-table--max">
+        <h1 class="content-page-table__title">Usuários</h1>
+        <div class="content-page-table__search-form">
+          <div class="filters--group-select">
+            <div class="filters__select">
+              <select class="filters__select__type">
+                <option value="" selected disabled hidden>
+                  Tipo de usuário
+                </option>
+                <option>MODERADOR</option>
+                <option>USUÁRIO PADRÃO</option>
+                <option>ADMINISTRADOR</option>
+              </select>
+            </div>
+            <div class="filters__right">
+              <input type="text" placeholder="Buscar" />
+              <button class="filters__right--button">Buscar</button>
+            </div>
+          </div>
+        </div>
+        <% if(data.length > 0) { %>
+        <table class="content-page-table__table">
+          <thead>
+            <tr>
+              <th class="table-header">Nome</th>
+              <th class="table-header">Email</th>
+              <th class="table-header">Telefone</th>
+              <th class="table-header">CARGO</th>
+              <th class="table-header">OPÇÕES</th>
+              <th class="table-header"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% data.forEach(function(user) { %>
+            <tr>
+              <td><a href="/user/<%= user.id %>"><%= user.name %></a></td>
+              <td><%= user.email %></td>
+              <td><%= user.phone %></td>
+              <td><%= user.role %></td>
+              <td class="table-actions">
+                <button class="edit-button">
+                  <i class="ph-fill ph-pencil"></i>
+                </button>
+                <button class="delete-button">
+                  <i class="ph ph-trash"></i>
+                </button>
+              </td>
+            </tr>
+            <% }) %>
+          </tbody>
+        </table>
+        <% } else { %>
+        <div class="list__no-result">
+          <p>Sem resultados</p>
+        </div>
+        <% } %>
+        <div class="content-page-table__pagination">
+          <%- include('../../partials/pagination'); %>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer"><%- include('../../partials/footer'); %></footer>
+  </body>
+</html>

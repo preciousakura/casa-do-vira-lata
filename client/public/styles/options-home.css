@@ -1,5 +1,4 @@
 .main-options {
-  min-height: calc(100vh - 80px - 136px);
   max-width: 1300px;
   width: 100%;
   margin: 0 auto;
@@ -10,7 +9,6 @@
 
 .content-options-home {
   display: flex;
-  min-height: calc(100vh - 164px);
   width: 100%;
   margin-top: 25px;
   justify-content: center;
@@ -98,4 +96,9 @@
 
 i {
   color: var(--text-color);
+  font-size: 2rem;
+}
+
+.content-page-table__pagination {
+  padding: 5rem 0;
 }

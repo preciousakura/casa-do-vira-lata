@@ -94,6 +94,8 @@
   height: 250px;
   border-radius: 16px;
   overflow: hidden;
+  display: flex;
+  align-items: center;
 }
 
 .list__item__image img {
@@ -114,7 +116,7 @@
 }
 
 .list__item__header i:hover {
-  color: var(--primary-color)
+  color: var(--primary-color);
 }
 
 .list__item__tags {

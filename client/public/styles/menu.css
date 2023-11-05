@@ -60,3 +60,12 @@ header nav {
 .user-btn:hover i {
   color: var(--primary-color);
 }
+
+.user-logged {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  background: none;
+  color: var(--text-color);
+}

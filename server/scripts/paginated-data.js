@@ -1,8 +1,8 @@
 const fs = require('fs')
 
 function paginatedData(req, res, path) {
-  const page = Number(req.query.page);
-  const size = Number(req.query.size);
+  const page = Number(req.query.page ? req.query.page : 0);
+  const size = Number(req.query.size ? req.query.size : 10);
 
   fs.readFile(path, "utf8", (err, data) => {
     if (err) {
@@ -12,7 +12,7 @@ function paginatedData(req, res, path) {
     }
     try {
       const jsonData = JSON.parse(data);
-      const result = jsonData.items.slice(page * size, (page * size) + size);
+      const result = jsonData.items.slice((page - 1) * size, ((page - 1) * size) + size);
       res.json({ items: result, total: jsonData.items.length });
     } catch (parseError) {
       console.error("Error parsing JSON:", parseError);

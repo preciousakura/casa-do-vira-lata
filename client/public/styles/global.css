@@ -14,6 +14,9 @@
   --white: #fff;
   --black: #000;
 
+  --edit-background: #068FFF;
+  --delete-background: #C70039;
+
   --contrast-background: #000;
   --contrast-text-color: #fff;
 }
@@ -31,6 +34,9 @@
 
   --white: #fff;
   --black: #000;
+
+  --edit-background: #0f4d7f;
+  --delete-background: #810000;
 
   --contrast-background: #fff;
   --contrast-text-color: #000;
@@ -75,4 +81,10 @@ h4,
 p {
   margin: 0;
   padding: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
 }

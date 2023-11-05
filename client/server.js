@@ -14,31 +14,75 @@ const user = {
   name: "Isabel Cristina de Oliveira Lopes",
   username: "isabel20",
   password: "",
-  role: "COLABORATOR",
+  role: "ADMIN",
 };
 
 app.get("/", (req, res) => { 
-  res.cookie("user", user, { maxAge: 900000, httpOnly: true });
+  res.cookie("user", user);
   res.render("pages/home") 
 });
 
 app.get("/pets", async (req, res) => {
-  const page = req.query.page ? req.query.page - 1 : 0;
+  const page = req.query.page ? req.query.page : 1;
+
   try {
     const response = await fetch(`http://localhost:3001/pets?page=${page}&size=9`);
     const data = await response.json();
-    res.render("pages/pets", { data: data.items, total: data.total });
+    res.render("pages/pets", { data: data.items, total: data.total, current_page: 'pets', size: 9 });
   } catch (error) {
     console.error(error);
     res.status(500).send("Erro ao obter dados da API");
   }
 });
 
-app.use("/admin", (req, res, next) => auth(req, res, next, {allowed: ["ADMIN"]}),
+app.get("/admin", (req, res, next) => auth(req, res, next, {allowed: ["ADMIN"]}),
   (req, res) => {
     res.render("pages/admin");
   }
 );
+
+app.get("/admin/users", (req, res, next) => auth(req, res, next, {allowed: ["ADMIN"]}),
+  async (req, res) => {
+    const page = req.query.page ? req.query.page : 1;
+    try {
+      const response = await fetch(`http://localhost:3001/users?page=${page}&size=10`);
+      const data = await response.json();
+      res.render("pages/admin/users", { data: data.items, total: data.total, current_page: 'users', size: 10 });
+    } catch (error) {
+      console.error(error);
+      res.status(500).send("Erro ao obter dados da API");
+    }
+  }
+);
+
+app.get("/admin/pets", (req, res, next) => auth(req, res, next, {allowed: ["ADMIN"]}),
+  async (req, res) => {
+    const page = req.query.page ? req.query.page : 1;
+    try {
+      const response = await fetch(`http://localhost:3001/pets?page=${page}&size=10`);
+      const data = await response.json();
+      res.render("pages/admin/pets", { data: data.items, total: data.total, current_page: 'pets', size: 10 });
+    } catch (error) {
+      console.error(error);
+      res.status(500).send("Erro ao obter dados da API");
+    }
+  }
+);
+
+app.get("/admin/solicitations", (req, res, next) => auth(req, res, next, {allowed: ["ADMIN"]}),
+  async (req, res) => {
+    const page = req.query.page ? req.query.page : 1;
+    try {
+      const response = await fetch(`http://localhost:3001/solicitations?page=${page}&size=10`);
+      const data = await response.json();
+      res.render("pages/admin/solicitations", { data: data.items, total: data.total, current_page: 'pets', size: 10 });
+    } catch (error) {
+      console.error(error);
+      res.status(500).send("Erro ao obter dados da API");
+    }
+  }
+);
+
 
 app.listen(port, () => {
   console.log(`Servidor rodando em http://localhost:${port}`);
