@@ -44,7 +44,7 @@ header nav {
 }
 .ul-menu__item.logo svg {
   width: auto;
-  height: 50px;
+  height: 40px;
 }
 .ul-menu__item.logo svg path {
   fill: var(--text-color);

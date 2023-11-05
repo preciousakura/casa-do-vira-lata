@@ -2,11 +2,11 @@
 
 :root {
   --primary-color: #1B9C85;
-  --secundary-color: #FFCF00;
+  --secundary-color: #fff5ca;
 
   --text-color: #000f18;
   --background-color: #F1F1F1;
-  --background-color-foreign: #F5F5F5;
+  --background-color-foreign: #cfdedb;
 
   --card-background: #FFFF;
   --border-color: #E5E5E5;
@@ -23,7 +23,7 @@
 
 .dark {
   --primary-color: #40ddc0;
-  --secundary-color: #ffdd4b;
+  --secundary-color: transparent;
 
   --text-color: #fdfdfd;
   --background-color: #0d0d0d;

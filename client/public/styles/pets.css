@@ -126,11 +126,12 @@
 }
 
 .list__item__tags span {
-  background: var(--secundary-color);
+  background: var(--primary-color);
   padding: 0.2rem 1rem;
   border-radius: 8px;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--black);
+  font-size: 13px;
   margin-top: 20px;
   text-transform: uppercase;
 }

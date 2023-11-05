@@ -1,13 +1,17 @@
 .section {
   display: flex;
   justify-content: center;
-  height: 100vh;
   width: 100%;
 }
 
 .section--first {
   position: relative;
   height: calc(100vh - 135px);
+
+  background: url("../images/cat.png"), url("../images/dog.png");
+  background-repeat: no-repeat, no-repeat;
+  background-position: bottom left, top right;
+  background-size: contain, contain;
 }
 
 .section__content {
@@ -56,7 +60,7 @@
 }
 
 .section__subtitle {
-  font-size: 5rem;
+  font-size: 7rem;
   font-style: normal;
   font-weight: 600;
   line-height: 125%; /* 80px */
@@ -66,7 +70,18 @@
   font-size: 1.1.8rem;
   font-style: normal;
   font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
 }
+
+.pet {
+  width: 400px;
+  height: 600px;
+  background: url("../images/dog-section-2.png") no-repeat bottom;
+  background-size: contain;
+}
+
 .section__btn {
   cursor: pointer;
   display: flex;
@@ -77,15 +92,13 @@
   padding: 12px 24px;
   gap: 1rem;
   margin-top: 10px;
+  background: var(--secundary-color);
+
+  width: max-content;
 }
 
 .section__btn:hover {
-  border: 1px solid var(--primary-color);
-}
-
-.section__btn:hover span,
-.section__btn:hover i {
-  color: var(--primary-color);
+  filter: brightness(0.9);
 }
 
 .section__btn span,
@@ -95,10 +108,7 @@
   font-style: normal;
   font-weight: 600;
 }
-.section__btn > img {
-  width: 25px;
-  margin-left: 5px;
-}
+
 .section__arrows {
   margin-top: 20px;
 }
@@ -108,20 +118,7 @@
   margin: 10px;
   cursor: pointer;
 }
-.cat-image {
-  position: absolute;
-  z-index: 0;
-  bottom: 0;
-  left: 0;
-  height: 500px;
-}
-.dog-image {
-  z-index: 0;
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 500px;
-}
+
 /* efeito de pulinho na seta*/
 @keyframes bounce {
   0%,
@@ -148,14 +145,30 @@
 /* estilos da sessao 2 */
 .section-2 {
   display: flex;
-  flex-direction: column;
-
-  padding: 52px 32px;
-  max-width: 850px;
+  align-items: center;
+  justify-content: space-between;
+  justify-items: center;
+  max-width: 1300px;
   width: 100%;
-
-  position: relative;
 }
+
+.section-2 .section__left {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem
+}
+
+.section-2 .section__text {
+  width: 750px;
+}
+
+.section-2 .section__title {
+  font-size: 50px;
+}
+.section__title span {
+  color: var(--primary-color);
+}
+
 .section-2 > .section__title {
   font-size: 3rem;
   font-style: normal;
@@ -170,18 +183,6 @@
   line-height: 150%; /* 31.5px */
 }
 
-.section-2 > .patinhas {
-  opacity: 0.2;
-  position: absolute;
-  height: 310px;
-  bottom: 0;
-}
-.section-2 > .cat-2 {
-  position: absolute;
-  height: 270px;
-  bottom: 25px;
-  right: -200px;
-}
 @media screen and (max-width: 991px) {
   .section-2 > .cat-2 {
     position: absolute;
@@ -195,14 +196,14 @@
   display: flex;
   flex-direction: column;
 
-  padding: 52px 32px;
-  max-width: 850px;
+  padding: 80px 0;
+  max-width: 1300px;
   width: 100%;
 
   position: relative;
 }
 .section-3 > .section__title {
-  font-size: 3rem;
+  font-size: 4rem;
   font-style: normal;
   font-weight: 700;
   line-height: 125%; /* 50px */
@@ -225,27 +226,46 @@
 .carousel {
   display: flex;
   overflow: hidden;
+  width: 1100px;
+  margin: 0 auto;
 }
 
 .carousel-inner {
   display: flex;
   transition: transform 0.5s ease;
+  gap: 2em;
 }
 
 .carousel-slide {
-  flex: 0 0 47%;
-  padding: 10px;
+  flex: 0 0 48.6%;
   text-align: center;
-  max-height: 100%; /* Defina a altura máxima desejada */
-  overflow-y: auto; /* Adicione esta propriedade para permitir rolagem vertical */
+  max-height: 250px; /* Defina a altura máxima desejada */
+
+  display: flex;
+  gap: 1rem
+}
+.carousel-slide__text {
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 2rem;
+}
+
+
+.carousel-slide__text p{
+  font-size: 14px;
+}
+
+.carousel-slide__text h2 {
+  color: var(--primary-color);
 }
 
 .carousel-slide img {
   width: 250px;
   height: 250px;
   border: 2px solid var(--secondary-color);
-  border-radius: 100%; /* Faz a imagem ficar redonda */
-  margin-bottom: 30px;
+  border-radius: 100%;
 }
 
 .prev-button,
@@ -273,12 +293,15 @@
 }
 /* estilos da sessao 4 */
 .section-4 {
+  padding-top: 100px;
+
   display: flex;
   justify-content: space-between;
-  padding: 100px 32px;
-  max-width: 850px;
+  max-width: 1300px;
   width: 100%;
   position: relative;
+  background: url('../images/cat-3.png') no-repeat center bottom;
+  background-size: contain;
 }
 .section-4__left {
   display: flex;
@@ -303,6 +326,11 @@
   margin: 0;
   margin-left: 10px;
 }
+
+.social-list__item:hover a, .social-list__item:hover i  {
+  color: var(--primary-color);
+}
+
 .section-4__right {
   display: flex;
   flex-direction: column;
@@ -311,11 +339,9 @@
 }
 
 .section-4__qr-code {
-  margin-top: 10px;
-}
-
-.section-4__cat-center {
-  position: absolute;
-  bottom: 0;
-  left: 30%;
+  width: 200px;
+  margin-top: 20px;
+  margin-bottom: 100px;
+  background: var(--white);
+  padding: 10px;
 }
