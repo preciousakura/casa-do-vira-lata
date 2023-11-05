@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../../partials/head'); %>
+  </head>
+  <body class="container">
+    <header class="header-content">
+      <%- include('../../partials/accessibility'); %>
+    </header>
+
+    <main class="not-authorized">
+      <div class="not-authorized__icon">
+        <i class="ph-fill ph-warning"></i>
+      </div>
+      <div class="not-authorized__text">
+        <h2>Page not found</h2>
+        <p>Poxa, tentamos o possível, mas não conseguimos encontrar a página que você está procurando.</p>
+        <p>
+          Caso tenha alguma dúvida ou precise de assistência, por favor,
+          consulte um administrador.
+        </p>
+      </div>
+      <div class="not-authorized__buttons">
+        <a href="/">Voltar para o inicio</a>
+      </div>
+    </main>
+
+    <footer class="footer"><%- include('../../partials/footer'); %></footer>
+  </body>
+</html>

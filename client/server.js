@@ -84,6 +84,9 @@ app.get("/admin/solicitations", (req, res, next) => auth(req, res, next, {allowe
   }
 );
 
+app.use((req, res) => {
+  res.status(404).render("pages/error/not-found", { data: [], total: 0, message: "Internal Server Error", user: req.cookies.user });
+});
 
 app.listen(port, () => {
   console.log(`Servidor rodando em http://localhost:${port}`);
