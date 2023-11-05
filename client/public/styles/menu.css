@@ -11,7 +11,7 @@ header nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
+
   max-width: 1300px;
   width: 100%;
   margin: 0 auto;
@@ -39,6 +39,16 @@ header nav {
   color: var(--primary-color);
 }
 
+.ul-menu__item.logo {
+  margin-right: 20px;
+}
+.ul-menu__item.logo svg {
+  width: auto;
+  height: 50px;
+}
+.ul-menu__item.logo svg path {
+  fill: var(--text-color);
+}
 
 .user-btn {
   display: flex;
@@ -68,4 +78,6 @@ header nav {
   cursor: pointer;
   background: none;
   color: var(--text-color);
+
+  white-space: nowrap;
 }

@@ -1,8 +1,12 @@
 <nav>
   <ul class="ul-menu">
+    <li class="ul-menu__item logo"><%- include('./logo'); %></li>
     <li class="ul-menu__item"><a href="/">Página Inicial</a></li>
     <li class="ul-menu__item"><a href="/pets">Pets da Casa</a></li>
   </ul>
-
-  <button class="user-btn"><i class="ph-fill ph-user"></i> Entrar</button>
+  <% if(!(typeof(user) === "undefined")) { %>
+    <button class="user-logged"><i class="ph-fill ph-caret-down"></i><%= user.name %></button>
+  <% } else { %>
+    <button class="user-btn"><i class="ph-fill ph-user"></i> Entrar</button>
+  <% } %>
 </nav>
