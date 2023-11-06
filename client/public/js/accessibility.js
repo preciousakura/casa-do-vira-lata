@@ -103,3 +103,21 @@ document.addEventListener("DOMContentLoaded", function () {
   loadColorMode(); 
   loadFontSizeSetting();
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  const userBtn = document.querySelector('.user-btn');
+  const dropdownMenu = document.querySelector('.user-dropdown__menu');
+
+  userBtn.addEventListener('click', function(event) {
+    // Toggle dropdown visibility
+    dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+    event.stopPropagation();
+  });
+
+  window.addEventListener('click', function() {
+    if (dropdownMenu.style.display === 'block') {
+      dropdownMenu.style.display = 'none';
+    }
+  });
+});
+

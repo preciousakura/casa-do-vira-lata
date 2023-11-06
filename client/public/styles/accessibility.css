@@ -1,6 +1,8 @@
 .acessibilidade-bar {
   background-color: var(--background-color-foreign);
   padding: 10px 0;
+  display: flex;
+  justify-content: center;
 }
 
 .acessibilidade-buttons {
@@ -9,10 +11,8 @@
   justify-content: end;
 
   max-width: 1300px;
-  margin: 0 50px;
-
-
-  
+  width: 100%;
+  padding: 0 5rem;
 }
 
 .acessibilidade-buttons button {

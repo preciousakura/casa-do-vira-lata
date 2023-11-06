@@ -66,24 +66,12 @@
 }
 
 .section__text {
-  font-size: 1.1.8rem;
+  font-size: 1.8rem;
   font-style: normal;
   font-weight: 500;
   display: flex;
   flex-direction: column;
   gap: 5rem;
-}
-
-.pet {
-  width: 500px;
-  height: 600px;
-  position: relative;
-}
-
-.cat-happy {
-  max-width: 500px;
-  position: absolute;
-  bottom: -131px;
 }
 
 .section__btn {
@@ -154,16 +142,34 @@
   justify-items: center;
   max-width: 1300px;
   width: 100%;
+
+  padding: 100px 0;
+}
+
+@media (max-width: 1160px) {
+  .section-2 {
+    flex-direction: column;
+    padding: 50px 0;
+  }
+  .pet {
+    width: 430px;
+    height: 250px;
+  }
+  .cat-happy {
+    bottom: -155px !important;
+  }
+  .section__text {
+    position: relative;
+    z-index: 2;
+    text-align: justify;
+  }
 }
 
 .section-2 .section__left {
   display: flex;
   flex-direction: column;
   gap: 5rem;
-}
-
-.section-2 .section__text {
-  width: 750px;
+  flex: 0 0 60%;
 }
 
 .section-2 .section__title {
@@ -187,21 +193,25 @@
   line-height: 150%; /* 31.5px */
 }
 
-@media screen and (max-width: 991px) {
-  .section-2 > .cat-2 {
-    position: absolute;
-    height: 200px;
-    bottom: 5px;
-    right: -100px;
-  }
+.pet {
+  width: 400px;
+  position: relative;
 }
+
+.cat-happy {
+  max-width: 100%;
+  position: absolute;
+  bottom: -387px;
+  z-index: 1;
+}
+
 /* estilos da sessao 3 */
 .section-3 {
   display: flex;
   flex-direction: column;
 
   padding: 80px 0;
-  max-width: 1260px;
+  max-width: 1300px;
   width: 100%;
 
   position: relative;
@@ -231,6 +241,25 @@
   background: url("../images/dog-section-2.png") no-repeat center bottom;
   background-size: 350px;
 }
+
+@media (max-width: 990px) {
+  .section-4 {
+    padding-top: 50px;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding-bottom: 45rem;
+  }
+
+  .section-4__left {
+    gap: 4rem;
+    text-align: center;
+  }
+
+  .section-4__qr-code {
+    margin-bottom: 50px !important;
+  }
+}
+
 .section-4__left {
   display: flex;
   flex-direction: column;
@@ -281,4 +310,14 @@
 .section-4 {
   padding-left: 5rem;
   padding-right: 5rem;
+}
+
+@media (max-width: 1160px) {
+  .section-1,
+  .section-2,
+  .section-3,
+  .section-4 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
 }
