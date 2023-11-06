@@ -13,17 +13,27 @@
         <%= user.name %>
         <i class="ph-fill ph-caret-down"></i>
       </button>
-      <ul class="user-dropdown__menu" id="userDropdown">
-        <li class="user-dropdown__item">
-          <a href="/profile" class="user-dropdown__link">Perfil</a>
-        </li>
-        <li class="user-dropdown__item">
-          <a href="/settings" class="user-dropdown__link">Configurações</a>
-        </li>
-        <li class="user-dropdown__item">
-          <a href="/logout" class="user-dropdown__link">Sair</a>
-        </li>
-      </ul>
+      <div class="user-dropdown__menu" id="userDropdown">
+        <% if(user.role === "ADMIN") { %>
+          <span>ADMINISTRADOR</span>
+        <ul class="painel">
+          <li class="user-dropdown__item">
+            <a href="/admin" class="user-dropdown__link">Meu painel</a>
+          </li>
+        </ul>
+        <% } %>
+        <ul>
+          <li class="user-dropdown__item">
+            <a href="/profile" class="user-dropdown__link">Perfil</a>
+          </li>
+          <li class="user-dropdown__item">
+            <a href="/settings" class="user-dropdown__link">Configurações</a>
+          </li>
+          <li class="user-dropdown__item">
+            <a href="/logout" class="user-dropdown__link">Sair</a>
+          </li>
+        </ul>
+      </div>
     </div>
     <% } else { %>
     <button class="user-btn" onclick="location.href='/login'">Entrar</button>

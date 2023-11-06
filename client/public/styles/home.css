@@ -288,6 +288,14 @@
   position: absolute;
   top: 50%;
   color: var(--text-color);
+
+  padding: 5px;
+}
+
+.prev-button:hover,
+.next-button:hover {
+  background-color: var(--background-light);
+  border-radius: 100%;
 }
 
 .prev-button i,
