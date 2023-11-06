@@ -344,3 +344,8 @@
   background: var(--white);
   padding: 10px;
 }
+
+.section-1, .section-2, .section-3, .section-4 {
+  padding-left: 5rem;
+  padding-right: 5rem;
+}

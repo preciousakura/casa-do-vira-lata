@@ -1,9 +1,9 @@
-.not-authorized {
+.error_content {
   max-width: 1300px;
   width: 100%;
   margin: 0 auto;
 
-  padding: 5rem 0;
+  padding: 5rem;
 
   display: flex;
   align-items: center;
@@ -12,30 +12,30 @@
   flex-direction: column;
   box-sizing: border-box;
 }
-.not-authorized__text {
+.error_content__text {
   text-align: center;
 }
-.not-authorized__text > h2 {
+.error_content__text > h2 {
   font-size: 6rem;
   text-align: center;
   color: var(--primary-color);
   margin-bottom: 2rem;
 }
 
-.not-authorized__text > p {
+.error_content__text > p {
   margin-bottom: 0.5rem;
 }
 
-.not-authorized__icon > i {
+.error_content__icon > i {
   font-size: 12rem;
   text-align: center;
 }
 
-.not-authorized__buttons {
+.error_content__buttons {
   margin-top: 2rem;
 }
 
-.not-authorized__buttons a {
+.error_content__buttons a {
   background: var(--contrast-background);
   border-radius: 8px;
   padding: 10px 20px;

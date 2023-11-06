@@ -9,17 +9,6 @@ app.use(cookie());
 app.use(express.static(path.join(__dirname, "/public")));
 app.set("view engine", "ejs");
 
-// Middleware para adicionar dados do usuário a res.locals
-app.use((req, res, next) => {
-  const userFromCookie = req.cookies['user'];
-  
-  if (userFromCookie) {
-    res.locals.user = userFromCookie;
-  }
-  
-  next();
-});
-
 const user = {
   id: 0,
   name: "Isabel Cristina de Oliveira Lopes",
@@ -52,8 +41,7 @@ app.get("/pets", async (req, res) => {
 
 app.get("/admin", (req, res, next) => auth(req, res, next, {allowed: ["ADMIN"]}),
   (req, res) => {
-    res.cookie("user", user);
-    res.render("pages/admin");
+    res.render("pages/admin", { user: req.cookies.user });
   }
 );
 

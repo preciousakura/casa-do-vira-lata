@@ -1,24 +1,32 @@
 <nav>
-  <ul class="ul-menu">
-    <li class="ul-menu__item logo"><%- include('./logo'); %></li>
-    <li class="ul-menu__item"><a href="/">Página Inicial</a></li>
-    <li class="ul-menu__item"><a href="/pets">Pets da Casa</a></li>
-  </ul>
-
-  <% if (user) { %>
-  <div class="user-dropdown">
-    <button class="user-btn" id="userButton">
-      <i class="ph-fill ph-user"></i>
-      <%= user.name.split(' ')[0] %> 
-      <i class="ph-caret-down"></i>
-    </button>
-    <ul class="user-dropdown__menu" id="userDropdown">
-      <li class="user-dropdown__item"><a href="/profile" class="user-dropdown__link">Perfil</a></li>
-      <li class="user-dropdown__item"><a href="/settings" class="user-dropdown__link">Configurações</a></li>
-      <li class="user-dropdown__item"><a href="/logout" class="user-dropdown__link">Sair</a></li>
+  <div class="nav-content">
+    <ul class="ul-menu">
+      <li class="ul-menu__item logo"><%- include('./logo'); %></li>
+      <li class="ul-menu__item"><a href="/">Página Inicial</a></li>
+      <li class="ul-menu__item"><a href="/pets">Pets da Casa</a></li>
     </ul>
-  </div>
-  <% } else { %>
+
+    <% if (user) { %>
+    <div class="user-dropdown">
+      <button class="user-btn" id="userButton">
+        <i class="ph-fill ph-user"></i>
+        <%= user.name %>
+        <i class="ph-fill ph-caret-down"></i>
+      </button>
+      <ul class="user-dropdown__menu" id="userDropdown">
+        <li class="user-dropdown__item">
+          <a href="/profile" class="user-dropdown__link">Perfil</a>
+        </li>
+        <li class="user-dropdown__item">
+          <a href="/settings" class="user-dropdown__link">Configurações</a>
+        </li>
+        <li class="user-dropdown__item">
+          <a href="/logout" class="user-dropdown__link">Sair</a>
+        </li>
+      </ul>
+    </div>
+    <% } else { %>
     <button class="user-btn" onclick="location.href='/login'">Entrar</button>
-  <% } %>
+    <% } %>
+  </div>
 </nav>
