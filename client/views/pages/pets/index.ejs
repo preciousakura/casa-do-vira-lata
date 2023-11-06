@@ -9,87 +9,88 @@
       include('../../partials/header'); %>
     </header>
 
-    <main>
-      <main class="main">
-        <section class="title">
-            <h2>Todo animal merece um lar amoroso.</h2>
-            <h2><span>Adote</span> um pet hoje.</h2>
-            <p>
-                Navegue pelos nossos animais disponíveis e saiba mais sobre o processo
-                de adoção. Juntos, podemos resgatar, reabilitar e realojar animais de
-                estimação necessitados. Obrigado por apoiar nossa missão de levar
-                alegria às famílias por meio da adoção de animais de estimação.
-            </p>
-        </section>
-        <div class="filters">
-            <div class="filters--group-select">
-                <div class="filters__select">
-                    <select class="filters__select__type">
-                        <option value="" selected disabled hidden>
-                            Selecione o tipo do pet
-                        </option>
-                        <option>Gato</option>
-                        <option>Cachorro</option>
-                    </select>
-                    <select class="filters__select__size">
-                        <option value="" selected disabled hidden>
-                            Selecione o porte
-                        </option>
-                        <option>Pequeno</option>
-                        <option>Médio</option>
-                        <option>Grande</option>
-                    </select>
-                    <select class="filters__select__gender">
-                        <option value="" selected disabled hidden>
-                            Selecione o sexo
-                        </option>
-                        <option>Fêmea</option>
-                        <option>Macho</option>
-                    </select>
-                </div>
-                <div class="filters__right">
-                    <input type="text" placeholder="Buscar">
-                    <button>Buscar pet</button>
-                </div>
-            </div>
-    
-            <div class="filters__checkbox">
-                <label><input type="checkbox">Castrado</label>
-                <label><input type="checkbox">Vacinado</label>
-                <label><input type="checkbox">Vermificado</label>
-            </div>
-
-
-              <% if(data.length > 0) { %>
-                <div class="list">
-                  <% data.forEach(function(pet) { %>
-                    <div class="list__item">
-                      <div class="list__item__image">
-                        <img src="<%= pet.image %>" alt="Imagem do pet">
-                      </div>
-                      <div class="list__item__header">
-                        <h2><%= pet.name %></h2>
-                        <i class="ph-fill ph-heart"></i>
-                      </div>
-                      <div class="list__item__description">
-                        <p><b>Idade:</b> <%= pet.age %> anos</p>
-                        <p><b>Sexo:</b> <%= pet.gender %></p>
-                      </div>
-                      <div class="list__item__tags">
-                        <% if(pet.castrated) { %><span>Castrado</span><% } %>
-                        <% if(pet.vaccinated) { %><span>Vacinado</span><% } %>
-                        <% if(pet.dewormed) { %><span>Vermificado</span><% } %>
-                      </div>
-                    </div>
-                  <% }); %>
-                </div>
-              <% } else { %>
-                <div class="list__no-result">
-                  <p><%= !(typeof(message) === "undefined") ? message : "Sem resultados" %></p>
-                </div>
-              <% } %>
+    <main class="main">
+      <section class="title">
+        <h2>Todo animal merece um lar amoroso.</h2>
+        <h2><span>Adote</span> um pet hoje.</h2>
+        <p>
+          Navegue pelos nossos animais disponíveis e saiba mais sobre o processo
+          de adoção. Juntos, podemos resgatar, reabilitar e realojar animais de
+          estimação necessitados. Obrigado por apoiar nossa missão de levar
+          alegria às famílias por meio da adoção de animais de estimação.
+        </p>
+      </section>
+      <div class="filters">
+        <div class="filters--group-select">
+          <div class="filters__select">
+            <select class="filters__select__type">
+              <option value="" selected disabled hidden>
+                Selecione o tipo do pet
+              </option>
+              <option>Gato</option>
+              <option>Cachorro</option>
+            </select>
+            <select class="filters__select__size">
+              <option value="" selected disabled hidden>
+                Selecione o porte
+              </option>
+              <option>Pequeno</option>
+              <option>Médio</option>
+              <option>Grande</option>
+            </select>
+            <select class="filters__select__gender">
+              <option value="" selected disabled hidden>
+                Selecione o sexo
+              </option>
+              <option>Fêmea</option>
+              <option>Macho</option>
+            </select>
           </div>
-          <%- include('../../partials/pagination'); %>
+          <div class="filters__right">
+            <input type="text" placeholder="Buscar" />
+            <button>Buscar pet</button>
+          </div>
+        </div>
+
+        <div class="filters__checkbox">
+          <label><input type="checkbox" />Castrado</label>
+          <label><input type="checkbox" />Vacinado</label>
+          <label><input type="checkbox" />Vermificado</label>
+        </div>
+
+        <% if(data.length > 0) { %>
+        <div class="list">
+          <% data.forEach(function(pet) { %>
+          <div class="list__item">
+            <div class="list__item__image">
+              <img src="<%= pet.image %>" alt="Imagem do pet" />
+            </div>
+            <div class="list__item__header">
+              <h2><%= pet.name %></h2>
+              <i class="ph-fill ph-heart"></i>
+            </div>
+            <div class="list__item__description">
+              <p><b>Idade:</b> <%= pet.age %> anos</p>
+              <p><b>Sexo:</b> <%= pet.gender %></p>
+            </div>
+            <div class="list__item__tags">
+              <% if(pet.castrated) { %><span>Castrado</span><% } %> <%
+              if(pet.vaccinated) { %><span>Vacinado</span><% } %> <%
+              if(pet.dewormed) { %><span>Vermificado</span><% } %>
+            </div>
+          </div>
+          <% }); %>
+        </div>
+        <% } else { %>
+        <div class="list__no-result">
+          <p>
+            <%= !(typeof(message) === "undefined") ? message : "Sem resultados"
+            %>
+          </p>
+        </div>
+        <% } %>
+      </div>
+      <%- include('../../partials/pagination'); %>
     </main>
 
     <footer class="footer"><%- include('../../partials/footer'); %></footer>
