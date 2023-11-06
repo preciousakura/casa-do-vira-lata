@@ -225,23 +225,26 @@
 
   position: relative;
   margin-top: 50px;
-}
-
-.carousel {
   display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.carousel {
   overflow: hidden;
-  width: 1150px;
-  margin: 0 auto;
+  width: 90%;
 }
 
 .carousel-inner {
   display: flex;
-  transition: transform 0.5s ease;
-  gap: 2em;
+  transition: transform 0.5s ease-in-out;
+  /* Não defina a largura aqui, pois ela será calculada pelo número de slides */
 }
 
+
+
 .carousel-slide {
-  flex: 0 0 48.6%;
+  flex:0 0 50%;
+  width: 100%;
   text-align: center;
   max-height: 250px; /* Defina a altura máxima desejada */
 
@@ -290,6 +293,7 @@
   color: var(--text-color);
 
   padding: 5px;
+  z-index: 9999;
 }
 
 .prev-button:hover,
