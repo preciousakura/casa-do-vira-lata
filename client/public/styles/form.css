@@ -8,6 +8,9 @@ input[type="text"] {
   color: var(--text-color);
   font-size: 1.3rem;
   line-height: 125%; /* 21.25px */
+
+  font-family: Work Sans;
+  font-weight: 500;
 }
 
 select {
