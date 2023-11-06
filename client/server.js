@@ -27,6 +27,10 @@ app.get("/login", (req, res) => {
   res.render("pages/login") 
 });
 
+app.get("/logout", (req, res) => { 
+  res.clearCookie('user');
+  res.redirect("/") 
+});
 
 app.get("/pets", async (req, res) => {
   const page = req.query.page ? req.query.page : 1;
