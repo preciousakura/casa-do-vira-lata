@@ -1,0 +1,87 @@
+.carousel-container {
+  width: 100%;
+  margin: 0 auto;
+
+  margin-top: 50px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 2rem;
+}
+
+.carousel {
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+
+.carousel-slide {
+  flex: 0 0 50%;
+  text-align: center;
+
+  display: flex;
+}
+.carousel-slide__text {
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 35px;
+  gap: 2rem;
+}
+
+.carousel-slide__text p {
+  font-size: 14px;
+}
+
+.carousel-slide__text h2 {
+  color: var(--primary-color);
+}
+
+.carousel-slide img {
+  width: 250px;
+  border: 2px solid var(--secondary-color);
+}
+
+.carousel-slide__image {
+  flex: 0 0 250px;
+  height: 250px;
+  border-radius: 100%;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+}
+
+.prev-button,
+.next-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: var(--text-color);
+  padding: 5px;
+}
+
+.prev-button:hover,
+.next-button:hover {
+  background-color: var(--background-light);
+  border-radius: 100%;
+}
+
+.prev-button i,
+.next-button i {
+  font-size: 3rem;
+}
+
+.prev-button {
+  left: 0;
+}
+
+.next-button {
+  right: 0px;
+}
