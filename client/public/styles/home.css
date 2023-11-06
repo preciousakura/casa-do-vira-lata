@@ -270,17 +270,17 @@
 .prev-button,
 .next-button {
   background-color: transparent;
-  height: 40px;
-  width: 40px;
   border: none;
   cursor: pointer;
+  padding: 0;
   position: absolute;
-  top: 35%;
-
+  top: 50%;
   color: var(--text-color);
+}
+
+.prev-button i,
+.next-button i {
   font-size: 3rem;
-  font-style: normal;
-  font-weight: 600;
 }
 
 .prev-button {
