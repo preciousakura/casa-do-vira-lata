@@ -26,6 +26,7 @@
   display: flex;
   background-color: var(--background-color);
   color: var(--text-color);
+  width: 100%;
 }
 .section--light {
   display: flex;
@@ -319,5 +320,18 @@
   .section-4 {
     padding-left: 3rem;
     padding-right: 3rem;
+  }
+}
+
+
+@media (max-width: 800px) { 
+  .section__main--content {
+   padding: 0px 10px;
+  }
+  @media (max-width: 800px) {
+    .section--first {
+      opacity: 0.8;
+      background-size: 50%, 50%; 
+    }
   }
 }

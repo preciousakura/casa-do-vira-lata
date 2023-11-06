@@ -66,7 +66,7 @@ header nav {
   border: 1px solid var(--text-color);
   background: none;
   color: var(--text-color);
-  padding: 7px 15px;
+  padding: 0.6rem 1.1rem;
   border-radius: 3px;
   white-space: nowrap;
 }
@@ -172,4 +172,27 @@ header nav {
   padding:  10px;
 
   box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+ .nav-content {
+  padding: 10px 20px;
+ }
+ .ul-menu__item a {
+  font-size: 1.5rem;
+
+}
+.user-btn > i:first-child , .user-name{
+  display: none;
+}
+.user-dropdown__menu::before {
+  right: 9px;
+}
+.ul-menu__item.logo {
+  margin: 0;
+}
+.ul-menu__item.logo svg {
+  height: 30px;
+}
+
 }
