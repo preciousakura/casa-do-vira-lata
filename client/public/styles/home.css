@@ -230,7 +230,7 @@
 .carousel {
   display: flex;
   overflow: hidden;
-  width: 1100px;
+  width: 1150px;
   margin: 0 auto;
 }
 
@@ -266,9 +266,17 @@
 
 .carousel-slide img {
   width: 250px;
-  height: 250px;
   border: 2px solid var(--secondary-color);
+}
+
+.carousel-slide__image {
+  flex: 0 0 250px;
+  height: 250px;
   border-radius: 100%;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
 }
 
 .prev-button,
