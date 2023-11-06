@@ -58,8 +58,8 @@ header nav {
   border: 1px solid var(--text-color);
   background: none;
   color: var(--text-color);
-  padding: 10px 15px;
-  border-radius: 8px;
+  padding: 3px 15px;
+  border-radius: 3px;
 }
 
 .user-btn:hover {
@@ -78,6 +78,75 @@ header nav {
   cursor: pointer;
   background: none;
   color: var(--text-color);
+}
 
-  white-space: nowrap;
+.ul-menu {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  padding: 0;
+  margin: 0;
+}
+
+.ul-menu__item a {
+  font-size: 1.8rem;
+  color: var(--text-color); /* Altere conforme a variável de cor de texto que você usa */
+  text-transform: uppercase;
+  font-weight: 600;
+  line-height: 150%;
+  text-decoration: none; /* Remove o sublinhado dos links */
+}
+
+
+
+
+
+
+.user-dropdown {
+  position: relative;
+  display: inline-block;
+  right: 25px;
+}
+
+.user-dropdown__menu {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: var(--background-color-foreign);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 9999;
+  margin: 10px 0 0 0;
+  padding: 0;
+  border: 1px solid var(--background-color-foreign);
+  border-radius: 3px;
+}
+.user-dropdown__menu::before {
+  content: "";
+  position: absolute;
+  top: -10px; 
+  right: 20px; 
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid var(--background-color-foreign);  
+}
+
+
+.user-dropdown__menu .user-dropdown__item {
+  color: black;
+
+  text-decoration: none;
+  display: block;
+}
+
+.user-dropdown__menu .user-dropdown__item:hover {
+  background-color:  var(--background-color-foreign);
+}
+.user-dropdown__link {
+  color: var(--text-color);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding:  10px;
 }
