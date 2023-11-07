@@ -2,26 +2,21 @@ const carouselContainer = document.querySelector(".carousel-inner");
 const slides = document.querySelectorAll(".carousel-slide");
 
 let currentIndex = 0;
-const size = slides.length;
+const size = Math.ceil(slides.length/2);
 
-function nextSlide() {
-  if (currentIndex + 1 === size - 1 && window.innerWidth > 1112) currentIndex = 0;
-  else currentIndex = (currentIndex + 1) % slides.length;
+function prevSlide() {
+  currentIndex = (currentIndex + 2) % size;
   updateCarousel();
 }
 
-function prevSlide() {
-  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+function nextSlide() {
+  currentIndex = (currentIndex - 2 + size) % size;
   updateCarousel();
 }
 
 function updateCarousel() {
-  let offset;
-  if (window.innerWidth <= 1112) offset = -currentIndex * 100 + "%";
-  else offset = -currentIndex * 50 + "%";
+  const offset = -currentIndex * 100 + "%";
   carouselContainer.style.transform = `translateX(${offset})`;
 }
-
-
 
 setInterval(nextSlide, 10000);
