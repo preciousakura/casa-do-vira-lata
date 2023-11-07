@@ -14,6 +14,16 @@
   background-size: contain, contain;
 }
 
+@media (max-width: 1030px) {
+  .section--first {
+    background: none;
+  }
+
+  p.section__subtitle {
+    font-size: 4rem;
+  }
+}
+
 .section__content {
   display: flex;
   flex-direction: column;
@@ -147,23 +157,20 @@
   padding: 100px 0;
 }
 
-@media (max-width: 1160px) {
-  .section-2 {
-    flex-direction: column;
-    padding: 50px 0;
-  }
-  .pet {
-    width: 430px;
-    height: 250px;
-  }
-  .cat-happy {
-    bottom: -155px !important;
-  }
-  .section__text {
-    position: relative;
-    z-index: 2;
-    text-align: justify;
-  }
+.pet {
+  width: 400px;
+  position: relative;
+}
+
+.cat-happy {
+  max-width: 100%;
+  position: absolute;
+  bottom: -387px;
+  z-index: 1;
+}
+
+.section__text p {
+  max-height: 100px;
 }
 
 .section-2 .section__left {
@@ -173,9 +180,7 @@
   flex: 0 0 60%;
 }
 
-.section-2 .section__title {
-  font-size: 50px;
-}
+
 .section__title span {
   color: var(--primary-color);
 }
@@ -193,17 +198,34 @@
   font-weight: 500;
   line-height: 150%; /* 31.5px */
 }
-
-.pet {
-  width: 400px;
-  position: relative;
+.section-2 .section__title {
+  font-size: 50px;
 }
 
-.cat-happy {
-  max-width: 100%;
-  position: absolute;
-  bottom: -387px;
-  z-index: 1;
+@media (max-width: 1160px) {
+  .section-2 {
+    flex-direction: column;
+    padding: 50px 0;
+  }
+  .pet {
+    width: 340px;
+    height: 250px;
+  }
+  .cat-happy {
+    bottom: -138px;
+  }
+  .section__text {
+    position: relative;
+    z-index: 2;
+    text-align: justify;
+  }
+  .section__text p {
+    max-height: initial;
+  }
+
+  .section-2 .section__title {
+    font-size: 4rem;
+  }
 }
 
 /* estilos da sessao 3 */
@@ -313,7 +335,7 @@
   padding-right: 5rem;
 }
 
-@media (max-width: 1160px) {
+@media (max-width: 800px) {
   .section-1,
   .section-2,
   .section-3,
@@ -323,15 +345,8 @@
   }
 }
 
-
-@media (max-width: 800px) { 
+@media (max-width: 800px) {
   .section__main--content {
-   padding: 0px 10px;
-  }
-  @media (max-width: 800px) {
-    .section--first {
-      opacity: 0.8;
-      background-size: 50%, 50%; 
-    }
+    padding: 0px 10px;
   }
 }

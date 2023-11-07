@@ -10,7 +10,6 @@ header nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
 }
 
 .nav-content {
@@ -100,17 +99,14 @@ header nav {
 
 .ul-menu__item a {
   font-size: 1.8rem;
-  color: var(--text-color); /* Altere conforme a variável de cor de texto que você usa */
+  color: var(
+    --text-color
+  ); /* Altere conforme a variável de cor de texto que você usa */
   text-transform: uppercase;
   font-weight: 600;
   line-height: 150%;
   text-decoration: none; /* Remove o sublinhado dos links */
 }
-
-
-
-
-
 
 .user-dropdown {
   position: relative;
@@ -122,7 +118,7 @@ header nav {
   right: 0;
   background-color: var(--background-color);
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 9999;
   margin: 10px 0 0 0;
   padding: 0;
@@ -133,11 +129,11 @@ header nav {
 .user-dropdown__menu::before {
   content: "";
   position: absolute;
-  top: -10px; 
-  right: 20px; 
+  top: -10px;
+  right: 20px;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-bottom: 10px solid var(--background-color-foreign);  
+  border-bottom: 10px solid var(--background-color-foreign);
 }
 
 .user-dropdown__menu > span {
@@ -163,36 +159,34 @@ header nav {
   background: var(--background-light);
 }
 
-
 .user-dropdown__link {
   color: var(--text-color);
   width: 100%;
   height: 100%;
   display: flex;
-  padding:  10px;
+  padding: 10px;
 
   box-sizing: border-box;
 }
 
-@media (max-width: 600px) {
- .nav-content {
-  padding: 10px 20px;
- }
- .ul-menu__item a {
-  font-size: 1.5rem;
-
-}
-.user-btn > i:first-child , .user-name{
-  display: none;
-}
-.user-dropdown__menu::before {
-  right: 9px;
-}
-.ul-menu__item.logo {
-  margin: 0;
-}
-.ul-menu__item.logo svg {
-  height: 30px;
-}
-
+@media (max-width: 730px) {
+  .nav-content {
+    padding: 10px 20px;
+  }
+  .ul-menu__item a {
+    font-size: 1.5rem;
+  }
+  .user-btn > i:first-child,
+  .user-name {
+    display: none;
+  }
+  .user-dropdown__menu::before {
+    right: 9px;
+  }
+  .ul-menu__item.logo {
+    margin: 0;
+  }
+  .ul-menu__item.logo svg {
+    height: 30px;
+  }
 }

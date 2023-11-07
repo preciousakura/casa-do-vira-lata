@@ -15,6 +15,12 @@
   padding: 0 5rem;
 }
 
+@media (max-width: 730px) {
+  .acessibilidade-buttons {
+    padding: 0 20px;
+  }
+}
+
 .acessibilidade-buttons button {
   cursor: pointer;
   width: 30px;
