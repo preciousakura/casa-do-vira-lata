@@ -23,4 +23,4 @@ function updateCarousel() {
   carouselContainer.style.transform = `translateX(${offset})`;
 }
 
-setInterval(nextSlide, 10000);
+setInterval(nextSlide, 20000);
