@@ -1,11 +1,11 @@
-.acessibilidade-bar {
+.accessibility-bar {
   background-color: var(--background-color-foreign);
   padding: 10px 0;
   display: flex;
   justify-content: center;
 }
 
-.acessibilidade-buttons {
+.accessibility-buttons {
   display: flex;
   gap: 5px;
   justify-content: end;
@@ -16,12 +16,12 @@
 }
 
 @media (max-width: 730px) {
-  .acessibilidade-buttons {
+  .accessibility-buttons {
     padding: 0 20px;
   }
 }
 
-.acessibilidade-buttons button {
+.accessibility-buttons button {
   cursor: pointer;
   width: 30px;
   height: 30px;
@@ -38,13 +38,13 @@
   background: none;
 }
 
-.acessibilidade-buttons button:hover,
-.acessibilidade-buttons button:focus {
+.accessibility-buttons button:hover,
+.accessibility-buttons button:focus {
   border: 1px solid var(--primary-color);
   color: var(--primary-color);
 }
 
-.acessibilidade-buttons button:hover i,
-.acessibilidade-buttons button:focus i {
+.accessibility-buttons button:hover i,
+.accessibility-buttons button:focus i {
   color: var(--primary-color);
 }

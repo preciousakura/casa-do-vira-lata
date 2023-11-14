@@ -31,48 +31,11 @@
             </div>
           </div>
         </div>
-        <% if(data.length > 0) { %>
-        <table class="content-page-table__table">
-          <thead>
-            <tr>
-              <th class="table-header">Nome</th>
-              <th class="table-header">Email</th>
-              <th class="table-header">Telefone</th>
-              <th class="table-header">CARGO</th>
-              <th class="table-header">OPÇÕES</th>
-              <th class="table-header"></th>
-            </tr>
-          </thead>
-          <tbody>
-            <% data.forEach(function(user) { %>
-            <tr>
-              <td><a href="/user/<%= user.id %>"><%= user.name %></a></td>
-              <td><%= user.email %></td>
-              <td><%= user.phone %></td>
-              <td><%= user.role %></td>
-              <td class="table-actions">
-                <button class="edit-button">
-                  <i class="ph-fill ph-pencil"></i>
-                </button>
-                <button class="delete-button">
-                  <i class="ph ph-trash"></i>
-                </button>
-              </td>
-            </tr>
-            <% }) %>
-          </tbody>
-        </table>
-        <% } else { %>
-        <div class="list__no-result">
-          <p><%= !(typeof(message) === "undefined") ? message : "Sem resultados" %></p>
-        </div>
-        <% } %>
-        <div class="content-page-table__pagination">
-          <%- include('../../partials/pagination'); %>
-        </div>
+        <div id="items_area"></div>
       </div>
     </main>
-
+    <script src="/js/data/admin/users.js"></script>
+    <script src="/js/pagination.js"></script>
     <footer class="footer"><%- include('../../partials/footer'); %></footer>
   </body>
 </html>

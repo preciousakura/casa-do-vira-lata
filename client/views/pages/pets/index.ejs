@@ -58,42 +58,11 @@
           <label><input type="checkbox" />Vacinado</label>
           <label><input type="checkbox" />Vermificado</label>
         </div>
-
-        <% if(data.length > 0) { %>
-        <div class="list">
-          <% data.forEach(function(pet) { %>
-          <div class="list__item">
-            <div class="list__item__image">
-              <img src="<%= pet.image %>" alt="Imagem do pet" />
-            </div>
-            <div class="list__item__header">
-              <h2><%= pet.name %></h2>
-              <i class="ph-fill ph-heart"></i>
-            </div>
-            <div class="list__item__description">
-              <p><b>Idade:</b> <%= pet.age %> anos</p>
-              <p><b>Sexo:</b> <%= pet.gender %></p>
-            </div>
-            <div class="list__item__tags">
-              <% if(pet.castrated) { %><span>Castrado</span><% } %> <%
-              if(pet.vaccinated) { %><span>Vacinado</span><% } %> <%
-              if(pet.dewormed) { %><span>Vermificado</span><% } %>
-            </div>
-          </div>
-          <% }); %>
-        </div>
-        <% } else { %>
-        <div class="list__no-result">
-          <p>
-            <%= !(typeof(message) === "undefined") ? message : "Sem resultados"
-            %>
-          </p>
-        </div>
-        <% } %>
+        <div id="items_area"></div>
       </div>
-      <%- include('../../partials/pagination'); %>
     </main>
-
+    <script src="/js/data/pets/list.js"></script>
+    <script src="/js/pagination.js"></script>
     <footer class="footer"><%- include('../../partials/footer'); %></footer>
   </body>
 </html>

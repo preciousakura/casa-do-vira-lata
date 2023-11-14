@@ -27,3 +27,7 @@ select {
 select:focus, input:focus {
   border: 1px solid var(--primary-color);
 }
+
+button {
+  font-family: Work Sans;
+}
