@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../../partials/head'); %>
+    <title>Casa do Vira-Lata - Moderador</title>
+  </head>
+  <body class="container">
+    <header class="header-content">
+      <%- include('../../partials/accessibility'); %> 
+      <%- include('../../partials/header'); %>
+    </header>
+
+    <main class="main-options">
+      <div class="content-options-home--max">
+        <h1 class="content-options-home__title">Olá, <span><%= user.name %></span>.</h1>
+        <p class="content-options-home__subtitle">
+          Aqui você pode gerenciar as solicitações de adoção e cadastrar os animais para adoção;
+        </p>
+
+        <div class="card-container-options">
+          <div class="card-options">
+            <a href="/moderator/animal-registration">
+              <div class="card-content">
+                <div>
+                  <i class="ph-fill ph-paw-print"></i>
+                  <h2>Cadastrar animais para adoção</h2>
+                </div>
+                <p>Cadastre animais para adoção</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="card-options">
+            <a href="/user/my-adoptions">
+              <div class="card-content">
+                <div>
+                  <i class="ph-fill ph-heart"></i>
+                  <h2>Solicitaões de adoção</h2>
+                </div>
+                <p>Gerencie as solicitações de adoção</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="card-options">
+            <a href="/user/profile">
+              <div class="card-content">
+                <div>
+                  <i class="ph-fill ph-user"></i>
+                  <h2>Perfil</h2>
+                </div>
+                <p>Edite seu perfil</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer"><%- include('../../partials/footer'); %></footer>
+  </body>
+</html>

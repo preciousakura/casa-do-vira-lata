@@ -68,7 +68,13 @@
             </div>
             <div class="list__item__header">
               <h2><%= pet.name %></h2>
-              <i class="ph-fill ph-heart"></i>
+              <div class="list__item__header--right">
+                <% if (user?.role === 'USER-DEFAULT') { %>
+                <div class="list__item__actions">
+                  <a href="/user-default/adoption?petId=<%= pet.id %>" class="adopt-button">ADOTAR</a>                </div>
+                <% } %>
+                <i class="ph-fill ph-heart"></i>
+              </div>
             </div>
             <div class="list__item__description">
               <p><b>Idade:</b> <%= pet.age %> anos</p>

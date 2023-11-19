@@ -84,10 +84,23 @@
 }
 
 .list__item {
+
   border-radius: 16px;
   background: var(--card-background);
   border: 1px solid var(--border-color);
   padding: 2.5rem;
+}
+.list__item__actions {
+margin-right: 10px;
+}
+.adopt-button {
+  border-radius: 10px;
+  padding: 2px 7px;
+  cursor: pointer;
+  text-decoration: none;
+  background: var(--card-background);
+  border: 1px solid var(--border-color);
+  color: var(--black);
 }
 
 .list__item__image {
@@ -109,7 +122,9 @@
   padding: 1rem 0;
   margin-top: 10px;
 }
-
+.list__item__header--right {
+  display: flex;
+}
 .list__item__header i {
   font-size: 20px;
   cursor: pointer;
