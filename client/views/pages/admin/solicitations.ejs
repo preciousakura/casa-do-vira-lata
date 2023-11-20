@@ -14,14 +14,27 @@
       <div class="content-page-table--max">
         <h1 class="content-page-table__title">Solicitações de Moderadores</h1>
         <div class="content-page-table__search-form">
-          <div class="filters--group-select" style="justify-content: space-between;">
+          <div
+            class="filters--group-select"
+            style="justify-content: space-between"
+          >
             <div class="filters__right">
               <input type="text" placeholder="Buscar" />
               <button class="filters__right--button">Buscar</button>
             </div>
             <div class="filters__right">
-              <button class="filters__left--button">Aprovar tudo</button>
-              <button class="filters__right--button">Excluir tudo</button>
+              <button
+                class="filters__left--button"
+                onclick="acceptAllModeratorRequests()"
+              >
+                Aprovar tudo
+              </button>
+              <button
+                class="filters__right--button"
+                onclick="rejectAllModeratorRequests()"
+              >
+                Excluir tudo
+              </button>
             </div>
           </div>
         </div>
@@ -38,15 +51,21 @@
           </thead>
           <tbody>
             <% data.forEach(function(user) { %>
-            <tr>
+            <tr id="user-row-<%= user.id %>">
               <td><a href="/user/<%= user.id %>"><%= user.name %></a></td>
               <td><%= user.email %></td>
               <td><%= user.phone %></td>
               <td class="table-actions">
-                <button class="edit-button">
+                <button
+                  class="edit-button"
+                  onclick="acceptModeratorRequest(<%= user.id %>)"
+                >
                   <i class="ph-fill ph-check-fat"></i>
                 </button>
-                <button class="delete-button">
+                <button
+                  class="delete-button"
+                  onclick="rejectModeratorRequest(<%= user.id %>)"
+                >
                   <i class="ph ph-trash"></i>
                 </button>
               </td>
@@ -69,5 +88,6 @@
     </main>
 
     <footer class="footer"><%- include('../../partials/footer'); %></footer>
+    <script src="/js/admin.js"></script>
   </body>
 </html>

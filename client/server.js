@@ -14,7 +14,7 @@ const user = {
   name: "Isabel Cristina de Oliveira Lopes",
   username: "isabel20",
   password: "",
-  role: "USER-DEFAULT",
+  role: "ADMIN",
 };
 
 app.get("/", (req, res) => {

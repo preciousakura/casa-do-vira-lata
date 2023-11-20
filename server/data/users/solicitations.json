@@ -13,27 +13,7 @@
       "email": "luigi15@example.org",
       "phone": "51 9677 9256",
       "password": "8lX1(tCm*m3Z"
-    },
-    {
-      "name": "Noah da Costa",
-      "id": 16,
-      "email": "isabella99@example.com",
-      "phone": "(081) 4208-6773",
-      "password": "^e1fREeUnjtI"
-    },
-    {
-      "name": "Andr\u00e9 Ara\u00fajo",
-      "id": 10,
-      "email": "rebeca45@example.org",
-      "phone": "(084) 4037 6086",
-      "password": "+Z1Nc8oE*ihC"
-    },
-    {
-      "name": "Henrique Freitas",
-      "id": 11,
-      "email": "souzanicole@example.com",
-      "phone": "(031) 9144-6772",
-      "password": "+7^owzoWyBSM"
     }
+    
   ]
 }
