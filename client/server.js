@@ -10,11 +10,12 @@ app.use(express.static(path.join(__dirname, "/public")));
 app.set("view engine", "ejs");
 
 const user = {
-  id: 0,
-  name: "Isabel Cristina de Oliveira Lopes",
-  username: "isabel20",
-  password: "",
-  role: "ADMIN",
+  name: "Maria Alice Dias",
+  id: 22,
+  email: "pintodaniel@example.org",
+  phone: "(084) 8201-3894",
+  password: "x+8wZHcPy@p1",
+  role: "USER-DEFAULT",
 };
 
 app.get("/", (req, res) => {
@@ -25,6 +26,7 @@ app.get("/login", (req, res) => {
   const name = user.name.split(" ");
   res.cookie("user", {
     name: `${name[0]} ${name[name.length - 1]}`,
+    id: user.id,
     role: user.role,
   });
   res.render("pages/login");
@@ -161,11 +163,17 @@ app.get(
     res.render("pages/user-default", { user: req.cookies.user });
   }
 );
+app.get(
+  "/user-default/solicitation",
+  (req, res, next) => auth(req, res, next, { allowed: ["USER-DEFAULT"] }),
+  (req, res) => {
+    res.render("pages/user-default/solicitation", { user: req.cookies.user });
+  }
+);
 app.get("/user-default/adoption", async (req, res) => {
   const petId = req.query.petId;
   try {
     const response = await fetch(`http://localhost:3001/pets/${petId}`);
-    console.log("response", petId, response)
     if (!response.ok) {
       throw new Error("Failed to fetch pet details");
     }
@@ -194,18 +202,18 @@ app.get(
   "/moderator/animal-registration",
   (req, res, next) => auth(req, res, next, { allowed: ["MODERATOR"] }),
   (req, res) => {
-    res.render("pages/moderator/animal-registration", { user: req.cookies.user });
+    res.render("pages/moderator/animal-registration", {
+      user: req.cookies.user,
+    });
   }
 );
 app.use((req, res) => {
-  res
-    .status(404)
-    .render("pages/error/not-found", {
-      data: [],
-      total: 0,
-      message: "Internal Server Error",
-      user: req.cookies.user,
-    });
+  res.status(404).render("pages/error/not-found", {
+    data: [],
+    total: 0,
+    message: "Internal Server Error",
+    user: req.cookies.user,
+  });
 });
 
 app.listen(port, () => {

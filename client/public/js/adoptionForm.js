@@ -29,7 +29,6 @@ function redirectToUserDefault() {
 }
 function openModal(modalId) {
   var modal = document.getElementById(modalId);
-  console.log("uemodal", modal);
   modal.classList.add("modal_fade--active");
 }
 
