@@ -5,13 +5,14 @@
       "name": "Cinthia Maria Andrade da Silva",
       "email": "cinthiagatinha@gmail.com",
       "password": "12345678",
-      "role": "MODERATOR",
+      "role": "USER-DEFAULT",
       "phone": "(85) 9 8965-1350",
       "favorites": [
         922,
         654,
         554,
-        585
+        585,
+        470
       ]
     },
     {

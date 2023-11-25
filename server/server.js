@@ -4,12 +4,11 @@ const app = express();
 const port = 3001;
 
 const paginatedData = require("./scripts/paginated-data");
-const findPetById = require("./scripts/filters");
 const { acceptModerator, rejectModerator, acceptAllModerators, rejectAllModerators } = require('./scripts/moderatorManagement');
 const addSolicitation = require('./scripts/addSolicitation');
 const addFavorite = require('./scripts/favorites');
 const findUserByCredentials = require('./scripts/users');
-
+const { filterPets, findPetById } = require("./scripts/filters");
 app.use(cors());
 app.use(express.json());
 app.get("/pets", function (req, res) {
@@ -69,6 +68,9 @@ app.get('/usersCredentials', (req, res) => {
     }
     res.json(user);
   });
+});
+app.get("/petsFilter", (req, res) => {
+  filterPets(req, res, "./data/pets/list.json");
 });
 
 app.listen(port, () => {
