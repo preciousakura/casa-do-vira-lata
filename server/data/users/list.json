@@ -5,25 +5,31 @@
       "name": "Cinthia Maria Andrade da Silva",
       "email": "cinthiagatinha@gmail.com",
       "password": "12345678",
-      "role": "ADMIN",
-      "phone": "(85) 9 8965-1350"
+      "role": "USER-DEFAULT",
+      "phone": "(85) 9 8965-1350",
+      "favorites": [
+        922,
+        654,
+        554
+      ]
     },
-
     {
-      "name": "Ana Vit\u00f3ria Rocha",
+      "name": "Ana Vitória Rocha",
       "id": 1,
       "email": "luiz-otavioferreira@example.org",
       "phone": "71 9253-4404",
       "password": "xU#el0As(O1J",
-      "role": "MODERATOR"
+      "role": "MODERATOR",
+      "favorites": []
     },
     {
       "name": "Maria Alice Dias",
-      "id": 22,
+      "id": 21,
       "email": "pintodaniel@example.org",
       "phone": "(084) 8201-3894",
       "password": "x+8wZHcPy@p1",
-      "role": "USER-DEFAULT"
+      "role": "MODERADOR",
+      "favorites": []
     },
     {
       "name": "Larissa Mendes",
@@ -31,7 +37,8 @@
       "email": "luigi15@example.org",
       "phone": "51 9677 9256",
       "password": "8lX1(tCm*m3Z",
-      "role": "USER-DEFAULT"
+      "role": "MODERADOR",
+      "favorites": []
     }
   ]
 }

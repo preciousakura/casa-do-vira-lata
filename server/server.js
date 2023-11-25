@@ -7,6 +7,9 @@ const paginatedData = require("./scripts/paginated-data");
 const findPetById = require("./scripts/filters");
 const { acceptModerator, rejectModerator, acceptAllModerators, rejectAllModerators } = require('./scripts/moderatorManagement');
 const addSolicitation = require('./scripts/addSolicitation');
+const addFavorite = require('./scripts/favorites');
+const findUserByCredentials = require('./scripts/users');
+
 app.use(cors());
 app.use(express.json());
 app.get("/pets", function (req, res) {
@@ -51,6 +54,22 @@ app.post('/send-user-solicitation-request', (req, res) => {
   });
 });
 
+app.put('/user/:userId/favorites', addFavorite);
+
+app.get('/usersCredentials', (req, res) => {
+  const { email, password } = req.query;
+  findUserByCredentials(email, password, (err, user) => {
+    if (err) {
+      if (err.message === 'User not found') {
+        res.status(404).json({ error: 'User not found' });
+      } else {
+        res.status(500).json({ error: 'Internal Server Error' });
+      }
+      return;
+    }
+    res.json(user);
+  });
+});
 
 app.listen(port, () => {
   console.log(`Servidor rodando em http://localhost:${port}`);
