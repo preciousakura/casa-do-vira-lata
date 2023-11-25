@@ -5,7 +5,7 @@
       "name": "Cinthia Maria Andrade da Silva",
       "email": "cinthiagatinha@gmail.com",
       "password": "12345678",
-      "role": "USER-DEFAULT",
+      "role": "MODERATOR",
       "phone": "(85) 9 8965-1350",
       "favorites": [
         922,
@@ -29,7 +29,7 @@
       "email": "pintodaniel@example.org",
       "phone": "(084) 8201-3894",
       "password": "x+8wZHcPy@p1",
-      "role": "MODERADOR",
+      "role": "MODERATOR",
       "favorites": []
     },
     {
@@ -38,7 +38,7 @@
       "email": "luigi15@example.org",
       "phone": "51 9677 9256",
       "password": "8lX1(tCm*m3Z",
-      "role": "MODERADOR",
+      "role": "MODERATOR",
       "favorites": []
     }
   ]
