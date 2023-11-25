@@ -38,7 +38,7 @@
 
 .card-container-options {
   display: flex;
-  justify-content: space-between;
+
   gap: 10px;
   flex-wrap: wrap;
   margin-top: 3rem;
@@ -51,6 +51,7 @@
   background: var(--card-background);
   padding: 16px 15px;
   height: 60px;
+  max-width: 350px;
 }
 
 .card-options:hover {

@@ -16,14 +16,13 @@ app.get("/", (req, res) => {
 });
 
 app.get("/login", async (req, res) => {
-/*   const { email, password } = req.query;
- */  
-const email= "cinthiagatinha@gmail.com"
-  const password = '12345678'
+  const email = "cinthiagatinha@gmail.com";
+  const password = '12345678';
+
   try {
     const response = await fetch(`http://localhost:3001/usersCredentials?email=${email}&password=${password}`);
-  
     const user = await response.json();
+
     if (user && user.email === email && user.password === password) {
       res.cookie("user", {
         name: user.name,
@@ -31,7 +30,21 @@ const email= "cinthiagatinha@gmail.com"
         role: user.role,
         favorites: user.favorites
       });
-      res.redirect("/");
+
+      console.log(user.role)
+      switch (user.role) {
+        case 'USER-DEFAULT':
+          res.redirect("/user-default");
+          break;
+        case 'ADMIN':
+          res.redirect("/admin");
+          break;
+        case 'MODERATOR':
+          res.redirect("/moderator");
+          break;
+        default:
+          res.redirect("/"); // Redirecionar para a página inicial ou outra página padrão
+      }
     } else {
       res.status(401).render("pages/login", { message: "Invalid credentials" });
     }
