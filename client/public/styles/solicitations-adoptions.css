@@ -1,0 +1,15 @@
+.main-solicitations-adoptions {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 5rem;
+    width: 100%;
+}
+.content-page-table-solicit-adoptions--max {
+    width: 100%;
+    max-width: 1300px;
+
+    padding: 0 50px 0 0;
+}

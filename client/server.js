@@ -31,7 +31,6 @@ app.get("/login", async (req, res) => {
         favorites: user.favorites
       });
 
-      console.log(user.role)
       switch (user.role) {
         case 'USER-DEFAULT':
           res.redirect("/user-default");
@@ -253,12 +252,27 @@ app.get(
     });
   }
 );
+const mockAdoptionSolicitations = [
+  {
+    id: 1,
+    candidateName: "João Silva",
+    petName: "Bolinha",
+    date: "2023-03-01"
+  },
+  {
+    id: 2,
+    candidateName: "Maria Oliveira",
+    petName: "Rex",
+    date: "2023-03-05"
+  },
+];
 app.get(
   "/moderator/solicitations-adoptions",
   (req, res, next) => auth(req, res, next, { allowed: ["MODERATOR"] }),
   (req, res) => {
     res.render("pages/moderator/solicitations-adoptions", {
       user: req.cookies.user,
+      data: mockAdoptionSolicitations 
     });
   }
 );
