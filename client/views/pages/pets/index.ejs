@@ -24,39 +24,44 @@
       <div class="filters">
         <div class="filters--group-select">
           <div class="filters__select">
-            <select class="filters__select__type">
-              <option value="" selected disabled hidden>
+            <select class="filters__select__type" id="filterType">
+              <option value="Todos" selected disabled hidden>
                 Selecione o tipo do pet
               </option>
+              <option>Todos</option>
+
               <option>Gato</option>
               <option>Cachorro</option>
             </select>
-            <select class="filters__select__size">
-              <option value="" selected disabled hidden>
+            <select class="filters__select__size" id="filterSize">
+              <option value="Todos" selected disabled hidden>
                 Selecione o porte
               </option>
+              <option>Todos</option>
+
               <option>Pequeno</option>
               <option>Médio</option>
               <option>Grande</option>
             </select>
-            <select class="filters__select__gender">
-              <option value="" selected disabled hidden>
+            <select class="filters__select__gender" id="filterGender">
+              <option value="Todos" selected disabled hidden>
                 Selecione o sexo
               </option>
+              <option>Todos</option>
               <option>Fêmea</option>
               <option>Macho</option>
             </select>
           </div>
           <div class="filters__right">
-            <input type="text" placeholder="Buscar" />
-            <button>Buscar pet</button>
+            <input type="text" placeholder="Buscar" id="filterSearch" />
+            <button id="searchButton">Buscar pet</button>
           </div>
         </div>
 
         <div class="filters__checkbox">
-          <label><input type="checkbox" />Castrado</label>
-          <label><input type="checkbox" />Vacinado</label>
-          <label><input type="checkbox" />Vermificado</label>
+          <label><input type="checkbox"  id="castrated"/>Castrado</label>
+          <label><input type="checkbox" id="vaccinated"/>Vacinado</label>
+          <label><input type="checkbox" id="dewormed" />Vermificado</label>
         </div>
 
         <% if(data.length > 0) { %>
@@ -70,11 +75,19 @@
               <h2><%= pet.name %></h2>
               <div class="list__item__header--right">
                 <% if (user?.role === 'USER-DEFAULT') { %>
-                  
+
                 <div class="list__item__actions">
-                  <a href="/user-default/adoption?petId=<%= pet.id %>" class="adopt-button">ADOTAR</a>                </div>
+                  <a
+                    href="/user-default/adoption?petId=<%= pet.id %>"
+                    class="adopt-button"
+                    >ADOTAR</a
+                  >
+                </div>
                 <% } %>
-                <i class="ph-fill ph-heart <%= user?.favorites?.includes(pet.id) ? 'favorite' : '' %>" onclick="addToFavorites(<%= pet.id %>)"></i>
+                <i
+                  class="ph-fill ph-heart <%= user?.favorites?.includes(pet.id) ? 'favorite' : '' %>"
+                  onclick="addToFavorites(<%= pet.id %>)"
+                ></i>
               </div>
             </div>
             <div class="list__item__description">
