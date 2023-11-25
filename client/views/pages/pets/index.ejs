@@ -70,10 +70,11 @@
               <h2><%= pet.name %></h2>
               <div class="list__item__header--right">
                 <% if (user?.role === 'USER-DEFAULT') { %>
+                  
                 <div class="list__item__actions">
                   <a href="/user-default/adoption?petId=<%= pet.id %>" class="adopt-button">ADOTAR</a>                </div>
                 <% } %>
-                <i class="ph-fill ph-heart"></i>
+                <i class="ph-fill ph-heart <%= user?.favorites?.includes(pet.id) ? 'favorite' : '' %>" onclick="addToFavorites(<%= pet.id %>)"></i>
               </div>
             </div>
             <div class="list__item__description">
@@ -99,7 +100,7 @@
       </div>
       <%- include('../../partials/pagination'); %>
     </main>
-
+    <script src="/js/user-default.js"></script>
     <footer class="footer"><%- include('../../partials/footer'); %></footer>
   </body>
 </html>

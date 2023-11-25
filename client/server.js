@@ -9,27 +9,36 @@ app.use(cookie());
 app.use(express.static(path.join(__dirname, "/public")));
 app.set("view engine", "ejs");
 
-const user = {
-  name: "Maria Alice Dias",
-  id: 22,
-  email: "pintodaniel@example.org",
-  phone: "(084) 8201-3894",
-  password: "x+8wZHcPy@p1",
-  role: "USER-DEFAULT",
-};
+
 
 app.get("/", (req, res) => {
   res.render("pages/home", { user: req.cookies.user });
 });
 
-app.get("/login", (req, res) => {
-  const name = user.name.split(" ");
-  res.cookie("user", {
-    name: `${name[0]} ${name[name.length - 1]}`,
-    id: user.id,
-    role: user.role,
-  });
-  res.render("pages/login");
+app.get("/login", async (req, res) => {
+/*   const { email, password } = req.query;
+ */  
+const email= "cinthiagatinha@gmail.com"
+  const password = '12345678'
+  try {
+    const response = await fetch(`http://localhost:3001/usersCredentials?email=${email}&password=${password}`);
+  
+    const user = await response.json();
+    if (user && user.email === email && user.password === password) {
+      res.cookie("user", {
+        name: user.name,
+        id: user.id,
+        role: user.role,
+        favorites: user.favorites
+      });
+      res.redirect("/");
+    } else {
+      res.status(401).render("pages/login", { message: "Invalid credentials" });
+    }
+  } catch (error) {
+    console.error("Login error:", error);
+    res.status(500).render("pages/error", { message: "Internal Server Error" });
+  }
 });
 
 app.get("/logout", (req, res) => {

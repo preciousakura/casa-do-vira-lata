@@ -157,3 +157,6 @@ margin-right: 10px;
   justify-content: center;
   align-items: center;
 }
+.ph-heart.favorite {
+  color: red; /* Ou qualquer estilo que indique que é um favorito */
+}

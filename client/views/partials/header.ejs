@@ -30,11 +30,13 @@
             <a href="/settings" class="user-dropdown__link">Configurações</a>
           </li>
           <li class="user-dropdown__item">
-            <a href="/logout" class="user-dropdown__link">Sair</a>
+            <a href="/logout" class="user-dropdown__link" id="logoutLink">Sair</a>
           </li>
         </ul>
       </div>
     </div>
+    <script src="/js/login.js"></script>
+
     <% } else { %>
     <button class="user-btn" onclick="location.href='/login'">Entrar</button>
     <% } %>
