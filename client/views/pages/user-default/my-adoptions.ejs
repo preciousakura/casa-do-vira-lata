@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../../partials/head'); %>
+    <title>Casa do Vira-Lata - Minhas Adoções</title>
+  </head>
+  <body class="container">
+    <header class="header-content">
+      <%- include('../../partials/accessibility'); %> 
+      <%- include('../../partials/header'); %>
+    </header>
+
+    <main class="main-my-adoptions">
+      <div class="content-page-table-my-adoptions--max"> 
+        <h1 class="content-page-table__title">Minhas Adoções</h1>
+        <!-- Seção de filtros, se necessário -->
+
+        <% if(data?.length > 0) { %>
+        <table class="content-page-table__table">
+          <thead>
+            <tr>
+              <th class="table-header">Nome do Pet</th>
+              <th class="table-header">Data da Adoção</th>
+              <th class="table-header">Status</th>
+              <!-- Outras colunas conforme necessário -->
+            </tr>
+          </thead>
+          <tbody>
+            <% data.forEach(function(adocao) { %>
+            <tr>
+              <td><%= adocao.petName %></td>
+              <td><%= adocao.adoptionDate %></td>
+              <td><%= adocao.status %></td>
+              <!-- Outras células conforme necessário -->
+            </tr>
+            <% }); %>
+          </tbody>
+        </table>
+        <% } else { %>
+        <div class="list__no-result">
+          <p><%= !(typeof(message) === "undefined") ? message : "Sem resultados" %></p>
+        </div>
+        <% } %>
+     
+      </div>
+    </main>
+
+    <footer class="footer"><%- include('../../partials/footer'); %></footer>
+  </body>
+</html>

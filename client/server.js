@@ -213,6 +213,31 @@ app.get("/user-default/adoption", async (req, res) => {
     });
   }
 });
+const mockAdoptions = [
+  {
+    petName: "Bolinha",
+    adoptionDate: "2023-01-15",
+    status: "Concluída"
+  },
+  {
+    petName: "Rex",
+    adoptionDate: "2023-02-20",
+    status: "Em Processamento"
+  },
+  // Adicione mais objetos conforme necessário
+];
+app.get(
+  "/user-default/my-adoptions",
+  (req, res, next) => auth(req, res, next, { allowed: ["USER-DEFAULT"] }),
+  (req, res) => {
+    // Aqui você passa os dados mock para o template EJS
+    res.render("pages/user-default/my-adoptions", {
+      user: req.cookies.user,
+      data: mockAdoptions // Passando os dados mock para o template
+    });
+  }
+);
+
 app.get(
   "/moderator",
   (req, res, next) => auth(req, res, next, { allowed: ["MODERATOR"] }),
