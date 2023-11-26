@@ -27,7 +27,7 @@
       </p>
 
       <section class="adoption-form">
-        <form id="adoptionForm" class="container-form-adoption" onsubmit="adoptMe(event)">
+        <form id="adoptionForm" class="container-form-adoption" onsubmit="adoptMe(event, <%= pet.id %>, <%= user.id %>)">
           <div class="adoption-form__group">
             <p class="adoption-form__group--title">
               Informações pessoais do adotante

@@ -4,6 +4,7 @@ const app = express();
 const port = 3001;
 
 const {addFavorite, removeFavorite} = require('./scripts/favorites');
+const adoptPet = require('./scripts/adoptPet');
 const findUserByCredentials = require('./scripts/users');
 const paginatedData = require('./scripts/paginated-data');
 const { acceptModerator, rejectModerator, acceptAllModerators, rejectAllModerators } = require('./scripts/moderatorManagement');
@@ -21,6 +22,8 @@ app.get('/solicitations', function (req, res) { return paginatedData(req, res, '
 app.get("/pets/:petId", function (req, res) { return findPetById(req, res, "./data/pets/list.json") });
 app.put('/accept-moderator/:userId', (req, res) => { acceptModerator(req, res) });
 
+
+app.post("/pets/adopt", function (req, res) { return adoptPet(req, res) });
 
 app.delete('/reject-moderator/:userId', (req, res) => { rejectModerator(req, res) });
 app.put('/accept-all-moderators', (req, res) => { acceptAllModerators(req, res) });

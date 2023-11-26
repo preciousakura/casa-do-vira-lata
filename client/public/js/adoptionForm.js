@@ -24,12 +24,11 @@
 //   });
 // });
 
-async function adoptMe(e) {
+async function adoptMe(e, petId, userId) {
   e.preventDefault();
   const data = new FormData(e.target);
-
   try {
-    const res = await fetch('http://localhost:3001/pets/adopt', {
+    const res = await fetch(`http://localhost:3001/pets/adopt?userId=${userId}&petId=${petId}`, {
       method: 'POST',
       headers: {
         "Content-Type": "application/json",
