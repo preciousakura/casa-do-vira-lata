@@ -18,6 +18,14 @@
       "role": "USER-DEFAULT",
       "favorites": [],
       "reason": "Porque sim!"
+    },
+    {
+      "name": "Cinthia Maria Andrade da Silva",
+      "id": 0,
+      "email": "cinthiagatinha@gmail.com",
+      "phone": "(85) 9 8965-1350",
+      "role": "USER-DEFAULT",
+      "reason": {}
     }
   ]
 }

@@ -1,6 +1,7 @@
 async function submitModeratorRequest(event) {
   event.preventDefault();
   const user = getUserFromCookie();
+  console.log(user)
   if (user) {
     const { id } = user;
 
@@ -18,30 +19,6 @@ async function submitModeratorRequest(event) {
     } catch (err) {
       openModal("modal-error-solicit-moder");
     }
-  }
-}
-
-function getUserFromCookie(cookieName) {
-  const cookieString = document.cookie
-    .split("; ")
-    .find((row) => row.startsWith(cookieName + "="));
-
-  if (!cookieString) {
-    return null;
-  }
-
-  const encodedCookieValue = cookieString.split("=")[1];
-  const decodedCookieValue = decodeURIComponent(encodedCookieValue);
-
-  const jsonValue = decodedCookieValue.startsWith("j:")
-    ? decodedCookieValue.substring(2)
-    : decodedCookieValue;
-
-  try {
-    return JSON.parse(jsonValue);
-  } catch (error) {
-    console.error("Erro ao analisar dados do cookie:", error);
-    return null;
   }
 }
 
