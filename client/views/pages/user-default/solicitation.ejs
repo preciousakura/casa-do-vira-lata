@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../../partials/head'); %>
+    <title>Casa do Vira-Lata - Solicitação de Moderador</title>
+  </head>
+  <body class="container">
+    <header class="header-content">
+      <%- include('../../partials/accessibility'); %> <%-
+      include('../../partials/header'); %>
+    </header>
+
+    <main class="main-user-solicitation">
+      <section class="title">
+        <h2>Solicitar ser <span>Moderador</span></h2>
+      </section>
+
+      <p>
+        Por favor, conte-nos por que você deseja se tornar um moderador e como
+        você pode contribuir para a comunidade.
+      </p>
+
+      <section class="user-solicitation-form">
+        <form
+          id="user-solicitationForm"
+          class="container-form-user-solicitation"
+          onsubmit="submitModeratorRequest(event, <%= user.id %>); return false;"
+        >
+          <div class="user-solicitation-form__group">
+            <div class="form-group">
+              <label for="user-solicitationReason"
+                >Motivo para ser moderador:</label
+              >
+              <textarea
+                id="user-solicitationReason"
+                name="user-solicitationReason"
+                rows="6"
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="submit-button">
+              Enviar Solicitação
+            </button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer"><%- include('../../partials/footer'); %></footer>
+    <script src="/js/user-default.js"></script>
+  </body>
+</html>

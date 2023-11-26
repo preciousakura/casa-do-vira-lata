@@ -1,0 +1,49 @@
+.main-registration {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 5rem;
+    width: 100%;
+}
+.animal-form__group {
+    margin: 25px 0;
+    width: 100%;
+
+}
+.container-form-registration {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.animal-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+    width: 50%;
+}
+.animal-form__group--title {
+    margin: 10px 0;
+}
+
+.animal-form input {
+width: 60%;}
+
+.content-form-group {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+}
+.content-form-group input, select {
+    width: 90%;
+}
+.content-form-group .form-group {
+    width: 30%;
+}
+.content-form-group  select {
+    height:34px;
+    
+}

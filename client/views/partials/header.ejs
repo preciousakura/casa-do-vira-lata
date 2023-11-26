@@ -16,11 +16,24 @@
       <div class="user-dropdown__menu" id="userDropdown">
         <% if(user.role === "ADMIN") { %>
           <span>ADMINISTRADOR</span>
-        <ul class="painel">
-          <li class="user-dropdown__item">
-            <a href="/admin" class="user-dropdown__link">Meu painel</a>
-          </li>
-        </ul>
+          <ul class="painel">
+            <li class="user-dropdown__item">
+              <a href="/admin" class="user-dropdown__link">Meu painel</a>
+            </li>
+          </ul>
+        <% } else if(user.role === "MODERATOR") { %>
+          <span>MODERADOR</span>
+          <ul class="painel">
+            <li class="user-dropdown__item">
+              <a href="/moderator" class="user-dropdown__link">Meu painel</a>
+            </li>
+          </ul>
+        <% } else { %>
+          <ul class="painel">
+            <li class="user-dropdown__item">
+              <a href="/user-default" class="user-dropdown__link">Meu painel</a>
+            </li>
+          </ul>
         <% } %>
         <ul>
           <li class="user-dropdown__item">
@@ -30,11 +43,13 @@
             <a href="/settings" class="user-dropdown__link">Configurações</a>
           </li>
           <li class="user-dropdown__item">
-            <a href="/logout" class="user-dropdown__link">Sair</a>
+            <a href="/logout" class="user-dropdown__link" id="logoutLink">Sair</a>
           </li>
         </ul>
       </div>
     </div>
+    <script src="/js/login.js"></script>
+
     <% } else { %>
     <button class="user-btn" onclick="location.href='/login'">Entrar</button>
     <% } %>
