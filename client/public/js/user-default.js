@@ -71,24 +71,10 @@ function toggleFavoriteIcon(petId) {
   });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const favorites = getFavoritesFromLocalStorage();
-  if (favorites) {
-    favorites.forEach((petId) => toggleFavoriteIcon(petId));
-  }
-});
-
 function getFavoritesFromLocalStorage() {
   const favorites = localStorage.getItem("favorites");
   return favorites ? JSON.parse(favorites) : [];
 }
-
-document.addEventListener("DOMContentLoaded", function () {
-  const searchButton = document.getElementById("searchButton");
-  if (searchButton) {
-    searchButton.addEventListener("click", applyFilters);
-  }
-});
 
 function applyFilters() {
   const type = document.querySelector(".filters__select__type").value;

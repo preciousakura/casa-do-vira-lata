@@ -28,6 +28,8 @@ app.get("/login", async (req, res) => {
         favorites: user.favorites
       });
 
+      localStorage.setItem("favorites", user.favorites);
+
       switch (user.role) {
         case 'USER-DEFAULT':
           res.redirect("/user-default");

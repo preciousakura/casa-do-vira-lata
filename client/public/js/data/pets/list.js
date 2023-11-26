@@ -16,6 +16,11 @@ function getUserCookie() {
   return null;
 }
 
+function getFavoritesFromLocalStorage() {
+  const favorites = localStorage.getItem("favorites");
+  return favorites ? JSON.parse(favorites) : [];
+}
+
 function createPetItem({ age, castrated, dewormed, gender, id, image, name, size, type, vaccinated }, role, favorites) {
   return `
     <div class="list__item">
@@ -56,11 +61,13 @@ async function loadPets(page = 1) {
   }
   
   const { items, total  } = data;
-  
+
+  const favorites = getFavoritesFromLocalStorage();
+
   if(items.length > 0) { 
     items.forEach(item => {
       const { age, castrated, dewormed, gender, id, image, name, size, type, vaccinated } = item;
-      list.innerHTML += createPetItem({ age, castrated, dewormed, gender, id, image, name, size, type, vaccinated }, user?.role, user?.favorites);
+      list.innerHTML += createPetItem({ age, castrated, dewormed, gender, id, image, name, size, type, vaccinated }, user?.role, favorites);
     });
     list.setAttribute('class', 'list');    
     items_area.innerHTML = ""
