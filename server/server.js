@@ -3,11 +3,11 @@ const cors = require('cors');
 const app = express();
 const port = 3001;
 
+const addFavorite = require('./scripts/favorites');
+const findUserByCredentials = require('./scripts/users');
 const paginatedData = require('./scripts/paginated-data');
 const { acceptModerator, rejectModerator, acceptAllModerators, rejectAllModerators } = require('./scripts/moderatorManagement');
 const { addSolicitation, verifyPermission} = require('./scripts/addSolicitation');
-const addFavorite = require('./scripts/favorites');
-const findUserByCredentials = require('./scripts/users');
 const { filterPets, findPetById } = require("./scripts/filters");
 
 
@@ -19,7 +19,6 @@ app.get('/users', function (req, res) { return paginatedData(req, res, './data/u
 app.get('/solicitations', function (req, res) { return paginatedData(req, res, './data/users/solicitations.json') })
 
 app.get("/pets/:petId", function (req, res) { return findPetById(req, res, "./data/pets/list.json") });
-
 app.put('/accept-moderator/:userId', (req, res) => { acceptModerator(req, res) });
 
 

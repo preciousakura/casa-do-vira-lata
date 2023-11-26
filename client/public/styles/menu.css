@@ -169,7 +169,7 @@ header nav {
   box-sizing: border-box;
 }
 
-@media (max-width: 730px) {
+@media (max-width: 800px) {
   .nav-content {
     padding: 10px 20px;
   }
