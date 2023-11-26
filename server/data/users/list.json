@@ -18,8 +18,7 @@
         988,
         4,
         642,
-        734,
-        800
+        922
       ]
     },
     {
@@ -37,7 +36,7 @@
       "email": "pintodaniel@example.org",
       "phone": "(084) 8201-3894",
       "password": "x+8wZHcPy@p1",
-      "role": "USER-DEFAULT",
+      "role": "MODERADOR",
       "favorites": []
     },
     {
