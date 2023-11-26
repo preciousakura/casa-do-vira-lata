@@ -29,7 +29,7 @@ function createPetItem({ age, castrated, dewormed, gender, id, image, name, size
       </div>
       <div class="list__item__header">
         <h2>${name}</h2>
-        <i onclick="addToFavorites(${id})" class="ph-fill ph-heart ${favorites && favorites.includes(id) && 'favorite'}"></i>
+        <i onclick="addToFavorites(${id})" class="ph-fill ph-heart ${favorites && favorites.includes(id) ? 'favorite' : ''}"></i>
       </div>
       <div class="list__item__description">
         <p><b>Idade:</b> ${age} anos</p>
@@ -40,7 +40,7 @@ function createPetItem({ age, castrated, dewormed, gender, id, image, name, size
         ${vaccinated ? '<span>Vacinado</span>' : ''}
         ${dewormed ? '<span>Vermificado</span>' : ''}
       </div>
-      ${role && role === 'USER-DEFAULT' && '<div class="adopt-button">Adotar</div>'}
+      ${role && role === 'USER-DEFAULT' ? `<a class="adopt-button" href="/user-default/adoption?petId=${id}">Adotar</a>` : ''}
     </div>
   `
 }

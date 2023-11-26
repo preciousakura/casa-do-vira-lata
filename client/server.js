@@ -28,8 +28,6 @@ app.get("/login", async (req, res) => {
         favorites: user.favorites
       });
 
-      localStorage.setItem("favorites", user.favorites);
-
       switch (user.role) {
         case 'USER-DEFAULT':
           res.redirect("/user-default");
@@ -92,27 +90,25 @@ app.get("/user-default/solicitation",(req, res, next) => auth(req, res, next, { 
   }
 });
 
-// app.get("/user-default/adoption", async (req, res) => {
-//   const petId = req.query.petId;
-//   try {
+app.get("/user-default/adoption", (req, res, next) => auth(req, res, next, { allowed: ["USER-DEFAULT"] }), async (req, res) => {
+  const { petId } = req.query;
+  try {
+    const response = await fetch(`http://localhost:3001/pets/${petId}`)
+    if (!response.ok) throw new Error("Failed to fetch pet details");
 
-//     if (!response.ok) {
-//       throw new Error("Failed to fetch pet details");
-//     }
-//     const pet = await response.json();
-
-//     res.render("pages/user-default/adoption", {
-//       pet: pet,
-//       user: req.cookies.user,
-//     });
-//   } catch (error) {
-//     res.render("pages/user-default/adoption", {
-//       pet: {},
-//       message: "Erro ao buscar detalhes do pet",
-//       user: req.cookies.user,
-//     });
-//   }
-// });
+    const data = await response.json();
+    res.render("pages/user-default/adoption", {
+      pet: data,
+      user: req.cookies.user,
+    });
+  } catch (error) {
+    res.render("pages/user-default/adoption", {
+      pet: {},
+      message: "Erro ao buscar detalhes do pet",
+      user: req.cookies.user,
+    });
+  }
+});
 
 app.get("/user-default/my-adoptions", (req, res, next) => auth(req, res, next, { allowed: ["USER-DEFAULT"] }), (req, res) => {
   res.render("pages/user-default/my-adoptions", { user: req.cookies.user })
