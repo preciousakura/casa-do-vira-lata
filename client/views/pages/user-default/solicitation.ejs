@@ -40,8 +40,23 @@
         <button type="submit" class="solicitation-button">Enviar</button>
       </form>
     </main>
-
+    <%- include('../../partials/modal', { 
+      modalId: 'modal-sucess-solicit-moder', 
+      title: 'Solicitação enviada!', 
+      body: '<p>Solicitação enviada com sucesso, aguarde.</p>', 
+      footer: '', 
+      onClose: 'closeModalSuccessSolicit' 
+    }) %>
+    <%- include('../../partials/modal', { 
+      modalId: 'modal-error-solicit-moder', 
+      title: 'Ops!', 
+      body: '<p>Houve um erro ao fazer a solicitação, tente novamente.</p>', 
+      footer: '', 
+      onClose: 'closeModalErrorSolicit' 
+    }) %>
     <footer class="footer"><%- include('../../partials/footer'); %></footer>
+    <script src="/js/modal.js"></script>
+
     <script src="/js/user-default.js"></script>
   </body>
 </html>

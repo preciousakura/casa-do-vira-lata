@@ -13,13 +13,10 @@ async function submitModeratorRequest(event) {
           body: JSON.stringify({ id, reason }),
         }
       );
-
-      const data = await res.json();
-
-      if (res.ok) alert("Solicitação feita com sucesso!");
-      else alert(data.error);
+      if (res.ok) openModal("modal-sucess-solicit-moder");
+      else openModal("modal-error-solicit-moder");
     } catch (err) {
-      alert(data.error);
+      openModal("modal-error-solicit-moder");
     }
   }
 }
