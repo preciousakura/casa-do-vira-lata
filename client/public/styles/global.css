@@ -3,6 +3,7 @@
 :root {
   --primary-color: #1B9C85;
   --secundary-color: #fff5ca;
+  --tags-background: #cfdedb;
 
   --text-color: #000f18;
   --background-color: #F1F1F1;
@@ -23,6 +24,7 @@
 }
 
 .dark {
+  --tags-background: #0d0d0d;
   --primary-color: #40ddc0;
   --secundary-color: transparent;
 

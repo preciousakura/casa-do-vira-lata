@@ -33,13 +33,13 @@ function addFavoriteToLocalStorage(petId) {
 
 function getFavoritesFromLocalStorage() {
   const favorites = localStorage.getItem("favorites");
-  const userfavorites = getUserFromCookie("user")?.favorites;
+  const userfavorites = getUserFromCookie()?.favorites;
 
   return favorites ? JSON.parse(favorites) : userfavorites ?? [];
-}
+} 
 
 function addToFavorites(petId) {
-  const userInfo = getUserFromCookie("user");
+  const userInfo = getUserFromCookie();
   const userId = userInfo.id ?? null;
 
   if (userId !== 0 && !userId) {
@@ -47,7 +47,7 @@ function addToFavorites(petId) {
     return;
   }
 
-  fetch(`${backendUrl}/user/${userId}/favorites`, {
+  fetch(`http://localhost:3001/user/${userId}/favorites`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",

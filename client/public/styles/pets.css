@@ -84,7 +84,9 @@
 }
 
 .list__item {
-
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   border-radius: 16px;
   background: var(--card-background);
   border: 1px solid var(--border-color);
@@ -93,14 +95,20 @@
 .list__item__actions {
 margin-right: 10px;
 }
+
 .adopt-button {
-  border-radius: 10px;
-  padding: 2px 7px;
+  background: var(--primary-color);
+  border-radius: 8px;
+  padding: 10px 20px;
+  color: var(--contrast-text-color);
+  font-weight: 600;
+  text-align: center;
   cursor: pointer;
-  text-decoration: none;
-  background: var(--card-background);
-  border: 1px solid var(--border-color);
-  color: var(--black);
+  margin-top: 1rem;
+}
+
+.adopt-button:hover {
+  filter: brightness(0.9);
 }
 
 .list__item__image {
@@ -141,11 +149,11 @@ margin-right: 10px;
 }
 
 .list__item__tags span {
-  background: var(--primary-color);
+  background: var(--tags-background);
   padding: 0.2rem 1rem;
   border-radius: 8px;
   font-weight: 700;
-  color: var(--black);
+  color: var(--contrast-background);
   font-size: 13px;
   margin-top: 20px;
   text-transform: uppercase;
@@ -158,5 +166,5 @@ margin-right: 10px;
   align-items: center;
 }
 .ph-heart.favorite {
-  color: red; /* Ou qualquer estilo que indique que é um favorito */
+  color: var(--primary-color); /* Ou qualquer estilo que indique que é um favorito */
 }
