@@ -1,5 +1,5 @@
 select,
-input[type="text"] {
+input[type="text"], input[type="tel"], input#email, input[type="number"]{
   padding: 1.3rem 5rem 1.3rem 1.3rem;
   background: var(--card-background);
   border-radius: 8px;
@@ -11,6 +11,10 @@ input[type="text"] {
 
   font-family: Work Sans;
   font-weight: 500;
+}
+
+input[type="number"] {
+  padding: 1.3rem !important;
 }
 
 select {
@@ -41,7 +45,7 @@ textarea {
   border: 1px solid var(--border-color);
 
   color: var(--text-color);
-  font-size: 1.8rem;
+  font-size: 1.3rem;
   line-height: 125%; /* 21.25px */
 
   font-family: Work Sans;

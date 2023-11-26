@@ -37,13 +37,4 @@ width: 60%;}
     width: 100%;
     gap: 10px;
 }
-.content-form-group input, select {
-    width: 90%;
-}
-.content-form-group .form-group {
-    width: 30%;
-}
-.content-form-group  select {
-    height:34px;
-    
-}
+
