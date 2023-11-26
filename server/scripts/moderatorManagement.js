@@ -231,33 +231,9 @@ function rejectAllModerators(req, res) {
   );
 }
 
-function verifyModerator(req, res, path) {
-  const id = req.query.id;
-  const role = req.query.role;
-
-  fs.readFile(path, "utf8", (err, data) => {
-    if (err) {
-      console.error("Error reading the file:", err);
-      res.status(500).json({ error: "Internal Server Error" });
-      return;
-    }
-    try {
-      const jsonData = JSON.parse(data);
-      const user = jsonData.items.find((item) => Number(item.id) === Number(id));
-      if(user) return res.json({ message: "Parece que você já fez essa solicitação. Por favor, aguarde, o pedido ainda está sendo avaliado pela administração." });
-      else if(role === "USER-DEFAULT") return res.json({ permission: true });
-      else return res.json({ permission: false });
-
-    } catch (parseError) {
-      res.status(500).json({ error: "Internal Server Error" });
-    }
-  });
-}
-
 module.exports = {
   acceptModerator,
   rejectModerator,
   acceptAllModerators,
   rejectAllModerators,
-  verifyModerator
 };

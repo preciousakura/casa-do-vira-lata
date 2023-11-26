@@ -1,3 +1,35 @@
+async function submitModeratorRequest(event) {
+  event.preventDefault();
+  const cookie = document.cookie.split("; ");
+  const user = cookie.find((row) => row.startsWith('user' + "="));
+
+  if(user) {
+    const data = decodeURIComponent(user.split("=")[1]);
+    const json = data.startsWith("j:") ? data.substring(2) : data;
+    try {
+      const reason = document.getElementById("reason").value;
+      const { id } = JSON.parse(json);
+
+      try {
+        const res = await fetch(`http://localhost:3001/send-user-solicitation-request`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ id, reason }),
+        })
+
+        const data = await res.json();
+
+        if(res.ok) alert("Solicitação feita com sucesso!")
+        else alert(data.error)
+      } catch (err) {
+        alert(data.error)
+      }
+    } catch (error) {
+      console.error("Erro ao analisar dados do cookie:", error);
+    }
+  }
+}
+
 function getUserInfoFromCookie(cookieName) {
   const cookieString = document.cookie
     .split("; ")
@@ -36,31 +68,6 @@ function getFavoritesFromLocalStorage() {
   const userfavorites = getUserInfoFromCookie("user")?.favorites;
 
   return favorites ? JSON.parse(favorites) : userfavorites ?? [];
-}
-
-const backendUrl = "http://localhost:3001";
-function submitModeratorRequest(e, userId) {
-  e.preventDefault();
-  const reason = document.getElementById("user-solicitationReason").value;
-
-  fetch(`${backendUrl}/send-user-solicitation-request`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ userId, reason }),
-  })
-    .then((response) => {
-      if (response.ok) {
-        alert("Solicitação enviada com sucesso.");
-      } else {
-        // Exibir mensagem de erro
-        alert("Falha ao enviar solicitação.");
-      }
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-    });
 }
 
 function addToFavorites(petId) {

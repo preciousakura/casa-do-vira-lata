@@ -35,10 +35,9 @@
           Desde já, obrigado pelo seu interesse em se juntar a nós na <span>Casa do Vira-Lata</span>.
         </p>
       </div>
-      <form>
-          <textarea placeholder="Conte-nos sobre você e porque quer fazer parte da casa do vira-lata" name="reason-text" rows="8" required></textarea>
-          <button type="submit" class="solicitation-button">Enviar</button>
-          </div>
+      <form onsubmit="submitModeratorRequest(event)">
+        <textarea id="reason" placeholder="Conte-nos sobre você e porque quer fazer parte da casa do vira-lata" name="reason" rows="8" required></textarea>
+        <button type="submit" class="solicitation-button">Enviar</button>
       </form>
     </main>
 
