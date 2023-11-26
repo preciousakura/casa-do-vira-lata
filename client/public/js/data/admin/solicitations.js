@@ -14,7 +14,7 @@ function createTableHeader(columns) {
 
 function createUserItem({ email, id, name, phone }) {
     return `
-        <tr>
+        <tr id="user-row-${id}">
           <td><a href="/user/${id}">${name}</a></td>
           <td>${email}</td>
           <td>${phone}</td>
