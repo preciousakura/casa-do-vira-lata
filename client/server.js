@@ -112,16 +112,9 @@ app.get("/user-default/solicitation",(req, res, next) => auth(req, res, next, { 
 //   }
 // });
 
-// app.get(
-//   "/user-default/my-adoptions",
-//   (req, res, next) => auth(req, res, next, { allowed: ["USER-DEFAULT"] }),
-//   (req, res) => {
-//     res.render("pages/user-default/my-adoptions", {
-//       user: req.cookies.user,
-//       data: mockAdoptions 
-//     });
-//   }
-// );
+app.get("/user-default/my-adoptions", (req, res, next) => auth(req, res, next, { allowed: ["USER-DEFAULT"] }), (req, res) => {
+  res.render("pages/user-default/my-adoptions", { user: req.cookies.user })
+});
 
 app.get("/moderator", (req, res, next) => auth(req, res, next, { allowed: ["MODERATOR"] }), (req, res) => {
   res.render("pages/moderator", { user: req.cookies.user });

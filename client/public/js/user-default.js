@@ -1,36 +1,30 @@
 async function submitModeratorRequest(event) {
   event.preventDefault();
-  const cookie = document.cookie.split("; ");
-  const user = cookie.find((row) => row.startsWith('user' + "="));
+  const user = getUserFromCookie();
+  if (user) {
+    const { id } = user;
 
-  if(user) {
-    const data = decodeURIComponent(user.split("=")[1]);
-    const json = data.startsWith("j:") ? data.substring(2) : data;
     try {
-      const reason = document.getElementById("reason").value;
-      const { id } = JSON.parse(json);
-
-      try {
-        const res = await fetch(`http://localhost:3001/send-user-solicitation-request`, {
+      const res = await fetch(
+        `http://localhost:3001/send-user-solicitation-request`,
+        {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ id, reason }),
-        })
+        }
+      );
 
-        const data = await res.json();
+      const data = await res.json();
 
-        if(res.ok) alert("Solicitação feita com sucesso!")
-        else alert(data.error)
-      } catch (err) {
-        alert(data.error)
-      }
-    } catch (error) {
-      console.error("Erro ao analisar dados do cookie:", error);
+      if (res.ok) alert("Solicitação feita com sucesso!");
+      else alert(data.error);
+    } catch (err) {
+      alert(data.error);
     }
   }
 }
 
-function getUserInfoFromCookie(cookieName) {
+function getUserFromCookie(cookieName) {
   const cookieString = document.cookie
     .split("; ")
     .find((row) => row.startsWith(cookieName + "="));
@@ -65,13 +59,13 @@ function addFavoriteToLocalStorage(petId) {
 
 function getFavoritesFromLocalStorage() {
   const favorites = localStorage.getItem("favorites");
-  const userfavorites = getUserInfoFromCookie("user")?.favorites;
+  const userfavorites = getUserFromCookie("user")?.favorites;
 
   return favorites ? JSON.parse(favorites) : userfavorites ?? [];
 }
 
 function addToFavorites(petId) {
-  const userInfo = getUserInfoFromCookie("user");
+  const userInfo = getUserFromCookie("user");
   const userId = userInfo.id ?? null;
 
   if (userId !== 0 && !userId) {
@@ -117,38 +111,28 @@ function getFavoritesFromLocalStorage() {
 
 document.addEventListener("DOMContentLoaded", function () {
   const searchButton = document.getElementById("searchButton");
-  const clearFiltersButton = document.getElementById('clearFiltersButton');
-
   if (searchButton) {
-    searchButton.addEventListener("click", () => {
-      const type = document.querySelector(".filters__select__type").value;
-      const size = document.querySelector(".filters__select__size").value;
-      const gender = document.querySelector(".filters__select__gender").value;
-      const name = document.getElementById("filterSearch").value;
-      const castrated = document.getElementById("castrated").checked;
-      const vaccinated = document.getElementById("vaccinated").checked;
-      const dewormed = document.getElementById("dewormed").checked;
-
-      applyFilters(type, size, gender, name, castrated, vaccinated, dewormed);
-    });
-  }
-  if (clearFiltersButton) {
-    clearFiltersButton.addEventListener('click', clearFilters);
+    searchButton.addEventListener("click", applyFilters);
   }
 });
 
-
-function applyFilters(type = "Todos", size = "Todos", gender = "Todos", name = "", castrated = false, vaccinated = false, dewormed = false) {
+function applyFilters() {
+  const type = document.querySelector(".filters__select__type").value;
+  const size = document.querySelector(".filters__select__size").value;
+  const gender = document.querySelector(".filters__select__gender").value;
+  const name = document.getElementById("filterSearch").value;
+  const castrated = document.getElementById("castrated").checked;
+  const vaccinated = document.getElementById("vaccinated").checked;
+  const dewormed = document.getElementById("dewormed").checked;
   fetch(
-      `${backendUrl}/petsFilter?type=${type}&size=${size}&gender=${gender}&name=${name}&castrated=${castrated}&vaccinated=${vaccinated}&dewormed=${dewormed}`
+    `${backendUrl}/petsFilter?type=${type}&size=${size}&gender=${gender}&name=${name}&castrated=${castrated}&vaccinated=${vaccinated}&dewormed=${dewormed}`
   )
-  .then((response) => response.json())
-  .then((data) => {
+    .then((response) => response.json())
+    .then((data) => {
       updatePetList(data);
-  })
-  .catch((error) => console.error("Erro ao aplicar filtros:", error));
+    })
+    .catch((error) => console.error("Erro ao aplicar filtros:", error));
 }
-
 
 function updatePetList(pets) {
   const listContainer = document.querySelector(".list");
@@ -183,16 +167,4 @@ function updatePetList(pets) {
       </div>
     `;
   });
-}
-
-function clearFilters() {
-  document.getElementById('filterType').selectedIndex = 0;
-  document.getElementById('filterSize').selectedIndex = 0;
-  document.getElementById('filterGender').selectedIndex = 0;
-  document.getElementById('filterSearch').value = '';
-  document.getElementById('castrated').checked = false;
-  document.getElementById('vaccinated').checked = false;
-  document.getElementById('dewormed').checked = false;
-
-  applyFilters(); 
 }
