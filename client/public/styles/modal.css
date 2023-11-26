@@ -1,18 +1,14 @@
-/* Estilos para o fundo escurecido */
 .modal_fade {
-display: none;
-}
-.modal_fade--active {
-    display: flex; /* Escondido por padrão */
-    position: fixed; /* Fica fixo na tela */
-    z-index: 1000; /* Fica acima de outros elementos */
+    display: none;
+    position: fixed; 
+    z-index: 1000; 
     left: 0;
     top: 0;
-    width: 100%; /* Largura total */
-    height: 100%; /* Altura total */
-    background-color: rgba(0, 0, 0, 0.5); /* Fundo preto com opacidade */
+    width: 100%;
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.5);
 }
-/* Estilos para a caixa do modal */
+
 .modal-dialog {
     position: fixed;
     top: 50%;
@@ -25,7 +21,6 @@ display: none;
     min-height: 150px;
 }
 
-/* Estilos para o cabeçalho do modal */
 .modal-header {
     padding: 10px;
     border-bottom: 1px solid var(--primary-color);
@@ -34,7 +29,6 @@ display: none;
     align-items: center;
 }
 
-/* Estilos para o título do modal */
 .modal-title {
     margin: 0;
     line-height: 1.5;
@@ -42,7 +36,6 @@ display: none;
     font-weight: 600;
 }
 
-/* Estilos para o botão de fechar */
 .close {
     font-size: 1.5rem;
     font-weight: 700;
@@ -55,13 +48,11 @@ display: none;
     cursor: pointer;
 }
 
-/* Estilos para o corpo do modal */
 .modal-body {
     position: relative;
     padding: 15px;
 }
 
-/* Estilos para o rodapé do modal */
 .modal-footer {
     padding: 10px;
     text-align: right;

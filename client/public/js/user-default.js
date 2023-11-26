@@ -19,14 +19,13 @@ async function submitModeratorRequest(event) {
 
         const data = await res.json();
 
-        if(res.ok) alert("Solicitação feita com sucesso!")
-        else alert(data.error)
+        if(res.ok) openModal('modal-sucess-solicit-moder') 
+        else openModal('modal-error-solicit-moder')
       } catch (err) {
-        alert(data.error)
+        openModal('modal-error-solicit-moder')
       }
     } catch (error) {
-      console.error("Erro ao analisar dados do cookie:", error);
-    }
+      openModal('modal-error-solicit-moder')    }
   }
 }
 
