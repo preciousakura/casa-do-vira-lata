@@ -43,7 +43,7 @@ async function loadUsers(page = 1) {
       list.setAttribute('class', 'content-page-table__table');    
       items_area.innerHTML = ""
       items_area.appendChild(list);
-      items_area.innerHTML += loadPagination({ page, total, size: 10 });
+      loadPagination({ page, total, size: 10 }, loadUsers, items_area);
       return;
     }
     
@@ -55,22 +55,3 @@ async function loadUsers(page = 1) {
 }
   
 loadUsers();
-
-
-// <% if(data.length > 0) { %>
-//     <table class="content-page-table__table">
-
-//       <tbody>
-//         <% data.forEach(function(user) { %>
-
-//         <% }) %>
-//       </tbody>
-//     </table>
-//     <% } else { %>
-//     <div class="list__no-result">
-//       <p><%= !(typeof(message) === "undefined") ? message : "Sem resultados" %></p>
-//     </div>
-//     <% } %>
-//     <div class="content-page-table__pagination">
-//       <%- include('../../partials/pagination'); %>
-//     </div>

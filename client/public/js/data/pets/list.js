@@ -45,7 +45,7 @@ async function loadPets(page = 1) {
     list.setAttribute('class', 'list');    
     items_area.innerHTML = ""
     items_area.appendChild(list);
-    items_area.innerHTML += loadPagination({ page, total, size: 9 });
+    loadPagination({ page, total, size: 9 }, loadPets, items_area);
     return;
   }
   
