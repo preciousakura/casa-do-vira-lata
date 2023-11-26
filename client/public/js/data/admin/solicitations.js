@@ -1,4 +1,4 @@
-const COLUMNS = ['Nome', 'E-mail', 'Telefone', 'Cargo', 'Opções']
+const COLUMNS = ['Nome', 'E-mail', 'Telefone', 'Opções']
 
 function createTableHeader(columns) {
     const thead = document.createElement('thead');
@@ -12,27 +12,26 @@ function createTableHeader(columns) {
     return thead;
 }
 
-function createUserItem({ email, id, name, phone, role }) {
+function createUserItem({ email, id, name, phone }) {
     return `
         <tr>
           <td><a href="/user/${id}">${name}</a></td>
           <td>${email}</td>
           <td>${phone}</td>
-          <td>${role}</td>
           <td class="table-actions">
             <button class="edit-button">
-              <i class="ph-fill ph-pencil"></i>
+                <i class="ph-fill ph-check-fat"></i>
             </button>
             <button class="delete-button">
-              <i class="ph ph-trash"></i>
+                <i class="ph ph-trash"></i>
             </button>
-          </td>
+        </td>
         </tr>
     `
 }
 
-async function loadUsers(page = 1) {
-    const res = await fetch(`http://localhost:3001/users?page=${page}&size=10`);
+async function loadSolicitations(page = 1) {
+    const res = await fetch(`http://localhost:3001/solicitations?page=${page}&size=10`);
     const data = await res.json();
     const items_area = document.getElementById('items_area');
 
@@ -53,13 +52,13 @@ async function loadUsers(page = 1) {
       list.appendChild(createTableHeader(COLUMNS))
 
       items.forEach(item => {
-        const { email, id, name, phone, role } = item;
-        list.innerHTML += createUserItem({ email, id, name, phone, role });
+        const { email, id, name, phone } = item;
+        list.innerHTML += createUserItem({ email, id, name, phone });
       });
       list.setAttribute('class', 'content-page-table__table');    
       items_area.innerHTML = ""
       items_area.appendChild(list);
-      loadPagination({ page, total, size: 10 }, loadUsers, items_area);
+      loadPagination({ page, total, size: 10 }, loadSolicitations, items_area);
       return;
     }
     
@@ -70,4 +69,4 @@ async function loadUsers(page = 1) {
     items_area.appendChild(list);
 }
   
-loadUsers();
+loadSolicitations();

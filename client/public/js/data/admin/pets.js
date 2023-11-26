@@ -1,4 +1,4 @@
-const COLUMNS = ['Nome', 'E-mail', 'Telefone', 'Cargo', 'Opções']
+const COLUMNS = ['Nome', 'Tipo', 'Sexo', 'Tamanho', 'Opções']
 
 function createTableHeader(columns) {
     const thead = document.createElement('thead');
@@ -12,13 +12,13 @@ function createTableHeader(columns) {
     return thead;
 }
 
-function createUserItem({ email, id, name, phone, role }) {
+function createUserItem({ id, name, type, gender, size }) {
     return `
         <tr>
           <td><a href="/user/${id}">${name}</a></td>
-          <td>${email}</td>
-          <td>${phone}</td>
-          <td>${role}</td>
+          <td>${type}</td>
+          <td>${gender}</td>
+          <td>${size}</td>
           <td class="table-actions">
             <button class="edit-button">
               <i class="ph-fill ph-pencil"></i>
@@ -31,8 +31,8 @@ function createUserItem({ email, id, name, phone, role }) {
     `
 }
 
-async function loadUsers(page = 1) {
-    const res = await fetch(`http://localhost:3001/users?page=${page}&size=10`);
+async function loadTablePets(page = 1) {
+    const res = await fetch(`http://localhost:3001/pets?page=${page}&size=10`);
     const data = await res.json();
     const items_area = document.getElementById('items_area');
 
@@ -51,15 +51,14 @@ async function loadUsers(page = 1) {
     if(items.length > 0) { 
       const list = document.createElement('table');
       list.appendChild(createTableHeader(COLUMNS))
-
       items.forEach(item => {
-        const { email, id, name, phone, role } = item;
-        list.innerHTML += createUserItem({ email, id, name, phone, role });
+        const { id, name, type, gender, size } = item;
+        list.innerHTML += createUserItem({ id, name, type, gender, size });
       });
       list.setAttribute('class', 'content-page-table__table');    
       items_area.innerHTML = ""
       items_area.appendChild(list);
-      loadPagination({ page, total, size: 10 }, loadUsers, items_area);
+      loadPagination({ page, total, size: 10 }, loadTablePets, items_area);
       return;
     }
     
@@ -70,4 +69,4 @@ async function loadUsers(page = 1) {
     items_area.appendChild(list);
 }
   
-loadUsers();
+loadTablePets();

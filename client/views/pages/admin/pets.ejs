@@ -49,47 +49,11 @@
             </div>
           </div>
         </div>
-        <% if(data.length > 0) { %>
-        <table class="content-page-table__table">
-          <thead>
-            <tr>
-              <th class="table-header">Nome</th>
-              <th class="table-header">Tipo</th>
-              <th class="table-header">Sexo</th>
-              <th class="table-header">Tamanho</th>
-              <th class="table-header">opções</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% data.forEach(function(pet) { %>
-            <tr>
-              <td><%= pet.name %></td>
-              <td><%= pet.type %></td>
-              <td><%= pet.gender %></td>
-              <td><%= pet.size %></td>
-              <td class="table-actions">
-                <button class="edit-button">
-                  <i class="ph-fill ph-pencil"></i>
-                </button>
-                <button class="delete-button">
-                  <i class="ph ph-trash"></i>
-                </button>
-              </td>
-            </tr>
-            <% }); %>
-          </tbody>
-        </table>
-        <% } else { %>
-        <div class="list__no-result">
-          <p><%= !(typeof(message) === "undefined") ? message : "Sem resultados" %></p>
-        </div>
-        <% } %>
-        <div class="content-page-table__pagination">
-          <%- include('../../partials/pagination'); %>
-        </div>
+        <div id="items_area"></div>
       </div>
     </main>
-
+    <script src="/js/data/admin/pets.js"></script>
+    <script src="/js/pagination.js"></script>
     <footer class="footer"><%- include('../../partials/footer'); %></footer>
   </body>
 </html>
