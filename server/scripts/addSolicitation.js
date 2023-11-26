@@ -3,28 +3,19 @@ const path = require("path");
 
 function addSolicitation(userId, reason, callback) {
   const usersFilePath = path.join(__dirname, "../data/users/list.json");
-  const solicitationsFilePath = path.join(
-    __dirname,
-    "../data/users/solicitations.json"
-  );
+  const solicitationsFilePath = path.join(__dirname, "../data/users/solicitations.json");
 
   fs.readFile(usersFilePath, "utf8", (err, usersData) => {
-    if (err) {
-      return callback(err);
-    }
-
+    if (err) return callback(err);
+    
     try {
       const users = JSON.parse(usersData);
       const user = users.items.find((u) => u.id == userId);
 
-      if (!user) {
-        return callback(new Error("Usuário não encontrado"));
-      }
+      if (!user) return callback(new Error("Usuário não encontrado"))
 
       fs.readFile(solicitationsFilePath, "utf8", (solicitErr, solicitData) => {
-        if (solicitErr) {
-          return callback(solicitErr);
-        }
+        if (solicitErr) return callback(solicitErr);
 
         try {
           const solicitations = JSON.parse(solicitData);
@@ -36,7 +27,6 @@ function addSolicitation(userId, reason, callback) {
             reason: reason,
           });
 
-          // Salvar o arquivo atualizado
           fs.writeFile(
             solicitationsFilePath,
             JSON.stringify(solicitations, null, 2),
@@ -45,7 +35,7 @@ function addSolicitation(userId, reason, callback) {
               if (writeErr) {
                 return callback(writeErr);
               }
-              callback(null, "Solicitação adicionada com sucesso");
+              callback(null, "Solicitação realizada com sucesso!");
             }
           );
         } catch (parseSolicitError) {

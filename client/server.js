@@ -78,14 +78,22 @@ app.get("/user-default", (req, res, next) => auth(req, res, next, { allowed: ["U
     res.render("pages/user-default", { user: req.cookies.user });
 });
 
-app.get("/user-default/solicitation",(req, res, next) => auth(req, res, next, { allowed: ["USER-DEFAULT"] }), (req, res) => {
-    res.render("pages/user-default/solicitation", { user: req.cookies.user });
+app.get("/user-default/solicitation",(req, res, next) => auth(req, res, next, { allowed: ["USER-DEFAULT"] }), async (req, res) => {
+  try {
+    const { id, role } = req.cookies.user;
+    const response = await fetch(`http://localhost:3001/verify-moderator?id=${id}&role=${role}`);
+    const data = await response.json();
+    if(data.message || !data.permission) res.render("pages/error/solicitation-reject", { user: req.cookies.user });
+    else if(data.permission) res.render("pages/user-default/solicitation", { user: req.cookies.user });
+  } catch (err) {
+    res.render("pages/error/solicitation-reject", { user: req.cookies.user });
+  }
 });
 
 // app.get("/user-default/adoption", async (req, res) => {
 //   const petId = req.query.petId;
 //   try {
-//     const response = await fetch(`http://localhost:3001/pets/${petId}`);
+
 //     if (!response.ok) {
 //       throw new Error("Failed to fetch pet details");
 //     }

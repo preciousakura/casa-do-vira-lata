@@ -1,3 +1,29 @@
 {
-  "items": []
+  "items": [    {
+    "name": "Ana Vitória Rocha",
+    "id": 1,
+    "email": "luiz-otavioferreira@example.org",
+    "phone": "71 9253-4404",
+    "password": "xU#el0As(O1J",
+    "role": "USER-DEFAULT",
+    "favorites": []
+  },
+  {
+    "name": "Maria Alice Dias",
+    "id": 21,
+    "email": "pintodaniel@example.org",
+    "phone": "(084) 8201-3894",
+    "password": "x+8wZHcPy@p1",
+    "role": "USER-DEFAULT",
+    "favorites": []
+  },
+  {
+    "name": "Larissa Mendes",
+    "id": 19,
+    "email": "luigi15@example.org",
+    "phone": "51 9677 9256",
+    "password": "8lX1(tCm*m3Z",
+    "role": "USER-DEFAULT",
+    "favorites": []
+  }]
 }

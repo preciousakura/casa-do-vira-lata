@@ -21,7 +21,7 @@
       "email": "luiz-otavioferreira@example.org",
       "phone": "71 9253-4404",
       "password": "xU#el0As(O1J",
-      "role": "MODERATOR",
+      "role": "USER-DEFAULT",
       "favorites": []
     },
     {
@@ -30,7 +30,7 @@
       "email": "pintodaniel@example.org",
       "phone": "(084) 8201-3894",
       "password": "x+8wZHcPy@p1",
-      "role": "MODERATOR",
+      "role": "USER-DEFAULT",
       "favorites": []
     },
     {
@@ -39,7 +39,7 @@
       "email": "luigi15@example.org",
       "phone": "51 9677 9256",
       "password": "8lX1(tCm*m3Z",
-      "role": "MODERATOR",
+      "role": "USER-DEFAULT",
       "favorites": []
     }
   ]

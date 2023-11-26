@@ -1,15 +1,42 @@
 .main-adoption, .main-user-solicitation {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
   max-width: 1300px;
   margin: 0 auto;
   padding: 5rem;
+}
+
+.box-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  margin-top: 17px;
+}
+
+.box-text p {
+  font-size: 1.8rem;
+  text-align: justify;
+}
+
+.box-text p > span {
+  color: var(--primary-color);
+}
+
+.main-user-solicitation .title h2 {
+  color: var(--text-color);
+  text-align: left;
+  font-size: 4rem;
+  font-weight: 600;
+}
+
+.solicitation-button {
+  width: max-content
+}
+
+/* er-solicitation textarea {
   width: 100%;
 }
-.main-user-solicitation textarea {
-  width: 100%;
-}
+
+
 .user-solicitation-form__group {
   display: flex;
   flex-direction: column;
@@ -18,7 +45,6 @@
   width: 500px;
 }
 .user-solicitation-form__group .form-group{
-
   width: 100%;
 }
 .user-solicitation-form {
@@ -59,19 +85,7 @@
   max-width: 300px;
 }
 
-.form-group input,
-.form-group select,
-.form-group textarea {
-  width: 90%;
-  padding: 0.5rem 10px;
-  margin-bottom: 1rem;
-  border: 1px solid var(--border-color);
-  border-radius: 7px;
-  height: 43px;
-}
-.form-group input {
-  height: 23px;
-}
+
 .submit-button {
   background-color: var(--primary-color);
   color: white;
@@ -101,4 +115,4 @@
 .adoption-form__group--title {
   margin: 10px 0;
   font-size: 2rem;
-}
+} */
