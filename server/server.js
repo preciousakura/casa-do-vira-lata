@@ -3,7 +3,7 @@ const cors = require('cors');
 const app = express();
 const port = 3001;
 
-const addFavorite = require('./scripts/favorites');
+const {addFavorite, removeFavorite} = require('./scripts/favorites');
 const findUserByCredentials = require('./scripts/users');
 const paginatedData = require('./scripts/paginated-data');
 const { acceptModerator, rejectModerator, acceptAllModerators, rejectAllModerators } = require('./scripts/moderatorManagement');
@@ -30,6 +30,7 @@ app.get('/verify-moderator', function (req, res) { return verifyPermission(req, 
 app.post('/send-user-solicitation-request', (req, res) => { return addSolicitation(req, res) });
 
 app.put('/user/:userId/favorites', addFavorite);
+app.delete('/user/:userId/favorites', removeFavorite);
 
 app.get('/usersCredentials', (req, res) => {
   const { email, password } = req.query;

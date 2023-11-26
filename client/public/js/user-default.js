@@ -47,8 +47,11 @@ function addToFavorites(petId) {
     return;
   }
 
+  let favorites = getFavoritesFromLocalStorage();
+  const method = favorites.includes(petId) ? "DELETE" : "PUT"; // Determine se deve adicionar ou remover
+
   fetch(`http://localhost:3001/user/${userId}/favorites`, {
-    method: "PUT",
+    method: method,
     headers: {
       "Content-Type": "application/json",
     },
@@ -56,20 +59,28 @@ function addToFavorites(petId) {
   })
     .then((response) => response.json())
     .then((data) => {
-      addFavoriteToLocalStorage(petId);
+      if (method === "PUT") {
+        addFavoriteToLocalStorage(petId);
+      } else {
+        removeFavoriteFromLocalStorage(petId);
+      }
       toggleFavoriteIcon(petId);
     })
-    .catch((error) => console.error("Erro ao adicionar aos favoritos:", error));
+    .catch((error) => console.error("Erro ao atualizar favoritos:", error));
 }
 
+function removeFavoriteFromLocalStorage(petId) {
+  let favorites = getFavoritesFromLocalStorage();
+  favorites = favorites.filter(favId => favId !== petId);
+  localStorage.setItem("favorites", JSON.stringify(favorites));
+}
 function toggleFavoriteIcon(petId) {
-  const favoriteIcons = document.querySelectorAll(
-    `i[onclick='addToFavorites(${petId})']`
-  );
+  const favoriteIcons = document.querySelectorAll(`i[onclick='addToFavorites(${petId})']`);
   favoriteIcons.forEach((icon) => {
-    icon.classList.add("favorite");
+    icon.classList.toggle("favorite");
   });
 }
+
 
 function getFavoritesFromLocalStorage() {
   const favorites = localStorage.getItem("favorites");
