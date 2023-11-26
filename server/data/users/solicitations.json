@@ -1,15 +1,6 @@
 {
   "items": [
     {
-      "name": "Larissa Mendes",
-      "id": 19,
-      "email": "luigi15@example.org",
-      "phone": "51 9677 9256",
-      "password": "8lX1(tCm*m3Z",
-      "role": "USER-DEFAULT",
-      "favorites": []
-    },
-    {
       "name": "Cinthia Maria Andrade da Silva",
       "id": 0,
       "email": "cinthiagatinha@gmail.com",

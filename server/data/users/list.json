@@ -5,7 +5,7 @@
       "name": "Cinthia Maria Andrade da Silva",
       "email": "cinthiagatinha@gmail.com",
       "password": "12345678",
-      "role": "USER-DEFAULT",
+      "role": "ADMIN",
       "phone": "(85) 9 8965-1350",
       "favorites": [
         554,
@@ -18,7 +18,8 @@
         988,
         4,
         642,
-        922
+        922,
+        654
       ]
     },
     {
@@ -45,7 +46,7 @@
       "email": "luigi15@example.org",
       "phone": "51 9677 9256",
       "password": "8lX1(tCm*m3Z",
-      "role": "USER-DEFAULT",
+      "role": "MODERADOR",
       "favorites": []
     }
   ]
