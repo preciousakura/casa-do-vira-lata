@@ -42,7 +42,7 @@ function acceptAdoption(req, res) {
                         let pets = JSON.parse(petsData);
                         const petIndex = pets.items.findIndex(pet => pet.id == petId);
                         if (petIndex !== -1) {
-                            pets.items[petIndex].status = "Adopted";
+                            pets.items[petIndex].status = "Adotado";
                         }
 
                         fs.writeFile(petsFilePath, JSON.stringify(pets, null, 2), "utf8", petsWriteErr => {

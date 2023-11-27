@@ -33,3 +33,27 @@ function closeModalErrorSolicitAdopt(){
     closeModal('modal-error-solicit-adopt')
 
 }
+function closeModalSuccessSolicitAnimal(){
+    window.location.href = '/moderator';
+    closeModal('modal-sucess-solicit-animal')
+
+}
+function closeModalErrorSolicitAnimal(){
+   
+    closeModal('modal-error-solicit-animal')
+
+}
+function closeModalSuccessSolicitListModSolic(){
+    closeModal('modal-sucess-solicit-listModSolic')
+
+}
+function closeModalErrorSolicitListModSolic(){
+   
+    closeModal('modal-error-solicit-listModSolic')
+
+}
+function closeModalErrorSolicitListRejeitMod(){
+   
+    closeModal('modal-error-solicit-rejeitMod')
+  
+}

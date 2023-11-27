@@ -1,3 +1,5 @@
+const backendUrl = "http://localhost:3001";
+
 async function submitModeratorRequest(event) {
   event.preventDefault();
   const user = getUserFromCookie();
@@ -86,55 +88,79 @@ function getFavoritesFromLocalStorage() {
   return favorites ? JSON.parse(favorites) : [];
 }
 
-// function applyFilters() {
-//   const type = document.querySelector(".filters__select__type").value;
-//   const size = document.querySelector(".filters__select__size").value;
-//   const gender = document.querySelector(".filters__select__gender").value;
-//   const name = document.getElementById("filterSearch").value;
-//   const castrated = document.getElementById("castrated").checked;
-//   const vaccinated = document.getElementById("vaccinated").checked;
-//   const dewormed = document.getElementById("dewormed").checked;
-//   fetch(
-//     `${backendUrl}/petsFilter?type=${type}&size=${size}&gender=${gender}&name=${name}&castrated=${castrated}&vaccinated=${vaccinated}&dewormed=${dewormed}`
-//   )
-//     .then((response) => response.json())
-//     .then((data) => {
-//       updatePetList(data);
-//     })
-//     .catch((error) => console.error("Erro ao aplicar filtros:", error));
-// }
+document.addEventListener("DOMContentLoaded", function () {
+  const searchButton = document.getElementById("searchButton");
+  const clearFiltersButton = document.getElementById('clearFiltersButton');
+  if (searchButton) {
+    searchButton.addEventListener("click", () => {
+      const type = document.querySelector(".filters__select__type").value;
+      const size = document.querySelector(".filters__select__size").value;
+      const gender = document.querySelector(".filters__select__gender").value;
+      const name = document.getElementById("filterSearch").value;
+      const castrated = document.getElementById("castrated").checked;
+      const vaccinated = document.getElementById("vaccinated").checked;
+      const dewormed = document.getElementById("dewormed").checked;
 
-// function updatePetList(pets) {
-//   const listContainer = document.querySelector(".list");
-//   if (!listContainer) return;
+      applyFilters(type, size, gender, name, castrated, vaccinated, dewormed);
+    });
+  }
+  if (clearFiltersButton) {
+    clearFiltersButton.addEventListener('click', clearFilters);
+  }
+});
 
-//   listContainer.innerHTML = "";
+function applyFilters(type = "Todos", size = "Todos", gender = "Todos", name = "", castrated = false, vaccinated = false, dewormed = false) {
+  fetch(
+    `${backendUrl}/petsFilter?type=${type}&size=${size}&gender=${gender}&name=${name}&castrated=${castrated}&vaccinated=${vaccinated}&dewormed=${dewormed}`
+    )
+    .then((response) => response.json())
+    .then((data) => {
+      updatePetList(data);
+    })
+    .catch((error) => console.error("Erro ao aplicar filtros:", error));
+}
+function clearFilters() {
+  document.getElementById('filterType').selectedIndex = 0;
+  document.getElementById('filterSize').selectedIndex = 0;
+  document.getElementById('filterGender').selectedIndex = 0;
+  document.getElementById('filterSearch').value = '';
+  document.getElementById('castrated').checked = false;
+  document.getElementById('vaccinated').checked = false;
+  document.getElementById('dewormed').checked = false;
 
-//   pets?.forEach((pet) => {
-//     listContainer.innerHTML += `
-//       <div class="list__item">
-//         <div class="list__item__image">
-//           <img src="${pet.image}" alt="Imagem do pet" />
-//         </div>
-//         <div class="list__item__header">
-//           <h2>${pet.name}</h2>
-//           <div class="list__item__header--right">
-//           
-//             <i class="ph-fill ph-heart ${
-//               pet.isFavorite ? "favorite" : ""
-//             }" onclick="addToFavorites(${pet.id})"></i>
-//           </div>
-//         </div>
-//         <div class="list__item__description">
-//           <p><b>Idade:</b> ${pet.age} anos</p>
-//           <p><b>Sexo:</b> ${pet.gender}</p>
-//         </div>
-//         <div class="list__item__tags">
-//           ${pet.castrated ? "<span>Castrado</span>" : ""}
-//           ${pet.vaccinated ? "<span>Vacinado</span>" : ""}
-//           ${pet.dewormed ? "<span>Vermificado</span>" : ""}
-//         </div>
-//       </div>
-//     `;
-//   });
-// }
+  applyFilters(); 
+}
+function updatePetList(pets) {
+  const listContainer = document.querySelector(".list");
+  if (!listContainer) return;
+
+  listContainer.innerHTML = "";
+
+  pets?.forEach((pet) => {
+    listContainer.innerHTML += `
+      <div class="list__item">
+        <div class="list__item__image">
+          <img src="${pet.image}" alt="Imagem do pet" />
+        </div>
+        <div class="list__item__header">
+          <h2>${pet.name}</h2>
+          <div class="list__item__header--right">
+            <!-- Adicione aqui lógica para verificar se o usuário é 'USER-DEFAULT' -->
+            <i class="ph-fill ph-heart ${
+              pet.isFavorite ? "favorite" : ""
+            }" onclick="addToFavorites(${pet.id})"></i>
+          </div>
+        </div>
+        <div class="list__item__description">
+          <p><b>Idade:</b> ${pet.age} anos</p>
+          <p><b>Sexo:</b> ${pet.gender}</p>
+        </div>
+        <div class="list__item__tags">
+          ${pet.castrated ? "<span>Castrado</span>" : ""}
+          ${pet.vaccinated ? "<span>Vacinado</span>" : ""}
+          ${pet.dewormed ? "<span>Vermificado</span>" : ""}
+        </div>
+      </div>
+    `;
+  });
+}

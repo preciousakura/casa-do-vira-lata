@@ -51,6 +51,11 @@
                 <option value="Grande">Grande</option>
               </select>
             </div>
+            <div class="form-group">
+              <label for="image">URL da Imagem:</label>
+              <input type="text" id="image" name="image" required />
+            </div>
+            
             <div class="form-group--line">
               <label for="is-castrado">O animal é castrado?</label>
               <input type="checkbox" id="castrated" name="castrated" />
@@ -70,6 +75,23 @@
         </form>
       </section>
     </main>
+    <%- include('../../partials/modal', { 
+      modalId: 'modal-sucess-solicit-animal', 
+      title: 'Solicitação enviada!', 
+      body: '<p>Solicitação de adoção enviada com sucesso, aguarde.</p>', 
+      footer: '', 
+      onClose: 'closeModalSuccessSolicitAnimal' 
+    }) %>
+    <%- include('../../partials/modal', { 
+      modalId: 'modal-error-solicit-animal', 
+      title: 'Ops!', 
+      body: '<p>Houve um erro ao fazer a solicitação de, tente novamente.</p>', 
+      footer: '', 
+      onClose: 'closeModalErrorSolicitAdopt' 
+    }) %>
+
+    <script src="/js/animal-register.js"></script> 
+    <script src="/js/modal.js"></script>
 
     <footer class="footer"><%- include('../../partials/footer'); %></footer>
   </body>
