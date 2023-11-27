@@ -35,6 +35,25 @@ app.get("/login", async (req, res) => {
   }
 });
 
+app.get("/signup", async (req, res) => {
+  try {
+    const response = await fetch("http://localhost:3001/me", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: JSON.stringify(req.cookies.user.token),
+      },
+    });
+
+    const data = await response.json();
+    console.log(data, req.cookies.user.token);
+    res.render("pages/login/signup");
+  } catch (err) {
+    console.log(err);
+    res.render("pages/login/signup");
+  }
+});
+
 app.post("/login", async (req, res) => {
   try {
     const response = await fetch("http://localhost:3001/login", {

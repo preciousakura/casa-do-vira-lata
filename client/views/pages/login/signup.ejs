@@ -13,8 +13,16 @@
       <section class="login login-image"></section>
       <section class="login login-form" id="login-form">
         <h2><span>Olá</span>, seja bem-vindo.</h2>
-        <p>É novo por aqui? <a href="/signup">Cadastre-se</a>.</p>
-        <form action="/login" method="post">
+        <p>Já tem uma conta? <a href="/login">Entre</a>.</p>
+        <form action="/signup" method="post">
+          <div class="form-group">
+            <label>Nome:</label>
+            <input type="text" name="name" required placeholder="Digite seu nome completo"/>
+            </div>
+          <div class="form-group">
+            <label for="phone">Telefone:</label>
+            <input placeholder="(99) 99999-9999" type="tel" id="phone" name="phone" />
+          </div>
           <div class="form-group">
             <label>E-mail:</label>
             <input type="email" name="email" required placeholder="Digite seu e-mail"/>
@@ -26,7 +34,7 @@
           <% if( typeof(error) != "undefined") { %>
             <p><%= error %></p>
           <% } %>
-          <button type="submit">Entrar</button>
+          <button type="submit">Cadastrar</button>
         </form>
       </section>
     </main>
