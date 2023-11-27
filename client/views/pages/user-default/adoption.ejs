@@ -186,16 +186,23 @@
         </form>
       </section>
     </main>
-    <!-- Modal de Sucesso -->
     <%- include('../../partials/modal', { 
-      modalId: 'modal-adoption', 
-      title: 'Solicitação enviada com sucesso!', 
-      body: 'Vamos analisar sua solicitação e logo mais entraremos em contato. Obrigada!', 
-      footer: '',
-      onClose: 'redirectToUserDefault'
+      modalId: 'modal-sucess-solicit-adopt', 
+      title: 'Solicitação enviada!', 
+      body: '<p>Solicitação de adoção enviada com sucesso, aguarde.</p>', 
+      footer: '', 
+      onClose: 'closeModalSuccessSolicitAdopt' 
     }) %>
-
+    <%- include('../../partials/modal', { 
+      modalId: 'modal-error-solicit-adopt', 
+      title: 'Ops!', 
+      body: '<p>Houve um erro ao fazer a solicitação de, tente novamente.</p>', 
+      footer: '', 
+      onClose: 'closeModalErrorSolicitAdopt' 
+    }) %>
     <footer class="footer"><%- include('../../partials/footer'); %></footer>
+    <script src="/js/modal.js"></script>
+
     <script src="/js/adoptionForm.js"></script>
   </body>
 </html>

@@ -23,3 +23,13 @@ function closeModalErrorSolicit(){
 
 }
 
+function closeModalSuccessSolicitAdopt(){
+    window.location.href = '/user-default';
+    closeModal('modal-sucess-solicit-adopt')
+
+}
+function closeModalErrorSolicitAdopt(){
+   
+    closeModal('modal-error-solicit-adopt')
+
+}
