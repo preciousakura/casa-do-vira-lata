@@ -18,6 +18,7 @@ const { filterPets, findPetById } = require("./scripts/filters");
 const {listAdoptions, listUserAdoptions} = require('./scripts/listAdoptions');
 const {acceptAdoption, rejectAdoption} = require('./scripts/adoption');
 const registerAnimal = require('./scripts/registerAnimal');
+const registerUser = require('./scripts/userRegistration');
 
 app.use(cors());
 app.use(express.json());
@@ -26,11 +27,25 @@ app.get('/me', verifyJWT, (req, res) => {
   return res.json({ token: req.token, user: req.user });
 });
 
-app.post('/login', async (req, res, next) => auth(req, res, next), (req, res) => {
-    const { id, role, name} = req.user
-    const token = jwt.sign({ id, role, name }, process.env.SECRET, { expiresIn: 100000 });
-    return res.json({ token: token, user: req.user });
-})
+app.post('/signup', registerUser);
+
+app.post('/login', (req, res) => {
+  const { email, password } = req.body;
+  const hashedPassword = sha512(password);
+
+  const usersFilePath = path.join(__dirname, './data/users/list.json');
+  const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf8'));
+  
+  const foundUser = users.find(user => user.email === email && user.password === hashedPassword);
+  
+  if (foundUser) {
+      const token = jwt.sign({ id: foundUser.id, role: foundUser.role, name: foundUser.name }, process.env.SECRET, { expiresIn: 100000 });
+      res.json({ token: token, user: foundUser });
+  } else {
+      res.status(401).json({ error: 'Invalid credentials' });
+  }
+});
+
 
 
 app.post('/logout', function(req, res) {
