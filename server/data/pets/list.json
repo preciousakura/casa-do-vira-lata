@@ -10,7 +10,8 @@
       "dewormed": false,
       "type": "Cachorro",
       "image": "https://images.unsplash.com/photo-1486365227551-f3f90034a57c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MjQ0NzZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTkxMzkyMTR8&ixlib=rb-4.0.3&q=80&w=1080",
-      "size": "Pequeno"
+      "size": "Pequeno",
+      "status": "Adopted"
     },
     {
       "id": 654,
@@ -34,7 +35,7 @@
       "dewormed": false,
       "type": "Gato",
       "image": "https://images.unsplash.com/photo-1550853123-b81beb0b1449?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MjQ0NzZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTkxMzkyMTV8&ixlib=rb-4.0.3&q=80&w=1080",
-      "size": "M\u00e9dio"
+      "size": "Médio"
     },
     {
       "id": 348,
@@ -52,7 +53,7 @@
       "id": 585,
       "name": "Sophie",
       "age": 8,
-      "gender": "F\u00eamea",
+      "gender": "Fêmea",
       "castrated": true,
       "vaccinated": false,
       "dewormed": true,
@@ -76,7 +77,7 @@
       "id": 114,
       "name": "Midnight",
       "age": 1,
-      "gender": "F\u00eamea",
+      "gender": "Fêmea",
       "castrated": false,
       "vaccinated": true,
       "dewormed": false,
@@ -88,7 +89,7 @@
       "id": 988,
       "name": "Leo",
       "age": 8,
-      "gender": "F\u00eamea",
+      "gender": "Fêmea",
       "castrated": false,
       "vaccinated": false,
       "dewormed": false,
@@ -100,19 +101,19 @@
       "id": 285,
       "name": "Jasper",
       "age": 5,
-      "gender": "F\u00eamea",
+      "gender": "Fêmea",
       "castrated": false,
       "vaccinated": true,
       "dewormed": false,
       "type": "Cachorro",
       "image": "https://images.unsplash.com/photo-1520552159191-e28a1d9f0d7e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MjQ0NzZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTkxMzkyMTZ8&ixlib=rb-4.0.3&q=80&w=1080",
-      "size": "M\u00e9dio"
+      "size": "Médio"
     },
     {
       "id": 721,
       "name": "Boots",
       "age": 5,
-      "gender": "F\u00eamea",
+      "gender": "Fêmea",
       "castrated": false,
       "vaccinated": false,
       "dewormed": true,
@@ -124,13 +125,13 @@
       "id": 915,
       "name": "Simba",
       "age": 11,
-      "gender": "F\u00eamea",
+      "gender": "Fêmea",
       "castrated": false,
       "vaccinated": true,
       "dewormed": true,
       "type": "Gato",
       "image": "https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MjQ0NzZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTkxMzkyMTZ8&ixlib=rb-4.0.3&q=80&w=1080",
-      "size": "M\u00e9dio"
+      "size": "Médio"
     },
     {
       "id": 597,
@@ -142,13 +143,13 @@
       "dewormed": false,
       "type": "Cachorro",
       "image": "https://images.unsplash.com/photo-1425082661705-1834bfd09dca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MjQ0NzZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTkxMzkyMTZ8&ixlib=rb-4.0.3&q=80&w=1080",
-      "size": "M\u00e9dio"
+      "size": "Médio"
     },
     {
       "id": 884,
       "name": "Lucky",
       "age": 6,
-      "gender": "F\u00eamea",
+      "gender": "Fêmea",
       "castrated": false,
       "vaccinated": false,
       "dewormed": true,
@@ -184,7 +185,7 @@
       "id": 10,
       "name": "Ginger",
       "age": 9,
-      "gender": "F\u00eamea",
+      "gender": "Fêmea",
       "castrated": true,
       "vaccinated": true,
       "dewormed": true,
@@ -202,7 +203,7 @@
       "dewormed": false,
       "type": "Gato",
       "image": "https://images.unsplash.com/photo-1573920111312-04f1b25c6b85?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MjQ0NzZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTkxMzkyMTd8&ixlib=rb-4.0.3&q=80&w=1080",
-      "size": "M\u00e9dio"
+      "size": "Médio"
     },
     {
       "id": 525,
@@ -220,7 +221,7 @@
       "id": 274,
       "name": "Zeus",
       "age": 1,
-      "gender": "F\u00eamea",
+      "gender": "Fêmea",
       "castrated": true,
       "vaccinated": true,
       "dewormed": false,
@@ -256,13 +257,13 @@
       "id": 986,
       "name": "Finn",
       "age": 7,
-      "gender": "F\u00eamea",
+      "gender": "Fêmea",
       "castrated": false,
       "vaccinated": true,
       "dewormed": false,
       "type": "Cachorro",
       "image": "https://images.unsplash.com/photo-1552474705-dd8183e00901?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MjQ0NzZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTkxMzkyMTh8&ixlib=rb-4.0.3&q=80&w=1080",
-      "size": "M\u00e9dio"
+      "size": "Médio"
     },
     {
       "id": 955,
@@ -304,7 +305,7 @@
       "id": 642,
       "name": "Pebbles",
       "age": 13,
-      "gender": "F\u00eamea",
+      "gender": "Fêmea",
       "castrated": true,
       "vaccinated": false,
       "dewormed": false,
@@ -316,7 +317,7 @@
       "id": 734,
       "name": "Romeo",
       "age": 4,
-      "gender": "F\u00eamea",
+      "gender": "Fêmea",
       "castrated": false,
       "vaccinated": true,
       "dewormed": false,
@@ -352,13 +353,13 @@
       "id": 192,
       "name": "Bruno",
       "age": 15,
-      "gender": "F\u00eamea",
+      "gender": "Fêmea",
       "castrated": false,
       "vaccinated": true,
       "dewormed": false,
       "type": "Cachorro",
       "image": "https://images.unsplash.com/photo-1618080206739-14e8ac105472?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MjQ0NzZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTkxMzkyMjB8&ixlib=rb-4.0.3&q=80&w=1080",
-      "size": "M\u00e9dio"
+      "size": "Médio"
     },
     {
       "id": 242,
@@ -388,13 +389,13 @@
       "id": 848,
       "name": "Angel",
       "age": 15,
-      "gender": "F\u00eamea",
+      "gender": "Fêmea",
       "castrated": true,
       "vaccinated": true,
       "dewormed": false,
       "type": "Gato",
       "image": "https://images.unsplash.com/photo-1523626797181-8c5ae80d40c2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MjQ0NzZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTkxMzkyMjF8&ixlib=rb-4.0.3&q=80&w=1080",
-      "size": "M\u00e9dio"
+      "size": "Médio"
     },
     {
       "id": 503,
@@ -412,7 +413,7 @@
       "id": 916,
       "name": "Mochi",
       "age": 3,
-      "gender": "F\u00eamea",
+      "gender": "Fêmea",
       "castrated": false,
       "vaccinated": false,
       "dewormed": true,
@@ -448,13 +449,13 @@
       "id": 311,
       "name": "Smudge",
       "age": 4,
-      "gender": "F\u00eamea",
+      "gender": "Fêmea",
       "castrated": true,
       "vaccinated": false,
       "dewormed": true,
       "type": "Gato",
       "image": "https://images.unsplash.com/photo-1538099130811-745e64318258?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MjQ0NzZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTkxMzkyMjJ8&ixlib=rb-4.0.3&q=80&w=1080",
-      "size": "M\u00e9dio"
+      "size": "Médio"
     },
     {
       "id": 611,
@@ -466,19 +467,19 @@
       "dewormed": true,
       "type": "Cachorro",
       "image": "https://images.unsplash.com/photo-1517423440428-a5a00ad493e8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MjQ0NzZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTkxMzkyMjJ8&ixlib=rb-4.0.3&q=80&w=1080",
-      "size": "M\u00e9dio"
+      "size": "Médio"
     },
     {
       "id": 843,
       "name": "Salem",
       "age": 6,
-      "gender": "F\u00eamea",
+      "gender": "Fêmea",
       "castrated": false,
       "vaccinated": true,
       "dewormed": true,
       "type": "Gato",
       "image": "https://images.unsplash.com/photo-1589656966895-2f33e7653819?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MjQ0NzZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTkxMzkyMjJ8&ixlib=rb-4.0.3&q=80&w=1080",
-      "size": "M\u00e9dio"
+      "size": "Médio"
     }
   ]
 }
