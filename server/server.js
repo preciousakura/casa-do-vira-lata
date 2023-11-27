@@ -21,7 +21,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/me', verifyJWT, (req, res) => {
-  return res.json({ token: token, user: req.user });
+  return res.json({ token: req.token, user: req.user });
 });
 
 app.post('/login', async (req, res, next) => auth(req, res, next), (req, res) => {
