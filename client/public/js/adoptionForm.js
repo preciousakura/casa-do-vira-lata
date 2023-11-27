@@ -38,7 +38,7 @@ async function adoptMe(e, petId, userId) {
     if(res.ok) alert("Solicitação de adoção realizada com sucesso!")
     else alert("Erro ao solicitar animal")
   } catch (err) {
-      alert("Erro ao solicitar animal")
+    alert("Erro ao solicitar animal")
   }
 }
 

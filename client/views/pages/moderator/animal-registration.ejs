@@ -12,14 +12,13 @@
 
     <main class="main-registration">
       <section class="title">
-        <h2>Cadastro de <span>Animal</span></h2>
+        <h2>Cadastro de <span>Pet</span></h2>
       </section>
 
       <section class="animal-form">
-        <h2>Formulário de Cadastro de Animal</h2>
         <form id="animalRegistrationForm" class="container-form-registration">
           <div class="animal-form__group">
-            <p class="animal-form__group--title">Informações do Animal</p>
+            <p class="animal-form__group--title">Informações do Pet</p>
             <div class="form-group">
               <label for="name">Nome:</label>
               <input type="text" id="name" name="name" required />
@@ -32,22 +31,38 @@
               <div class="form-group">
                 <label for="gender">Sexo:</label>
                 <select id="gender" name="gender">
-                  <option value="male">Macho</option>
-                  <option value="female">Fêmea</option>
+                  <option value="Macho">Macho</option>
+                  <option value="Fêmea">Fêmea</option>
                 </select>
               </div>
             </div>
             <div class="form-group">
-              <label for="species">Espécie:</label>
-              <input type="text" id="species" name="species" required />
+              <label for="type">Espécie:</label>
+              <select id="type" name="type">
+                <option value="Gato">Gato</option>
+                <option value="Cachorro">Cachorro</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="size">Tamanho:</label>
+              <select id="size" name="size">
+                <option value="Pequeno">Pequeno</option>
+                <option value="Médio">Médio</option>
+                <option value="Grande">Grande</option>
+              </select>
             </div>
             <div class="form-group--line">
               <label for="is-castrado">O animal é castrado?</label>
-              <input type="checkbox" id="yard" name="yard" />
+              <input type="checkbox" id="castrated" name="castrated" />
             </div>
             <div class="form-group--line">
                 <label for="is-castrado">O animal é vacinado?</label>
-                <input type="checkbox" id="yard" name="yard" />
+                <input type="checkbox" id="vaccinated" name="vaccinated" />
+              </div>
+
+              <div class="form-group--line">
+                <label for="is-castrado">O animal é vermifugado?</label>
+                <input type="checkbox" id="dewormed" name="dewormed" />
               </div>
           </div>
 

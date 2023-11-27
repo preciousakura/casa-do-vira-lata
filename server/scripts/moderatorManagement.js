@@ -26,7 +26,7 @@ function acceptModerator(req, res) {
         return;
       }
 
-      users.items[userIndex].role = "MODERADOR";
+      users.items[userIndex].role = "MODERATOR";
 
       fs.writeFile(
         usersFilePath,
@@ -166,7 +166,7 @@ function acceptAllModerators(req, res) {
             (user) => user.id == solicitation.id
           );
           if (userIndex != -1) {
-            users.items[userIndex].role = "MODERADOR";
+            users.items[userIndex].role = "MODERATOR";
           }
         });
 
@@ -215,7 +215,6 @@ function rejectAllModerators(req, res) {
     "../data/users/solicitations.json"
   );
 
-  // Simplesmente limpa o arquivo de solicitações
   fs.writeFile(
     solicitationsFilePath,
     JSON.stringify({ items: [] }, null, 2),

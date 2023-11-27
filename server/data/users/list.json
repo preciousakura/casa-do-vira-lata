@@ -7,20 +7,7 @@
       "password": "12345678",
       "role": "MODERATOR",
       "phone": "(85) 9 8965-1350",
-      "favorites": [
-        554,
-        585,
-        470,
-        348,
-        744,
-        285,
-        114,
-        988,
-        4,
-        642,
-        922,
-        654
-      ]
+      "favorites": []
     },
     {
       "name": "Ana Vitória Rocha",
@@ -37,7 +24,7 @@
       "email": "pintodaniel@example.org",
       "phone": "(084) 8201-3894",
       "password": "x+8wZHcPy@p1",
-      "role": "MODERADOR",
+      "role": "MODERATOR",
       "favorites": []
     },
     {
@@ -46,7 +33,7 @@
       "email": "luigi15@example.org",
       "phone": "51 9677 9256",
       "password": "8lX1(tCm*m3Z",
-      "role": "MODERADOR",
+      "role": "USER-DEFAULT",
       "favorites": []
     }
   ]

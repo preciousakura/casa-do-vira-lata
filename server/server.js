@@ -1,3 +1,6 @@
+require("dotenv-safe").config({ path: '.env' })
+const jwt = require('jsonwebtoken');
+
 const express = require("express");
 const cors = require('cors');
 const app = express();
@@ -5,6 +8,7 @@ const port = 3001;
 
 const {addFavorite, removeFavorite} = require('./scripts/favorites');
 const adoptPet = require('./scripts/adoptPet');
+const {auth, verifyJWT} = require('./scripts/auth');
 const findUserByCredentials = require('./scripts/users');
 const paginatedData = require('./scripts/paginated-data');
 const { acceptModerator, rejectModerator, acceptAllModerators, rejectAllModerators } = require('./scripts/moderatorManagement');
@@ -15,6 +19,21 @@ const {listAdoptions, listUserAdoptions} = require('./scripts/listAdoptions');
 const {acceptAdoption, rejectAdoption} = require('./scripts/adoption');
 app.use(cors());
 app.use(express.json());
+
+app.get('/me', verifyJWT, (req, res) => {
+  return res.json({ token: token, user: req.user });
+});
+
+app.post('/login', async (req, res, next) => auth(req, res, next), (req, res) => {
+    const { id, role, name} = req.user
+    const token = jwt.sign({ id, role, name }, process.env.SECRET, { expiresIn: 100000 });
+    return res.json({ token: token, user: req.user });
+})
+
+
+app.post('/logout', function(req, res) {
+    res.json({ auth: false, token: null });
+})
 
 app.get('/pets', function (req, res) { return paginatedData(req, res, './data/pets/list.json') })
 app.get('/users', function (req, res) { return paginatedData(req, res, './data/users/list.json') })

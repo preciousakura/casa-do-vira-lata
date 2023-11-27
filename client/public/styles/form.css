@@ -1,5 +1,10 @@
 select,
-input[type="text"], input[type="tel"], input#email, input[type="number"]{
+input[type="text"],
+input[type="tel"],
+input#email,
+input[type="number"],
+input[type="email"],
+input[type="password"] {
   padding: 1.3rem 5rem 1.3rem 1.3rem;
   background: var(--card-background);
   border-radius: 8px;
