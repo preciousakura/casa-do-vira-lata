@@ -17,7 +17,22 @@ app.get("/", (req, res) => {
 });
 
 app.get("/login", async (req, res) => {
-  res.render("pages/login");
+  try {
+    const response = await fetch("http://localhost:3001/me", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: JSON.stringify(req.cookies.user.token),
+      },
+    });
+
+    const data = await response.json();
+    console.log(data, req.cookies.user.token);
+    res.render("pages/login");
+  } catch (err) {
+    console.log(err);
+    res.render("pages/login");
+  }
 });
 
 app.post("/login", async (req, res) => {
@@ -29,14 +44,14 @@ app.post("/login", async (req, res) => {
     });
     const data = await response.json();
     if (response.ok) {
-      const name = data.user.name.split(' ');
+      const name = data.user.name.split(" ");
       res.cookie("user", {
         token: data.token,
         name: `${name[0]} ${name[name.length - 1]}`,
         id: data.user.id,
         role: data.user.role,
-        favorites: data.user.favorites
-      });      
+        favorites: data.user.favorites,
+      });
       switch (data.user.role) {
         case "USER-DEFAULT":
           res.redirect("/user-default");
