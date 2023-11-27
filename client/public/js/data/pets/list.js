@@ -21,7 +21,8 @@ function getFavoritesFromLocalStorage() {
   return favorites ? JSON.parse(favorites) : [];
 }
 
-function createPetItem({ age, castrated, dewormed, gender, id, image, name, size, type, vaccinated }, role, favorites) {
+function createPetItem({ age, castrated, dewormed, gender, id, image, name, size, type, vaccinated, status}, role, favorites) {
+  if(status !== null) return ``
   return `
     <div class="list__item">
       <div class="list__item__image">
@@ -66,8 +67,8 @@ async function loadPets(page = 1) {
 
   if(items.length > 0) { 
     items.forEach(item => {
-      const { age, castrated, dewormed, gender, id, image, name, size, type, vaccinated } = item;
-      list.innerHTML += createPetItem({ age, castrated, dewormed, gender, id, image, name, size, type, vaccinated }, user?.role, favorites);
+      const { age, castrated, dewormed, gender, id, image, name, size, type, vaccinated, status =null } = item;
+      list.innerHTML += createPetItem({ age, castrated, dewormed, gender, id, image, name, size, type, vaccinated , status}, user?.role, favorites);
     });
     list.setAttribute('class', 'list');    
     items_area.innerHTML = ""

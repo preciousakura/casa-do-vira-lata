@@ -44,7 +44,7 @@ async function adoptPet(req, res) {
                 const verify_exists = adoptions.items.find((item) => { return item.userId === Number(userId) && item.petId === Number(petId) });
                 if(verify_exists) return res.status(500).json({ error: "Já existe uma solicitação desse usuário para este pet." });
                 
-                adoptions.items.push({ ...req.body,status:'Pendente',  userId: Number(userId), petId: petId,  
+                adoptions.items.push({ status:'Em processo',  ...req.body,userId: Number(userId), petId: petId,  
                     ...pet, id: `${petId}${userId}`,  date: formatDate(new Date())});
                 fs.writeFile(adoptFilePath, JSON.stringify(adoptions, null, 2), "utf8", (writeErr) => {
                     if (writeErr) return res.status(500).json({ error: "Não foi possível salvar sua solicitação." });

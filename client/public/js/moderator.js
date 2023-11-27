@@ -41,3 +41,4 @@ function rejectAdoptionRequest(solicitationId) {
         })
         .catch(error => console.error('Erro:', error));
 }
+

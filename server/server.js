@@ -17,6 +17,8 @@ const { filterPets, findPetById } = require("./scripts/filters");
 
 const {listAdoptions, listUserAdoptions} = require('./scripts/listAdoptions');
 const {acceptAdoption, rejectAdoption} = require('./scripts/adoption');
+const registerAnimal = require('./scripts/registerAnimal');
+
 app.use(cors());
 app.use(express.json());
 
@@ -77,6 +79,7 @@ app.get('/user/:userId/adoptions', listUserAdoptions);
 app.put('/adoptions/:id/accept', acceptAdoption);
 app.delete('/adoptions/:id/reject', rejectAdoption);
 
+app.post('/registerAnimal', registerAnimal);
 app.listen(port, () => {
   console.log(`Servidor rodando em http://localhost:${port}`);
 });

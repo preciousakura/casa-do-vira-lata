@@ -27,19 +27,19 @@ function acceptModeratorRequest(userId) {
   fetch(`${backendUrl}/accept-moderator/${userId}`, { method: "PUT" })
     .then((response) => {
       if (response.ok) {
-        alert("Solicitação de moderação aceita com sucesso!");
+        openModal('modal-sucess-solicit-listModSolic')
         checkAndUpdateForEmptyTable()
         const row = document.getElementById(`user-row-${userId}`);
         if (row) {
           row.remove();
         }
       } else {
-        alert("Falha ao aceitar a solicitação de moderação.");
+        openModal('modal-error-solicit-listModSolic')
       }
     })
     .catch((error) => {
       console.error("Error:", error);
-      alert("Ocorreu um erro ao processar a solicitação.");
+      openModal('modal-error-solicit-listModSolic')
     });
 }
 
@@ -47,19 +47,20 @@ function rejectModeratorRequest(userId) {
   fetch(`${backendUrl}/reject-moderator/${userId}`, { method: "DELETE" })
     .then((response) => {
       if (response.ok) {
-        alert("Solicitação de moderação rejeitada com sucesso.");
+        
+        openModal('modal-error-solicit-rejeitMod')
         checkAndUpdateForEmptyTable()
         const row = document.getElementById(`user-row-${userId}`);
         if (row) {
           row.remove();
         }
       } else {
-        alert("Falha ao rejeitar a solicitação de moderação.");
+        openModal('modal-error-solicit-listModSolic')
       }
     })
     .catch((error) => {
       console.error("Error:", error);
-      alert("Ocorreu um erro ao processar a solicitação.");
+      openModal('modal-error-solicit-listModSolic')
     });
 }
 
@@ -67,16 +68,16 @@ function acceptAllModeratorRequests() {
     fetch(`${backendUrl}/accept-all-moderators`, { method: "PUT" })
       .then(response => {
         if (response.ok) {
-          alert("Todas as solicitações de moderação foram aceitas com sucesso!");
+          openModal('modal-sucess-solicit-listModSolic')
           removeTable()
           document.querySelectorAll("[id^='user-row-']").forEach(row => row.remove());
         } else {
-          alert("Falha ao aceitar todas as solicitações de moderação.");
+          openModal('modal-error-solicit-listModSolic')
         }
       })
       .catch(error => {
         console.error("Error:", error);
-        alert("Ocorreu um erro ao processar as solicitações.");
+        openModal('modal-error-solicit-listModSolic')
       });
   }
   
@@ -84,18 +85,17 @@ function acceptAllModeratorRequests() {
     fetch(`${backendUrl}/reject-all-moderators`, { method: "DELETE" })
       .then(response => {
         if (response.ok) {
-          alert("Todas as solicitações de moderação foram rejeitadas com sucesso.");
+          openModal('modal-error-solicit-rejeitMod')
           removeTable()
           // Remover todas as linhas da tabela
           document.querySelectorAll("[id^='user-row-']").forEach(row => row.remove());
         } else {
-          alert("Falha ao rejeitar todas as solicitações de moderação.");
+          openModal('modal-error-solicit-listModSolic')
         }
       })
       .catch(error => {
         console.error("Error:", error);
-        alert("Ocorreu um erro ao processar as solicitações.");
+        openModal('modal-error-solicit-listModSolic')
       });
   }
-
 

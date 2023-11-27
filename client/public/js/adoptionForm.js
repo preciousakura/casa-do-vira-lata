@@ -35,27 +35,14 @@ async function adoptMe(e, petId, userId) {
       },
       body: JSON.stringify(Object.fromEntries(data.entries())),
     })
-    if(res.ok) alert("Solicitação de adoção realizada com sucesso!")
-    else alert("Erro ao solicitar animal")
+    if(res.ok) openModal("modal-sucess-solicit-adopt");
+    else openModal("modal-error-solicit-adopt");
   } catch (err) {
-    alert("Erro ao solicitar animal")
+    openModal("modal-error-solicit-adopt");
   }
 }
 
 function redirectToUserDefault() {
   window.location.href = "/user-default";
 }
-function openModal(modalId) {
-  var modal = document.getElementById(modalId);
-  modal.classList.add("modal_fade--active");
-}
 
-function closeModal(modalId) {
-  var modal = document.getElementById(modalId);
-  modal.classList.remove("modal_fade--active");
-
-  var callbackName = modal.getAttribute("data-onclose");
-  if (callbackName && typeof window[callbackName] === "function") {
-    window[callbackName]();
-  }
-}
