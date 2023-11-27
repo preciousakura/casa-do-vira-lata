@@ -11,6 +11,7 @@ const { acceptModerator, rejectModerator, acceptAllModerators, rejectAllModerato
 const { addSolicitation, verifyPermission} = require('./scripts/addSolicitation');
 const { filterPets, findPetById } = require("./scripts/filters");
 
+const listAdoptions = require('./scripts/listAdoptions');
 
 app.use(cors());
 app.use(express.json());
@@ -51,7 +52,7 @@ app.get('/usersCredentials', (req, res) => {
 });
 
 app.get("/petsFilter", (req, res) => { filterPets(req, res, "./data/pets/list.json") });
-
+app.get('/adoptions', listAdoptions);
 app.listen(port, () => {
   console.log(`Servidor rodando em http://localhost:${port}`);
 });

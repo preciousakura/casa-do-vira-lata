@@ -17,6 +17,12 @@ function findElementById(path, id) {
       });
     });
 }
+function formatDate(date) {
+    const day = date.getDate().toString().padStart(2, '0');
+    const month = (date.getMonth() + 1).toString().padStart(2, '0'); // getMonth() retorna de 0-11
+    const year = date.getFullYear();
+    return `${day}/${month}/${year}`;
+}
 
 async function adoptPet(req, res) {
     const usersFilePath = path.join(__dirname, "../data/users/list.json");
@@ -29,7 +35,7 @@ async function adoptPet(req, res) {
     
     const user = await findElementById(usersFilePath, userId);
     const pet = await findElementById(petsFilePath, petId);
-
+console.log(user, pet)
     if(user || pet) {
         fs.readFile(adoptFilePath, "utf8", (err, data) => {
             if (err) return res.status(500).json({ error: "Internal Server Error" });
@@ -39,7 +45,7 @@ async function adoptPet(req, res) {
                 const verify_exists = adoptions.items.find((item) => { return item.userId === Number(userId) && item.petId === Number(petId) });
                 if(verify_exists) return res.status(500).json({ error: "Já existe uma solicitação desse usuário para este pet." });
                 
-                adoptions.items.push({ ...req.body, userId: Number(userId), petId: Number(petId) });
+                adoptions.items.push({ ...req.body, userId: Number(userId), ...pet,  date: formatDate(new Date())});
                 fs.writeFile(adoptFilePath, JSON.stringify(adoptions, null, 2), "utf8", (writeErr) => {
                     if (writeErr) return res.status(500).json({ error: "Não foi possível salvar sua solicitação." });
                     return res.json({ message: "Solicitação realizada com sucesso!" });  

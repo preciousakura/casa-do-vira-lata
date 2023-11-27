@@ -17,11 +17,11 @@
           <!-- Seção de busca, se necessário -->
         </div>
 
-        <% if(data.length > 0) { %>
+        <% if(data && data.length > 0) { %>
         <table class="content-page-table__table">
           <thead>
             <tr>
-              <th class="table-header">Nome do Solicitante</th>
+              <th class="table-header">Solicitante</th>
               <th class="table-header">Pet</th>
               <th class="table-header">Data da Solicitação</th>
               <th class="table-header">OPÇÕES</th>
@@ -30,20 +30,14 @@
           <tbody>
             <% data.forEach(function(solicitation) { %>
             <tr id="solicitation-row-<%= solicitation.id %>">
-              <td><%= solicitation.candidateName %></td>
-              <td><%= solicitation.petName %></td>
-              <td><%= solicitation.date %></td>
+              <td><%= solicitation.fullName %></td> <!-- Ajuste conforme seu modelo de dados -->
+              <td><%= solicitation.name %></td> <!-- Você pode precisar ajustar isso com base nos seus dados -->
+              <td><%= solicitation.date %></td> <!-- Certifique-se de que 'date' está presente nos seus dados -->
               <td class="table-actions">
-                <button
-                  class="edit-button"
-                  onclick="acceptAdoptionRequest(<%= solicitation.id %>)"
-                >
+                <button class="edit-button" onclick="acceptAdoptionRequest(<%= solicitation.id %>)">
                   <i class="ph-fill ph-check-fat"></i>
                 </button>
-                <button
-                  class="delete-button"
-                  onclick="rejectAdoptionRequest(<%= solicitation.id %>)"
-                >
+                <button class="delete-button" onclick="rejectAdoptionRequest(<%= solicitation.id %>)">
                   <i class="ph ph-trash"></i>
                 </button>
               </td>
@@ -53,7 +47,7 @@
         </table>
         <% } else { %>
         <div class="list__no-result">
-          <p><%= !(typeof(message) === "undefined") ? message : "Sem resultados" %></p>
+          <p>Sem resultados</p>
         </div>
         <% } %>
      

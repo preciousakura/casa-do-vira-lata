@@ -122,16 +122,27 @@ app.get("/moderator/animal-registration", (req, res, next) => auth(req, res, nex
   res.render("pages/moderator/animal-registration", { user: req.cookies.user });
 });
 
-// app.get(
-//   "/moderator/solicitations-adoptions",
-//   (req, res, next) => auth(req, res, next, { allowed: ["MODERATOR"] }),
-//   (req, res) => {
-//     res.render("pages/moderator/solicitations-adoptions", {
-//       user: req.cookies.user,
-//       data: mockAdoptionSolicitations 
-//     });
-//   }
-// );
+app.get("/moderator/solicitations-adoptions", (req, res, next) => {
+  auth(req, res, next, { allowed: ["MODERATOR"] });
+}, async (req, res) => {
+  try {
+    const response = await fetch(`http://localhost:3001/adoptions`);
+    const adoptions = await response.json();
+    console.log("adoptions", adoptions)
+    res.render("pages/moderator/solicitations-adoptions", {
+      user: req.cookies.user,
+      data: adoptions.items
+    });
+  } catch (error) {
+    console.error("Error fetching adoptions:", error);
+    res.render("pages/moderator/solicitations-adoptions", {
+      user: req.cookies.user,
+      data: [],
+      error: "Erro ao carregar solicitações de adoções."
+    });
+  }
+});
+
 
 app.use((req, res) => {
   res.status(404).render("pages/error/not-found", { user: req.cookies.user });
