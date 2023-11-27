@@ -83,6 +83,8 @@
 .next-button:hover {
   background-color: var(--background-light);
   border-radius: 100%;
+
+  border: 0;;
 }
 
 .prev-button i,
