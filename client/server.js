@@ -110,9 +110,30 @@ app.get("/user-default/adoption", (req, res, next) => auth(req, res, next, { all
   }
 });
 
-app.get("/user-default/my-adoptions", (req, res, next) => auth(req, res, next, { allowed: ["USER-DEFAULT"] }), (req, res) => {
-  res.render("pages/user-default/my-adoptions", { user: req.cookies.user })
+app.get("/user-default/my-adoptions", (req, res, next) => {
+  auth(req, res, next, { allowed: ["USER-DEFAULT"] });
+}, async (req, res) => {
+  const userId = req.cookies.user.id; // Obter o ID do usuário dos cookies
+  try {
+    const response = await fetch(`http://localhost:3001/user/${userId}/adoptions`);
+    if (!response.ok) {
+      throw new Error('Falha ao buscar adoções');
+    }
+    const adoptions = await response.json();
+    res.render("pages/user-default/my-adoptions", {
+      user: req.cookies.user,
+      adoptions: adoptions 
+    });
+  } catch (error) {
+    console.error("Erro ao carregar adoções:", error);
+    res.render("pages/user-default/my-adoptions", {
+      user: req.cookies.user,
+      adoptions: [],
+      error: "Erro ao carregar adoções."
+    });
+  }
 });
+
 
 app.get("/moderator", (req, res, next) => auth(req, res, next, { allowed: ["MODERATOR"] }), (req, res) => {
   res.render("pages/moderator", { user: req.cookies.user });
@@ -128,7 +149,6 @@ app.get("/moderator/solicitations-adoptions", (req, res, next) => {
   try {
     const response = await fetch(`http://localhost:3001/adoptions`);
     const adoptions = await response.json();
-    console.log("adoptions", adoptions)
     res.render("pages/moderator/solicitations-adoptions", {
       user: req.cookies.user,
       data: adoptions.items

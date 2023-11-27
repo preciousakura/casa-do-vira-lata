@@ -1,7 +1,6 @@
 async function submitModeratorRequest(event) {
   event.preventDefault();
   const user = getUserFromCookie();
-  console.log(user)
   if (user) {
     const { id } = user;
 
@@ -120,7 +119,7 @@ function getFavoritesFromLocalStorage() {
 //         <div class="list__item__header">
 //           <h2>${pet.name}</h2>
 //           <div class="list__item__header--right">
-//             <!-- Adicione aqui lógica para verificar se o usuário é 'USER-DEFAULT' -->
+//           
 //             <i class="ph-fill ph-heart ${
 //               pet.isFavorite ? "favorite" : ""
 //             }" onclick="addToFavorites(${pet.id})"></i>

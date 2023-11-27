@@ -35,7 +35,6 @@ async function adoptPet(req, res) {
     
     const user = await findElementById(usersFilePath, userId);
     const pet = await findElementById(petsFilePath, petId);
-console.log(user, pet)
     if(user || pet) {
         fs.readFile(adoptFilePath, "utf8", (err, data) => {
             if (err) return res.status(500).json({ error: "Internal Server Error" });

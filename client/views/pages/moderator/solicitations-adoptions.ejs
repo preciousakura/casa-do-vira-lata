@@ -14,7 +14,6 @@
       <div class="content-page-table-solicit-adoptions--max">
         <h1 class="content-page-table__title">Solicitações de Adoção</h1>
         <div class="content-page-table__search-form">
-          <!-- Seção de busca, se necessário -->
         </div>
 
         <% if(data && data.length > 0) { %>
@@ -30,9 +29,9 @@
           <tbody>
             <% data.forEach(function(solicitation) { %>
             <tr id="solicitation-row-<%= solicitation.id %>">
-              <td><%= solicitation.fullName %></td> <!-- Ajuste conforme seu modelo de dados -->
-              <td><%= solicitation.name %></td> <!-- Você pode precisar ajustar isso com base nos seus dados -->
-              <td><%= solicitation.date %></td> <!-- Certifique-se de que 'date' está presente nos seus dados -->
+              <td><%= solicitation.fullName %></td> 
+              <td><%= solicitation.name %></td> 
+              <td><%= solicitation.date %></td> 
               <td class="table-actions">
                 <button class="edit-button" onclick="acceptAdoptionRequest(<%= solicitation.id %>)">
                   <i class="ph-fill ph-check-fat"></i>
@@ -55,6 +54,6 @@
     </main>
 
     <footer class="footer"><%- include('../../partials/footer'); %></footer>
-    <script src="/js/moderator.js"></script> <!-- Ajuste o caminho do script conforme necessário -->
+    <script src="/js/moderator.js"></script> 
   </body>
 </html>

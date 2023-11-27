@@ -13,12 +13,37 @@
     <main>
       <div class="content-page-table--max"> 
         <h1 class="content-page-table__title">Minhas adoções</h1>
-        <div id="items_area"></div>
+        <% if (adoptions && adoptions?.length > 0) { %>
+          <table class="content-page-table__table">
+            <thead>
+              <tr>
+                <th>Nome do Pet</th>
+                <th>Idade do Pet</th>
+                <th>Sexo do Pet</th>
+                <th>Raçã do Pet</th>
+
+                <th>Data da Adoção</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% adoptions?.forEach(function(adoption) { %>
+                <tr>
+                  <td><%= adoption.name %></td>
+                  <td><%= adoption.age %></td>
+                  <td><%= adoption.gender %></td>
+                  <td><%= adoption.type %></td>
+
+                  <td><%= adoption.date %></td>
+                </tr>
+              <% }); %>
+            </tbody>
+          </table>
+        <% } else { %>
+          <p>Você ainda não realizou nenhuma adoção.</p>
+        <% } %>
       </div>
     </main>
-    
-    <script src="/js/data/pets/list.js"></script>
-    <script src="/js/pagination.js"></script>
+
     <footer class="footer"><%- include('../../partials/footer'); %></footer>
   </body>
 </html>
