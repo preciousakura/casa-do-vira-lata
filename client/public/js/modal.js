@@ -38,6 +38,12 @@ function closeModalSuccessSolicitAnimal(){
     closeModal('modal-sucess-solicit-animal')
 
 }
+
+function closeModalSuccessAnimalRegister(){
+    window.location.href = '/pets';
+    closeModal('modal-sucess-solicit-animal')
+
+}
 function closeModalErrorSolicitAnimal(){
    
     closeModal('modal-error-solicit-animal')

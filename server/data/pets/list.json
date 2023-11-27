@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "id": 42,
+      "name": "Gatito",
+      "age": 8,
+      "gender": "Macho",
+      "type": "Gato",
+      "size": "Médio",
+      "castrated": true,
+      "vaccinated": false,
+      "dewormed": false,
+      "image": "https://i.pinimg.com/originals/e6/ae/f7/e6aef707984ef7077e755ba2cfa2c936.jpg"
+    },
+    {
       "id": 922,
       "name": "Coco",
       "age": 13,
@@ -480,6 +492,18 @@
       "type": "Gato",
       "image": "https://images.unsplash.com/photo-1589656966895-2f33e7653819?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MjQ0NzZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTkxMzkyMjJ8&ixlib=rb-4.0.3&q=80&w=1080",
       "size": "Médio"
+    },
+    {
+      "id": 41,
+      "name": "Gatita",
+      "age": 8,
+      "gender": "Fêmea",
+      "type": "Gato",
+      "size": "Pequeno",
+      "castrated": true,
+      "vaccinated": true,
+      "dewormed": false,
+      "image": "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info"
     }
   ]
 }

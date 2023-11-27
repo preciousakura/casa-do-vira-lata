@@ -13,7 +13,7 @@ function registerAnimal(req, res) {
     try {
       const pets = JSON.parse(data);
       const newAnimal = { id: pets.items.length + 1, ...req.body };
-      pets.items.push(newAnimal);
+      pets.items.unshift(newAnimal);
 
       fs.writeFile(petsFilePath, JSON.stringify(pets, null, 2), "utf8", writeErr => {
         if (writeErr) {

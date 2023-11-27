@@ -77,15 +77,15 @@
     </main>
     <%- include('../../partials/modal', { 
       modalId: 'modal-sucess-solicit-animal', 
-      title: 'Solicitação enviada!', 
-      body: '<p>Solicitação de adoção enviada com sucesso, aguarde.</p>', 
+      title: 'Sucesso', 
+      body: '<p>Cadastro de animal finalizado com sucesso.</p>', 
       footer: '', 
-      onClose: 'closeModalSuccessSolicitAnimal' 
+      onClose: 'closeModalSuccessAnimalRegister' 
     }) %>
     <%- include('../../partials/modal', { 
       modalId: 'modal-error-solicit-animal', 
       title: 'Ops!', 
-      body: '<p>Houve um erro ao fazer a solicitação de, tente novamente.</p>', 
+      body: '<p>Houve um erro ao fazer o cadastro de, tente novamente.</p>', 
       footer: '', 
       onClose: 'closeModalErrorSolicitAdopt' 
     }) %>
