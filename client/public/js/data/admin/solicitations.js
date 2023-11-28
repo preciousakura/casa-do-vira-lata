@@ -1,4 +1,5 @@
 const COLUMNS = ['Nome', 'E-mail', 'Telefone', 'Opções']
+const user = getUserFromCookie();
 
 function createTableHeader(columns) {
     const thead = document.createElement('thead');
@@ -31,7 +32,7 @@ function createUserItem({ email, id, name, phone }) {
 }
 
 async function loadSolicitations(page = 1) {
-    const res = await fetch(`http://localhost:3001/solicitations?page=${page}&size=10`);
+    const res = await fetch(`http://localhost:3001/solicitations?page=${page}&size=10`, { headers: { Authorization: user.token } });
     const data = await res.json();
     const items_area = document.getElementById('items_area');
 

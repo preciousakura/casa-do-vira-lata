@@ -50,7 +50,6 @@
   background: var(--card-background);
   padding: 16px 15px;
   height: 60px;
-  max-width: 350px;
 }
 
 .card-options:hover {

@@ -62,9 +62,21 @@ app.post("/login", async (req, res) => {
   }
 });
 
-app.get("/logout", (req, res) => {
-  res.clearCookie("user");
-  res.redirect("/");
+app.get("/logout", async (req, res) => {
+  try {
+    const response = await fetch("http://localhost:3001/logout", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+    });
+    if (response.ok) {
+      res.clearCookie("user");
+      localStorage.removeItem('favorites')
+    } 
+    res.redirect("/");
+    
+  } catch (err) {
+    res.redirect("/");
+  }
 });
 
 app.get("/pets", (req, res) => {
@@ -118,7 +130,8 @@ app.get(
     try {
       const { id, role } = req.cookies.user;
       const response = await fetch(
-        `http://localhost:3001/verify-moderator?id=${id}&role=${role}`
+        `http://localhost:3001/verify-moderator?id=${id}&role=${role}`,
+        { headers: { Authorization: req.cookies.user.token } }
       );
       const data = await response.json();
       if (data.message || !data.permission)
@@ -141,7 +154,9 @@ app.get(
   async (req, res) => {
     const { petId } = req.query;
     try {
-      const response = await fetch(`http://localhost:3001/pets/${petId}`);
+      const response = await fetch(`http://localhost:3001/pets/${petId}`, {
+        headers: { Authorization: req.cookies.user.token },
+      });
       if (!response.ok) throw new Error("Failed to fetch pet details");
 
       const data = await response.json();
@@ -168,7 +183,8 @@ app.get(
     const userId = req.cookies.user.id; // Obter o ID do usuário dos cookies
     try {
       const response = await fetch(
-        `http://localhost:3001/user/${userId}/adoptions`
+        `http://localhost:3001/user/${userId}/adoptions`,
+        { headers: { Authorization: req.cookies.user.token } }
       );
       if (!response.ok) {
         throw new Error("Falha ao buscar adoções");
@@ -214,7 +230,9 @@ app.get(
   },
   async (req, res) => {
     try {
-      const response = await fetch(`http://localhost:3001/adoptions`);
+      const response = await fetch(`http://localhost:3001/adoptions`, {
+        headers: { Authorization: req.cookies.user.token },
+      });
       const adoptions = await response.json();
       res.render("pages/moderator/solicitations-adoptions", {
         user: req.cookies.user,
@@ -233,6 +251,10 @@ app.get(
 
 app.use((req, res) => {
   res.status(404).render("pages/error/not-found", { user: req.cookies.user });
+});
+
+app.use((req, res) => {
+  res.status(401).render("pages/error", { user: req.cookies.user });
 });
 
 app.listen(port, () => {

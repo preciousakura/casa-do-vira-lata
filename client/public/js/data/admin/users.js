@@ -1,5 +1,5 @@
 const COLUMNS = ['Nome', 'E-mail', 'Telefone', 'Cargo', 'Opções']
-
+const user = getUserFromCookie();
 
 function createTableHeader(columns) {
     const thead = document.createElement('thead');
@@ -14,7 +14,6 @@ function createTableHeader(columns) {
 }
 
 function createUserItem({ email, id, name, phone, role }) {
-  const user = getUserFromCookie();
   if(user?.id == id) return ``
     return `
         <tr id="user-row-${id}">
@@ -35,7 +34,7 @@ function createUserItem({ email, id, name, phone, role }) {
 }
 
 async function loadUsers(page = 1) {
-    const res = await fetch(`http://localhost:3001/users?page=${page}&size=10`);
+    const res = await fetch(`http://localhost:3001/users?page=${page}&size=10`, { headers: { Authorization: user.token } });
     const data = await res.json();
     const items_area = document.getElementById('items_area');
 
@@ -77,7 +76,8 @@ loadUsers();
 
 function deleteUser(userId) {
   fetch(`http://localhost:3001/users/${userId}`, {
-    method: 'DELETE'
+    method: 'DELETE',
+    headers: { Authorization: user.token }
   })
   .then(response => {
     if (response.ok) {

@@ -26,7 +26,7 @@ function verifyJWT(req, res, next) {
     const token = req.headers['authorization'];
     if (!token) return res.status(401).json({ auth: false, message: 'Sem token' });
     jwt.verify(token, process.env.SECRET, function(err, decoded) {
-      if (err) return res.status(500).json({ auth: false, message: 'Falha na autenticação' });
+      if (err) return res.status(401).json({ auth: false, message: 'Falha na autenticação' });
       const { id, name, role } = decoded;
       req.user = { id, name, role };
       req.token = token;
