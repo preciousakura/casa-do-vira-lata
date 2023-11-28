@@ -5,21 +5,13 @@
       "name": "Cinthia Maria Andrade da Silva",
       "email": "cinthiagatinha@gmail.com",
       "password": "12345678",
-      "role": "MODERATOR",
+      "role": "ADMIN",
       "phone": "(85) 9 8965-1350",
       "favorites": [
         848,
-        41
+        41,
+        42
       ]
-    },
-    {
-      "name": "Ana Vitória Rocha",
-      "id": 1,
-      "email": "luiz-otavioferreira@example.org",
-      "phone": "71 9253-4404",
-      "password": "xU#el0As(O1J",
-      "role": "USER-DEFAULT",
-      "favorites": []
     },
     {
       "name": "Maria Alice Dias",

@@ -16,17 +16,18 @@
         <div class="content-page-table__search-form">
           <div class="filters--group-select">
             <div class="filters__select">
-              <select class="filters__select__type">
-                <option value="" selected disabled hidden>
-                  Selecione o tipo de animal
+              <select class="filters__select__type" id="filterType">
+                <option value="Todos" selected disabled hidden>
+                  Selecione o tipo do pet
                 </option>
+  
                 <option>Gato</option>
                 <option>Cachorro</option>
               </select>
             </div>
             <div class="filters__select">
-              <select class="filters__select__type">
-                <option value="" selected disabled hidden>
+              <select class="filters__select__size" id="filterSize">
+                <option value="Todos" selected disabled hidden>
                   Selecione o porte
                 </option>
                 <option>Grande</option>
@@ -35,8 +36,8 @@
               </select>
             </div>
             <div class="filters__select">
-              <select class="filters__select__type">
-                <option value="" selected disabled hidden>
+              <select class="filters__select__gender" id="filterGender">
+                <option value="Todos" selected disabled hidden>
                   Selecione o sexo
                 </option>
                 <option>Fêmea</option>
@@ -44,14 +45,35 @@
               </select>
             </div>
             <div class="filters__right">
-              <input type="text" placeholder="Buscar" />
-              <button class="filters__right--button">Aplicar Filtros</button>
+              <input type="text" placeholder="Buscar" id="filterSearch"/>
+              <button class="filters__right--button" id="searchButtonList">Buscar</button>
+              <button id="clearFiltersButtonList">Limpar</button> 
+
             </div>
           </div>
         </div>
         <div id="items_area"></div>
       </div>
     </main>
+    <%- include('../../partials/modal', { 
+      modalId: 'modal-sucess-solicit-listPets', 
+      title: 'Pet removido!', 
+      body: '<p>Pet removido com sucesso.</p>', 
+      footer: '', 
+      onClose: 'closeModalSolicitListPets' 
+    }) %>
+    <%- include('../../partials/modal', { 
+      modalId: 'modal-error-solicit-listPets', 
+      title: 'Erro!', 
+      body: '<p>Erro ao remover pet, tente novamente.</p>', 
+      footer: '', 
+      onClose: 'closeModalSolicitListPets' 
+    }) %>
+    <script src="/js/utils.js"></script>
+
+    <script src="/js/modal.js"></script>
+    <script src="/js/user-default.js"></script>
+
     <script src="/js/data/admin/pets.js"></script>
     <script src="/js/pagination.js"></script>
     <footer class="footer"><%- include('../../partials/footer'); %></footer>

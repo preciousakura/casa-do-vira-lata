@@ -1,12 +1,12 @@
 const backendUrl = "http://localhost:3001";
 function checkAndUpdateForEmptyTable() {
-  const table = document.querySelector('.content-page-table__table'); // Substitua pelo seletor correto da sua tabela
+  const table = document.querySelector('.content-page-table__table');
   const items_area = document.getElementById('items_area');
-  if (!table || table.rows.length <= 2) { // Considerando que a primeira linha é o cabeçalho da tabela
+  if (!table || table.rows.length <= 2) { 
       const noResultDiv = document.createElement('div');
       noResultDiv.setAttribute('class', 'list__no-result');   
       noResultDiv.innerHTML = '<p>Sem resultados</p>';
-      items_area.innerHTML = ""; // Limpa a área de itens para remover a tabela vazia
+      items_area.innerHTML = ""; 
       items_area.appendChild(noResultDiv);
   }
 }
@@ -18,7 +18,7 @@ function removeTable() {
       const noResultDiv = document.createElement('div');
       noResultDiv.setAttribute('class', 'list__no-result');   
       noResultDiv.innerHTML = '<p>Sem resultados</p>';
-      items_area.innerHTML = ""; // Limpa a área de itens para remover a tabela vazia
+      items_area.innerHTML = ""; 
       items_area.appendChild(noResultDiv);
   }
 }

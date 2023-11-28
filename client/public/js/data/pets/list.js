@@ -1,20 +1,4 @@
-function getUserCookie() {
-  const cookie = document.cookie.split("; ");
-  const user = cookie.find((row) => row.startsWith('user' + "="));
 
-  if(user) {
-    const data = decodeURIComponent(user.split("=")[1]);
-    const json = data.startsWith("j:") ? data.substring(2) : data;
-    try {
-      return JSON.parse(json);
-    } catch (error) {
-      console.error("Erro ao analisar dados do cookie:", error);
-      return null;
-    }
-  }
-
-  return null;
-}
 
 function getFavoritesFromLocalStorage() {
   const favorites = localStorage.getItem("favorites");
@@ -47,7 +31,7 @@ function createPetItem({ age, castrated, dewormed, gender, id, image, name, size
 }
 
 async function loadPets(page = 1) {
-  const user = getUserCookie();
+  const user = getUserFromCookie();
   const res = await fetch(`http://localhost:3001/pets?page=${page}&size=9`);
   const data = await res.json();
   const items_area = document.getElementById('items_area');
@@ -84,3 +68,5 @@ async function loadPets(page = 1) {
 }
 
 loadPets();
+
+

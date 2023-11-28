@@ -18,6 +18,8 @@ const { filterPets, findPetById } = require("./scripts/filters");
 const {listAdoptions, listUserAdoptions} = require('./scripts/listAdoptions');
 const {acceptAdoption, rejectAdoption} = require('./scripts/adoption');
 const registerAnimal = require('./scripts/registerAnimal');
+const deleteUser = require('./scripts/deleteUser');
+const deletePet = require("./scripts/deletePet");
 
 app.use(cors());
 app.use(express.json());
@@ -42,6 +44,7 @@ app.get('/users', function (req, res) { return paginatedData(req, res, './data/u
 app.get('/solicitations', function (req, res) { return paginatedData(req, res, './data/users/solicitations.json') })
 
 app.get("/pets/:petId", function (req, res) { return findPetById(req, res, "./data/pets/list.json") });
+
 app.put('/accept-moderator/:userId', (req, res) => { acceptModerator(req, res) });
 
 
@@ -56,6 +59,9 @@ app.post('/send-user-solicitation-request', (req, res) => { return addSolicitati
 
 app.put('/user/:userId/favorites', addFavorite);
 app.delete('/user/:userId/favorites', removeFavorite);
+app.delete('/users/:userId', deleteUser);
+app.delete('/pets/:petId', deletePet);
+
 
 app.get('/usersCredentials', (req, res) => {
   const { email, password } = req.query;

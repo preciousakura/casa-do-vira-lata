@@ -52,7 +52,7 @@ app.post("/login", async (req, res) => {
           res.redirect("/moderator");
           break;
         default:
-          res.redirect("/"); // Redirecionar para a página inicial ou outra página padrão
+          res.redirect("/");
       }
     } else {
       res.render("pages/login", { error: data.error });

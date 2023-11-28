@@ -63,3 +63,16 @@ function closeModalErrorSolicitListRejeitMod(){
     closeModal('modal-error-solicit-rejeitMod')
   
 }
+function closeModalSolicitListUsers(){
+    closeModal('modal-sucess-solicit-listUsers')
+
+    closeModal('modal-error-solicit-listUsers')
+  
+}
+function closeModalSolicitListPets(){
+    closeModal('modal-sucess-solicit-listPets')
+
+    closeModal('modal-error-solicit-listPets')
+  
+}
+

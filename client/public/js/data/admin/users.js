@@ -1,5 +1,6 @@
 const COLUMNS = ['Nome', 'E-mail', 'Telefone', 'Cargo', 'Opções']
 
+
 function createTableHeader(columns) {
     const thead = document.createElement('thead');
     const tr = document.createElement('tr');
@@ -13,17 +14,19 @@ function createTableHeader(columns) {
 }
 
 function createUserItem({ email, id, name, phone, role }) {
+  const user = getUserFromCookie();
+  if(user?.id == id) return ``
     return `
-        <tr>
+        <tr id="user-row-${id}">
           <td><a href="/user/${id}">${name}</a></td>
           <td>${email}</td>
           <td>${phone}</td>
-          <td>${role}</td>
+          <td>${nameRole(role)}</td>
           <td class="table-actions">
             <button class="edit-button">
               <i class="ph-fill ph-pencil"></i>
             </button>
-            <button class="delete-button">
+            <button class="delete-button" onclick="deleteUser(${id})">
               <i class="ph ph-trash"></i>
             </button>
           </td>
@@ -71,3 +74,24 @@ async function loadUsers(page = 1) {
 }
   
 loadUsers();
+
+function deleteUser(userId) {
+  fetch(`http://localhost:3001/users/${userId}`, {
+    method: 'DELETE'
+  })
+  .then(response => {
+    if (response.ok) {
+      openModal('modal-sucess-solicit-listUsers');
+      checkAndUpdateForEmptyTable()
+      const row = document.getElementById(`user-row-${userId}`);
+      if (row) {
+        row.remove();
+      }
+    } else {
+      openModal('modal-error-solicit-listUsers');
+    }
+  })
+  .catch(error => {
+    openModal('modal-error-solicit-listUsers');
+  });
+}

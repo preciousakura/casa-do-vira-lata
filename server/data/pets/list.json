@@ -62,18 +62,6 @@
       "size": "Pequeno"
     },
     {
-      "id": 585,
-      "name": "Sophie",
-      "age": 8,
-      "gender": "Fêmea",
-      "castrated": true,
-      "vaccinated": false,
-      "dewormed": true,
-      "type": "Gato",
-      "image": "https://images.unsplash.com/photo-1602491453631-e2a5ad90a131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MjQ0NzZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTkxMzkyMTV8&ixlib=rb-4.0.3&q=80&w=1080",
-      "size": "Grande"
-    },
-    {
       "id": 744,
       "name": "Felix",
       "age": 12,

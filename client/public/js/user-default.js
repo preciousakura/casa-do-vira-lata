@@ -93,13 +93,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const clearFiltersButton = document.getElementById('clearFiltersButton');
   if (searchButton) {
     searchButton.addEventListener("click", () => {
-      const type = document.querySelector(".filters__select__type").value;
-      const size = document.querySelector(".filters__select__size").value;
-      const gender = document.querySelector(".filters__select__gender").value;
-      const name = document.getElementById("filterSearch").value;
-      const castrated = document.getElementById("castrated").checked;
-      const vaccinated = document.getElementById("vaccinated").checked;
-      const dewormed = document.getElementById("dewormed").checked;
+      const type = document.querySelector(".filters__select__type")?.value?? 'Todos';
+      const size = document.querySelector(".filters__select__size")?.value?? 'Todos';
+      const gender = document.querySelector(".filters__select__gender")?.value ?? 'Todos';
+      const name = document.getElementById("filterSearch")?.value ?? 'Todos';
+      const castrated = document.getElementById("castrated")?.checked ?? false;
+      const vaccinated = document.getElementById("vaccinated")?.checked?? false;
+      const dewormed = document.getElementById("dewormed")?.checked ?? false;
 
       applyFilters(type, size, gender, name, castrated, vaccinated, dewormed);
     });
