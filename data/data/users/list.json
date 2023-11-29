@@ -17,6 +17,15 @@
       "phone": "85989651350",
       "email": "vanessa@gmail.com",
       "password": "a17086eddd211e8126260af686cba1ceccd615221775eca4bc3ba369321cfc4d33350f7d85aab1a008236b8c277afd48477f25893e693f64ce848885741f4b22",
+      "role": "MODERATOR",
+      "favorites": []
+    },
+    {
+      "id": "617ca72e-aaad-42e8-826c-5bbe8c4dc263",
+      "name": "Cinthia Maria Andrade da Silva",
+      "phone": "858585858",
+      "email": "cinthia@gmail.com",
+      "password": "d2552fc3de5b850041833672d48516d31e2e234d89422c2782486690424ccc6c3b598581cb472ea1013bce391555db1aae805f304e3a6b4b1a1281a98999d530",
       "role": "USER-DEFAULT",
       "favorites": []
     }

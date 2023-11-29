@@ -6,7 +6,6 @@ function getFavoritesFromLocalStorage() {
   }
   
   function createPetItem({ age, castrated, dewormed, gender, id, image, name, size, type, vaccinated, status}, role, favorites) {
-    if(status !== null) return ``
     return `
       <div class="list__item">
         <div class="list__item__image">
@@ -33,7 +32,7 @@ function getFavoritesFromLocalStorage() {
   async function loadPets(page = 1) {
     try {
         const user = getUserFromCookie();
-        const res = await fetch(`http://localhost:3001/pets?page=${page}&size=9`);
+        const res = await fetch(`http://localhost:3001/pets?page=${page}&size=9&non_adopeted=${true}`);
         const data = await res.json();
         const items_area = document.getElementById('items_area');
         const list = document.createElement('div');
@@ -52,7 +51,7 @@ function getFavoritesFromLocalStorage() {
       
         if(items.length > 0) { 
           items.forEach(item => {
-            const { age, castrated, dewormed, gender, id, image, name, size, type, vaccinated, status =null } = item;
+            const { age, castrated, dewormed, gender, id, image, name, size, type, vaccinated, status } = item;
             list.innerHTML += createPetItem({ age, castrated, dewormed, gender, id, image, name, size, type, vaccinated , status}, user?.role, favorites);
           });
           list.setAttribute('class', 'list');    

@@ -47,7 +47,10 @@ function listPets(req, res) {
         if (err) return res.status(500).json({ error: "Internal Server Error" });
         try {
             const adoptions = JSON.parse(data);
-            return res.json(pagination(adoptions, page, size));
+            const { non_adopeted } = req.query;
+            const filtered = non_adopeted ? adoptions.items.filter(item => item.status ? item.status !== "Adotado" : true ) : false;
+
+            return res.json(pagination({ items: non_adopeted ? filtered : adoptions.items }, page, size));
         } catch (parseError) {
             res.status(500).json({ error: "Internal Server Error" });
         }
@@ -127,7 +130,7 @@ function createPet(req, res) {
     
       try {
         const pets = JSON.parse(data);
-        const new_pet = { id: uuidv4(), ...req.body };
+        const new_pet = { id: uuidv4(), ...req.body, status: "Disponível" };
         pets.items.unshift(new_pet);
   
         fs.writeFile(petsFilePath, JSON.stringify(pets, null, 2), "utf8", writeErr => {
