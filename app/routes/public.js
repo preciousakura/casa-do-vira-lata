@@ -54,7 +54,7 @@ router.get("/logout", async (req, res) => {
   try {
     const response = await fetch("http://localhost:3001/user/logout", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json", Authorization: req.cookies.user.token },
     });
     if (response.ok) {
       res.clearCookie("user");
