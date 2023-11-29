@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../../partials/head'); %>
+    <title>Casa do Vira-Lata - Usuários</title>
+  </head>
+  <body class="container">
+    <header class="header-content">
+      <%- include('../../partials/accessibility'); %> <%-
+      include('../../partials/header'); %>
+    </header>
+
+    <main>
+        <div class="content-page-table--max">
+          <h1 class="content-page-table__title">Usuários</h1>
+          <div id="items_area"></div>
+        </div>
+    </main>
+    <%- include('../../partials/modal', { 
+    modalId: 'modal-sucess-solicit-listUsers', 
+    title: 'Usuário removido!', 
+    body: '<p>Usuário removido com sucesso.</p>', 
+    footer: '', 
+    onClose: 'closeModalSolicitListUsers' 
+    }) %>
+    <%- include('../../partials/modal', { 
+    modalId: 'modal-error-solicit-listUsers', 
+    title: 'Erro!', 
+    body: '<p>Erro ao remover usuário, tente novamente.</p>', 
+    footer: '', 
+    onClose: 'closeModalSolicitListUsers' 
+    }) %>
+
+    <script src="/js/utils.js"></script>
+    <script src="/js/modal.js"></script>
+    <script src="/js/users.js"></script>
+    <script src="/js/data/admin/users.js"></script>
+    <script src="/js/pagination.js"></script>
+    <%- include('../../partials/footer'); %>
+  </body>
+</html>

@@ -32,7 +32,7 @@ function createUserItem({ email, id, name, phone }) {
 }
 
 async function loadSolicitations(page = 1) {
-    const res = await fetch(`http://localhost:3001/solicitations?page=${page}&size=10`, { headers: { Authorization: user.token } });
+    const res = await fetch(`http://localhost:3001/admin/solicitations?page=${page}&size=10`, { headers: { Authorization: user.token } });
     const data = await res.json();
     const items_area = document.getElementById('items_area');
 

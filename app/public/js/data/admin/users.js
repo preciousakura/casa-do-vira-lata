@@ -14,7 +14,6 @@ function createTableHeader(columns) {
 }
 
 function createUserItem({ email, id, name, phone, role }) {
-  if(user?.id == id) return ``
     return `
         <tr id="user-row-${id}">
           <td><a href="/user/${id}">${name}</a></td>
@@ -34,7 +33,7 @@ function createUserItem({ email, id, name, phone, role }) {
 }
 
 async function loadUsers(page = 1) {
-    const res = await fetch(`http://localhost:3001/users?page=${page}&size=10`, { headers: { Authorization: user.token } });
+    const res = await fetch(`http://localhost:3001/admin/users?page=${page}&size=10`, { headers: { Authorization: user.token } });
     const data = await res.json();
     const items_area = document.getElementById('items_area');
 
@@ -73,25 +72,3 @@ async function loadUsers(page = 1) {
 }
   
 loadUsers();
-
-function deleteUser(userId) {
-  fetch(`http://localhost:3001/users/${userId}`, {
-    method: 'DELETE',
-    headers: { Authorization: user.token }
-  })
-  .then(response => {
-    if (response.ok) {
-      openModal('modal-sucess-solicit-listUsers');
-      checkAndUpdateForEmptyTable()
-      const row = document.getElementById(`user-row-${userId}`);
-      if (row) {
-        row.remove();
-      }
-    } else {
-      openModal('modal-error-solicit-listUsers');
-    }
-  })
-  .catch(error => {
-    openModal('modal-error-solicit-listUsers');
-  });
-}

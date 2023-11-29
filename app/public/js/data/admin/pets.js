@@ -70,25 +70,3 @@ async function loadTablePets(page = 1) {
 }
   
 loadTablePets();
-
-
-async function deletePet(petId) {
-  try {
-    const user = getUserFromCookie();
-    const res = await fetch(`http://localhost:3001/pets?petId=${petId}`, {
-      method: 'DELETE',
-      headers: { Authorization: user.token }
-    })
-
-    if(res.ok) {
-      checkAndUpdateForEmptyTable()
-      const row = document.getElementById(`pet-row-${petId}`);
-      openModal('modal-sucess-solicit-listPets')
-      if (row) row.remove();
-    } else openModal('modal-error-solicit-listPets')
-  } catch (err) {
-    openModal('modal-error-solicit-listPets')
-  }
-}
-
-

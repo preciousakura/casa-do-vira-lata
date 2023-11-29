@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../../partials/head'); %>
+    <title>Casa do Vira-Lata - Solicitações</title>
+  </head>
+  <body class="container">
+    <header class="header-content">
+      <%- include('../../partials/accessibility'); %> <%-
+      include('../../partials/header'); %>
+    </header>
+
+    <main>
+        <div class="content-page-table--max">
+          <h1 class="content-page-table__title">Solicitações de Moderadores</h1>
+          <div class="content-page-table__search-form">
+            <div
+              class="filters--group-select"
+              style="justify-content: space-between"
+            >
+              <div class="filters__right">
+                <button
+                  class="filters__left--button"
+                  onclick="acceptAllModeratorRequests()"
+                >
+                  Aprovar tudo
+                </button>
+                <button
+                  class="filters__right--button"
+                  onclick="rejectAllModeratorRequests()"
+                >
+                  Rejeitar tudo
+                </button>
+              </div>
+            </div>
+          </div>
+          <div id="items_area"></div>
+        </div>
+      </main>
+      <%- include('../../partials/modal', { 
+        modalId: 'modal-sucess-solicit-listModSolic', 
+        title: 'Solicitação aceita!', 
+        body: '<p>Solicitação aceita!</p>', 
+        footer: '', 
+        onClose: 'closeModalSuccessSolicitListModSolic' 
+      }) %>
+      <%- include('../../partials/modal', { 
+        modalId: 'modal-error-solicit-rejeitMod', 
+        title: 'Solicitação negada!', 
+        body: '<p>Solicitação de moderação negada!</p>', 
+        footer: '', 
+        onClose: 'closeModalErrorSolicitListRejeitMod' 
+      }) %>
+      <%- include('../../partials/modal', { 
+        modalId: 'modal-error-solicit-listModSolic', 
+        title: 'Ops!', 
+        body: '<p>Houve um erro ao fazer a solicitação, tente novamente.</p>', 
+        footer: '', 
+        onClose: 'closeModalErrorSolicitListModSolic' 
+      }) %>
+
+    <script src="/js/modal.js"></script>
+    <script src="/js/utils.js"></script>
+    <script src="/js/data/admin/solicitations.js"></script>
+    <script src="/js/pagination.js"></script>
+    <script src="/js/users.js"></script>
+    <%- include('../../partials/footer'); %>
+  </body>
+</html>
