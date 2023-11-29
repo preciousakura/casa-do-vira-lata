@@ -122,6 +122,29 @@ async function adoptPet(req, res) {
     } else return res.status(500).json({ error: "Usuário ou pet não encontrados" });
 }
 
+function editPet(req, res) {
+  const petsFile = path.join(__dirname, "../data/pets/list.json");
+
+  fs.readFile(petsFile, "utf8", (err, data) => {
+    if (err) return res.status(500).json({ error: "Internal Server Error" });
+    try {
+      const pets = JSON.parse(data);
+      const { petId } = req.query;
+      const petIndex = pets.items.findIndex((user) => user.id == petId);
+
+      if (petIndex == -1) return res.status(404).json({ error: "User not found" });
+      pets.items[petIndex] = { ...req.body, id: petId };
+      
+      fs.writeFile( petsFile, JSON.stringify(pets, null, 2), "utf8", (writeErr) => {
+          if (writeErr) return res.status(500).json({ error: "Internal Server Error" });
+          return res.json({ message: "Pet editado com sucesso!" });
+      });
+    } catch (parseError) {
+      return res.status(500).json({ error: "Internal Server Error" });
+    }
+  });
+}
+
 function createPet(req, res) {
     const petsFilePath = path.join(__dirname, "../data/pets/list.json");
   
@@ -323,4 +346,4 @@ function removeFavorite(req, res) {
     });
 }
 
-module.exports = { listPets, adoptPet, findPetById, createPet, deletePet, listAdoptions, acceptAdoption, rejectAdoption, addFavorite, removeFavorite }
+module.exports = { listPets, adoptPet, findPetById, createPet, deletePet, listAdoptions, acceptAdoption, rejectAdoption, addFavorite, removeFavorite, editPet }

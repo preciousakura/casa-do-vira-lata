@@ -22,9 +22,8 @@
             <span>Pet</span>
           </h2>
         </section>
-
         <section class="animal-form">
-          <form class="container-form-registration" <% if(typeof(pet) != "undefined") { %>onsubmit="editPet(event)"<% } else { %>onsubmit="createPet(event)"<% } %>>
+          <form class="container-form-registration" <% if(typeof(pet) != "undefined") { %>onsubmit="editPet(event, <%= JSON.stringify(pet.id) %>)"<% } else { %>onsubmit="createPet(event)"<% } %>>
             <div class="animal-form__group">
               <p class="animal-form__group--title">Informações do Pet</p>
               <div class="form-group">
@@ -95,14 +94,14 @@
     <%- include('../../partials/modal', { 
       modalId: 'modal-sucess-solicit-animal', 
       title: 'Sucesso', 
-      body: '<p>Cadastro de animal finalizado com sucesso.</p>', 
+      body: '<p>Operação finalizada com sucesso.</p>', 
       footer: '', 
       onClose: 'closeModalSuccessAnimalRegister' 
     }) %>
     <%- include('../../partials/modal', { 
       modalId: 'modal-error-solicit-adopt', 
       title: 'Ops!', 
-      body: '<p>Houve um erro ao fazer o cadastro do pet, tente novamente.</p>', 
+      body: '<p>Houve um erro. Tente novamente.</p>', 
       footer: '', 
       onClose: 'closeModalErrorSolicitAdopt' 
     }) %>

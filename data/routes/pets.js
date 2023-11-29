@@ -2,11 +2,12 @@ const express = require('express');
 const router = express.Router();
 
 const { verifyJWT } = require('../controller/user');
-const { listPets, adoptPet, findPetById, createPet, deletePet, listAdoptions, acceptAdoption, rejectAdoption, addFavorite, removeFavorite } = require('../controller/pets');
-
+const { listPets, adoptPet, findPetById, createPet, deletePet, editPet, listAdoptions, acceptAdoption, rejectAdoption, addFavorite, removeFavorite } = require('../controller/pets');
+ 
 router.get('/', listPets);
 router.post('/', verifyJWT, createPet );
 router.delete('/', verifyJWT, deletePet);
+router.patch('/', verifyJWT, editPet);
 
 router.get('/adoptions', verifyJWT, listAdoptions);
 
