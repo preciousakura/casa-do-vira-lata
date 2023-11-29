@@ -157,7 +157,7 @@ function createPet(req, res) {
         const { petId } = req.query
         
         const petsData = JSON.parse(data);
-        petsData.items = petsData.items.filter(pet => pet.id !== petId);
+        petsData.items = petsData.items.filter(pet => pet.id != petId);
         fs.writeFile(petsFilePath, JSON.stringify(petsData, null, 2), "utf8", (writeErr) => {
           if (writeErr) return res.status(500).json({ error: "Internal Server Error" });
           res.json({ message: "pet removed successfully" });

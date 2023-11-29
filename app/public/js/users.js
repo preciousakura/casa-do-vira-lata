@@ -2,7 +2,7 @@ const { token } = getUserFromCookie();
 
 async function deleteUser(userId) {
     try {
-        const response = fetch(`http://localhost:3001/admin/users?userId=${userId}`, {
+        const response = await fetch(`http://localhost:3001/admin/users?userId=${userId}`, {
             method: 'DELETE',
             headers: { Authorization: token }
         })
@@ -11,7 +11,7 @@ async function deleteUser(userId) {
             checkAndUpdateForEmptyTable()
             const row = document.getElementById(`user-row-${userId}`);
             if (row) row.remove();
-        } else openModal('modal-error-solicit-listUsers');
+        }
     } catch (err) {
       openModal('modal-error-solicit-listUsers');
     }

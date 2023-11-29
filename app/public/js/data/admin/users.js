@@ -14,6 +14,7 @@ function createTableHeader(columns) {
 }
 
 function createUserItem({ email, id, name, phone, role }) {
+
     return `
         <tr id="user-row-${id}">
           <td><a href="/user/${id}">${name}</a></td>
@@ -24,7 +25,7 @@ function createUserItem({ email, id, name, phone, role }) {
             <button class="edit-button">
               <i class="ph-fill ph-pencil"></i>
             </button>
-            <button class="delete-button" onclick="deleteUser(${id})">
+            <button class="delete-button" onclick="deleteUser('${id}')">
               <i class="ph ph-trash"></i>
             </button>
           </td>

@@ -1,62 +1,6 @@
 {
   "items": [
     {
-      "id": "6953bb43-6b69-4907-9ee0-022c6dd0f689",
-      "name": "Rubisco",
-      "age": "1",
-      "gender": "Macho",
-      "type": "Gato",
-      "size": "Grande",
-      "image": "https://www.cinemacats.com/wp-content/uploads/movies/kikisdeliveryservice14.jpg",
-      "vaccinated": "on",
-      "dewormed": "on",
-      "status": "Disponível"
-    },
-    {
-      "id": "7fa2c061-a12a-467c-969d-43fc6440d3d4",
-      "name": "Pedro",
-      "age": "1",
-      "gender": "Macho",
-      "type": "Gato",
-      "size": "Pequeno",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZtLA3CGPYy8BCycImNpqBJ8Bk_tWDBml-yA&usqp=CAU"
-    },
-    {
-      "id": "2aef3cd1-10b3-443a-a9d6-5ef226fc8b87",
-      "name": "Yuumi",
-      "age": "7",
-      "gender": "Fêmea",
-      "type": "Gato",
-      "size": "Pequeno",
-      "image": "https://www.cinemacats.com/wp-content/uploads/movies/kikisdeliveryservice14.jpg",
-      "dewormed": "on",
-      "status": "Adotado"
-    },
-    {
-      "id": 42,
-      "name": "Gatito",
-      "age": 8,
-      "gender": "Macho",
-      "type": "Gato",
-      "size": "Médio",
-      "castrated": true,
-      "vaccinated": false,
-      "dewormed": false,
-      "image": "https://i.pinimg.com/originals/e6/ae/f7/e6aef707984ef7077e755ba2cfa2c936.jpg"
-    },
-    {
-      "id": 654,
-      "name": "Rudy",
-      "age": 1,
-      "gender": "Macho",
-      "castrated": false,
-      "vaccinated": true,
-      "dewormed": false,
-      "type": "Cachorro",
-      "image": "https://images.unsplash.com/photo-1425082661705-1834bfd09dca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MjQ0NzZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTkxMzkyMTR8&ixlib=rb-4.0.3&q=80&w=1080",
-      "size": "Grande"
-    },
-    {
       "id": 554,
       "name": "Rosie",
       "age": 15,
