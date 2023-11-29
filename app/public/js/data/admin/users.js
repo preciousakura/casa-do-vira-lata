@@ -22,9 +22,6 @@ function createUserItem({ email, id, name, phone, role }) {
           <td>${phone}</td>
           <td>${nameRole(role)}</td>
           <td class="table-actions">
-            <button class="edit-button">
-              <i class="ph-fill ph-pencil"></i>
-            </button>
             <button class="delete-button" onclick="deleteUser('${id}')">
               <i class="ph ph-trash"></i>
             </button>
