@@ -20,9 +20,9 @@ function createUserItem({ id, name, type, gender, size }) {
           <td>${gender}</td>
           <td>${size}</td>
           <td class="table-actions">
-            <button class="edit-button">
+            <a href="/admin/pets/${id}" class="edit-button">
               <i class="ph-fill ph-pencil"></i>
-            </button>
+            </a>
             <button class="delete-button"  onclick="deletePet(${id})">
               <i class="ph ph-trash"></i>
             </button>
