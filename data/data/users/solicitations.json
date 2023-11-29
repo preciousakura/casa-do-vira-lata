@@ -1,12 +1,11 @@
 {
-  "items": [
-    {
-      "name": "Cinthia Maria Andrade da Silva",
-      "id": "617ca72e-aaad-42e8-826c-5bbe8c4dc263",
-      "email": "cinthia@gmail.com",
-      "phone": "858585858",
-      "role": "USER-DEFAULT",
-      "reason": "sim"
-    }
-  ]
+  "items": [   {
+    "id": "15af51ef-6bf6-42be-a528-9e0a7a59cc78",
+    "name": "Vanessa de Oliveira Lopes",
+    "phone": "85989651350",
+    "email": "vanessa@gmail.com",
+    "password": "a17086eddd211e8126260af686cba1ceccd615221775eca4bc3ba369321cfc4d33350f7d85aab1a008236b8c277afd48477f25893e693f64ce848885741f4b22",
+    "role": "USER-DEFAULT",
+    "favorites": []
+  }]
 }

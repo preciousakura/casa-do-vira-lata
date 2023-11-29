@@ -20,10 +20,10 @@ function createUserItem({ email, id, name, phone }) {
           <td>${email}</td>
           <td>${phone}</td>
           <td class="table-actions">
-            <button class="edit-button" onclick="acceptModeratorRequest(${id})">  
+            <button class="edit-button" onclick="acceptModeratorRequest('${id}')">  
                 <i class="ph-fill ph-check-fat"></i>
             </button>
-            <button class="delete-button" onclick="rejectModeratorRequest(${id})">
+            <button class="delete-button" onclick="rejectModeratorRequest('${id}')">
                 <i class="ph ph-trash"></i>
             </button>
         </td>
