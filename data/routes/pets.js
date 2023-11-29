@@ -6,6 +6,7 @@ const { listPets, adoptPet, findPetById, createPet, deletePet, listAdoptions, ac
 
 router.get('/', listPets);
 router.post('/', verifyJWT, createPet );
+router.delete('/', verifyJWT, deletePet);
 
 router.get('/adoptions', verifyJWT, listAdoptions);
 
@@ -17,8 +18,6 @@ router.delete('/favorites', verifyJWT, removeFavorite);
 
 router.put('/accept', verifyJWT, acceptAdoption);
 router.delete('/reject', verifyJWT, rejectAdoption);
-
-router.delete('/:petId', verifyJWT, deletePet);
 
 router.get('/:petId', findPetById );
 router.post('/adopt', verifyJWT, adoptPet );

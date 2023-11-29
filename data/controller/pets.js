@@ -151,7 +151,7 @@ function createPet(req, res) {
       if (err) return res.status(500).json({ error: "Internal Server Error" });
       
       try {
-        const { petId } = req.params
+        const { petId } = req.query
         
         const petsData = JSON.parse(data);
         petsData.items = petsData.items.filter(pet => pet.id !== petId);
