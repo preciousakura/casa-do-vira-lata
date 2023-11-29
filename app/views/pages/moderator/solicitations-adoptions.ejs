@@ -1,0 +1,26 @@
+<html lang="en">
+  <head>
+    <%- include('../../partials/head'); %>
+    <title>Casa do Vira-Lata</title>
+  </head>
+  <body>
+    <header class="header-content">
+      <%- include('../../partials/accessibility'); %> <%-
+      include('../../partials/header'); %>
+    </header>
+    <main class="content-main">
+        <div class="content-page-table--max">
+            <div class="content-page-table-solicit-adoptions--max">
+                <h1 class="content-page-table__title">Solicitações de Adoção</h1>
+            </div>
+            <div id="items_area"></div>
+        </div>
+    </main>
+
+    <script src="/js/utils.js"></script>
+    <script src="/js/data/pets/adoptions.js"></script>
+    <script src="/js/moderator.js"></script>
+    <script src="/js/pagination.js"></script>
+    <%- include('../../partials/footer'); %>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<nav>
+  <div class="nav-content">
+    <ul class="ul-menu">
+      <li class="ul-menu__item logo"><%- include('./logo'); %></li>
+      <li class="ul-menu__item"><a href="/">Página Inicial</a></li>
+      <li class="ul-menu__item"><a href="/pets">Pets da Casa</a></li>
+    </ul>
+
+    <% if(typeof(user) != "undefined") { %>
+      <div class="user-dropdown">
+        <button class="user-btn" id="userButton">
+          <i class="ph-fill ph-user"></i>
+        <p class="user-name"> <%= user.name %></p>
+          <i class="ph-fill ph-caret-down"></i>
+        </button>
+        <div class="user-dropdown__menu" id="userDropdown">
+          <% if(user.role === "ADMIN") { %>
+            <span>ADMINISTRADOR</span>
+            <ul class="painel">
+              <li class="user-dropdown__item">
+                <a href="/admin" class="user-dropdown__link">Meu painel</a>
+              </li>
+            </ul>
+          <% } else if(user.role === "MODERATOR") { %>
+            <span>MODERATOR</span>
+            <ul class="painel">
+              <li class="user-dropdown__item">
+                <a href="/moderator" class="user-dropdown__link">Meu painel</a>
+              </li>
+            </ul>
+          <% } else { %>
+            <ul class="painel">
+              <li class="user-dropdown__item">
+                <a href="/user-default" class="user-dropdown__link">Meu painel</a>
+              </li>
+            </ul>
+          <% } %>
+          <ul>
+            <li class="user-dropdown__item">
+              <a href="/profile" class="user-dropdown__link">Perfil</a>
+            </li>
+            <li class="user-dropdown__item">
+              <a href="/settings" class="user-dropdown__link">Configurações</a>
+            </li>
+            <li class="user-dropdown__item">
+              <a href="/logout" class="user-dropdown__link" id="logoutLink">Sair</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    <% } else { %>
+      <a class="user-btn" href="/login">Entrar</a>
+    <% } %>
+  </div>
+</nav>

@@ -1,0 +1,31 @@
+
+<html lang="en">
+  <head>
+    <%- include('../../partials/head'); %>
+  </head>
+  <body class="container">
+    <header class="header-content">
+      <%- include('../../partials/accessibility'); %>
+      <title>Page not found</title>
+    </header>
+
+    <main class="error_content">
+      <div class="error_content__icon">
+        <i class="ph-bold ph-magnifying-glass"></i>
+      </div>
+      <div class="error_content__text">
+        <h2>Page not found</h2>
+        <p>Poxa, tentamos o possível, mas não conseguimos encontrar a página que você está procurando.</p>
+        <p>
+          Caso tenha alguma dúvida ou precise de assistência, por favor,
+          consulte um administrador.
+        </p>
+      </div>
+      <div class="error_content__buttons">
+        <a href="/">Voltar para o inicio</a>
+      </div>
+    </main>
+
+    <%- include('../../partials/footer'); %>
+  </body>
+</html>

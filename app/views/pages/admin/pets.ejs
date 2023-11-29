@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../../partials/head'); %>
+    <title>Casa do Vira-Lata - Pets</title>
+  </head>
+  <body class="container">
+    <header class="header-content">
+      <%- include('../../partials/accessibility'); %> <%-
+      include('../../partials/header'); %>
+    </header>
+
+    <main>
+      <div class="content-page-table--max"> 
+        <h1 class="content-page-table__title">Pets</h1>
+        <div id="items_area"></div>
+      </div>
+    </main>
+    <%- include('../../partials/modal', { 
+      modalId: 'modal-sucess-solicit-listPets', 
+      title: 'Pet removido!', 
+      body: '<p>Pet removido com sucesso.</p>', 
+      footer: '', 
+      onClose: 'closeModalSolicitListPets' 
+    }) %>
+    <%- include('../../partials/modal', { 
+      modalId: 'modal-error-solicit-listPets', 
+      title: 'Erro!', 
+      body: '<p>Erro ao remover pet, tente novamente.</p>', 
+      footer: '', 
+      onClose: 'closeModalSolicitListPets' 
+    }) %>
+    
+
+    <script src="/js/modal.js"></script>
+    <script src="/js/user-default.js"></script>
+    <script src="/js/data/admin/pets.js"></script>
+    <script src="/js/pagination.js"></script>
+    <script src="/js/utils.js"></script>
+    <%- include('../../partials/footer'); %>
+  </body>
+</html>

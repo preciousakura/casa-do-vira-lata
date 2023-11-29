@@ -1,0 +1,62 @@
+<html lang="en">
+  <head>
+    <%- include('../../partials/head'); %>
+    <title>Casa do Vira-Lata</title>
+  </head>
+  <body>
+    <header class="header-content">
+      <%- include('../../partials/accessibility'); %> <%-
+      include('../../partials/header'); %>
+    </header>
+    <main class="content-main">
+      <div class="content-options-home--max">
+        <h1 class="content-options-home__title">
+          Olá, <span><%= user.name %></span>.
+        </h1>
+        <p class="content-options-home__subtitle">
+          Gerenciamento de usuário e pets. Edite, exclua e adicione novos
+          moderadores.
+        </p>
+
+        <div class="card-container-options">
+          <div class="card-options">
+            <a href="/admin/users">
+              <div class="card-content">
+                <div>
+                  <i class="ph-fill ph-user"></i>
+                  <h2>Usuários</h2>
+                </div>
+                <p>Gerencie os usuários e Moderadores</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="card-options">
+            <a href="/admin/pets">
+              <div class="card-content">
+                <div>
+                  <i class="ph-fill ph-paw-print"></i>
+                  <h2>Pets</h2>
+                </div>
+                <p>Gerencie os animais cadastrados para adoção</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="card-options">
+            <a href="/admin/solicitations">
+              <div class="card-content">
+                <div>
+                  <i class="ph-fill ph-users"></i>
+                  <h2>Solicitações de Moderadores</h2>
+                </div>
+                <p>Aprove, edite ou exclua solicitações</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+    <%- include('../../partials/footer'); %>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "items": [
+    {
+      "id": "e986b2ab-e8e4-43fb-ae4f-54eb21f3bac8",
+      "name": "Isabel Cristina de Oliveira Lopes",
+      "phone": "85989651350",
+      "email": "isabel@gmail.com",
+      "password": "a17086eddd211e8126260af686cba1ceccd615221775eca4bc3ba369321cfc4d33350f7d85aab1a008236b8c277afd48477f25893e693f64ce848885741f4b22",
+      "role": "ADMIN",
+      "favorites": [
+        "42"
+      ]
+    },
+    {
+      "id": "15af51ef-6bf6-42be-a528-9e0a7a59cc78",
+      "name": "Vanessa de Oliveira Lopes",
+      "phone": "85989651350",
+      "email": "vanessa@gmail.com",
+      "password": "a17086eddd211e8126260af686cba1ceccd615221775eca4bc3ba369321cfc4d33350f7d85aab1a008236b8c277afd48477f25893e693f64ce848885741f4b22",
+      "role": "USER-DEFAULT",
+      "favorites": []
+    }
+  ]
+}

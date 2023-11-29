@@ -15,22 +15,5 @@ document
       image: document.getElementById("image").value,
     };
 
-    fetch("http://localhost:3001/registerAnimal", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(animalData),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.success) {
-          openModal("modal-sucess-solicit-animal");
-        } else {
-          openModal("modal-error-solicit-animal");
-        }
-      })
-      .catch((error) => {
-        openModal("modal-error-solicit-animal");
-      });
+    
   });

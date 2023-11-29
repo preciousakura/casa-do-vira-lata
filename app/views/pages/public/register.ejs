@@ -1,0 +1,43 @@
+<html lang="en">
+  <head>
+    <%- include('../../partials/head'); %>
+    <title>Cadastro</title>
+  </head>
+  <body>
+    <header class="header-content">
+      <%- include('../../partials/accessibility'); %>
+    </header>
+    <main>
+      <section class="login-content">
+        <div class="login login-image"></div>
+        <div class="login login-form">
+          <h2><span>Olá</span>, seja bem-vindo.</h2>
+          <p>Já tem uma conta? <a href="/login">Entre</a>.</p>
+          <form action="/register" method="post">
+            <div class="form-group">
+              <label>Nome:</label>
+              <input autocomplete="off" type="text" name="name" required placeholder="Digite seu nome completo" value="<% if( typeof(error) != "undefined") { %><%= data.name %><% } %>"/>
+            </div>
+            <div class="form-group">
+              <label for="phone">Telefone:</label>
+              <input autocomplete="off" placeholder="(99) 99999-9999" type="tel" name="phone" value="<% if( typeof(error) != "undefined") { %><%= data.phone %><% } %>"/>
+            </div>
+            <div class="form-group">
+              <label>E-mail:</label>
+              <input autocomplete="off" type="email" name="email" required placeholder="Digite seu e-mail" value="<% if( typeof(error) != "undefined") { %><%= data.email %><% } %>"/>
+            </div>
+            <div class="form-group">
+              <label>Senha:</label>
+              <input autocomplete="off" type="password" name="password" required placeholder="Digite sua senha" value="<% if( typeof(error) != "undefined") { %><%= data.password %><% } %>"/>
+            </div>
+            <% if( typeof(error) != "undefined") { %>
+                <p><%= error %></p>
+            <% } %>
+            <button type="submit">Cadastrar</button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <%- include('../../partials/footer'); %>
+  </body>
+</html>

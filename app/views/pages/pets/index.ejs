@@ -1,0 +1,35 @@
+<html lang="en">
+  <head>
+    <%- include('../../partials/head'); %>
+    <title>Minhas adoções</title>
+  </head>
+  <body>
+    <header class="header-content">
+      <%- include('../../partials/accessibility'); %> <%-
+      include('../../partials/header'); %>
+    </header>
+    <main class="content-main">
+      <div class="adopt-list">
+        <section class="title">
+          <h2>Todo animal merece um lar amoroso.</h2>
+          <h2><span>Adote</span> um pet hoje.</h2>
+          <p>
+            Navegue pelos nossos animais disponíveis e saiba mais sobre o
+            processo de adoção. Juntos, podemos resgatar, reabilitar e realojar
+            animais de estimação necessitados. Obrigado por apoiar nossa missão
+            de levar alegria às famílias por meio da adoção de animais de
+            estimação.
+          </p>
+        </section>
+
+        <div id="items_area"></div>
+      </div>
+    </main>
+
+    <script src="/js/utils.js"></script>
+    <script src="/js/user-default.js"></script>
+    <script src="/js/data/pets/list.js"></script>
+    <script src="/js/pagination.js"></script>
+    <%- include('../../partials/footer'); %>
+  </body>
+</html>

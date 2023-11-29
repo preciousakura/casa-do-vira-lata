@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "dotenv-safe": "^8.2.0",
-    "jsonwebtoken": "^9.0.2"
-  }
-}
