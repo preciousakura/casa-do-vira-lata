@@ -13,6 +13,7 @@ function removeTable() {
 }
 
 async function acceptAdoptionRequest(solicitationId) {
+  console.log("clicou")
   try {
     const user = getUserFromCookie();
     const response = await fetch(`http://localhost:3001/pets/accept?id=${solicitationId}`, { method: "PUT", headers: { Authorization: user.token } });

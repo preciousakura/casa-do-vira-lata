@@ -7,10 +7,7 @@
       "email": "isabel@gmail.com",
       "password": "a17086eddd211e8126260af686cba1ceccd615221775eca4bc3ba369321cfc4d33350f7d85aab1a008236b8c277afd48477f25893e693f64ce848885741f4b22",
       "role": "ADMIN",
-      "favorites": [
-        "42",
-        "9462a1f3-449f-4ba9-b926-6b36d6e80ca5"
-      ]
+      "favorites": []
     },
     {
       "id": "15af51ef-6bf6-42be-a528-9e0a7a59cc78",
@@ -27,12 +24,13 @@
       "phone": "88999731591",
       "email": "cinthiagatinha@gmail.com",
       "password": "300ff9753012f69632240aa5f6c60e7aee57c34921f86b14176411c2cadaa23781731db750a627b80ab0c691dda57d57db5cb023dbd7c05b6b75c58899e94a75",
-      "role": "MODERATOR",
+      "role": "ADMIN",
       "favorites": [
-        "8e95ee2a-cdb4-4d5b-b367-60c6428dc2d2",
         "9462a1f3-449f-4ba9-b926-6b36d6e80ca5",
         "3f04a873-dcdd-463f-afdd-778304d835f6",
-        "c8085f17-9481-4e80-82cd-9f29a0504830"
+        "c8085f17-9481-4e80-82cd-9f29a0504830",
+        "8dd566cd-13d0-4606-903d-9f0ba1990a00",
+        "c06f326f-9b13-48e4-bf21-cb30d9ff4627"
       ]
     }
   ]

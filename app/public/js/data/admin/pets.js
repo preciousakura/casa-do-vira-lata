@@ -23,7 +23,11 @@ function createUserItem({ id, name, type, gender, size }) {
             <a href="/admin/pets/${id}" class="edit-button">
               <i class="ph-fill ph-pencil"></i>
             </a>
+<<<<<<< HEAD
             <button class="delete-button"  onclick="deletePet(${id})">
+=======
+            <button class="delete-button"  onclick="deletePet('${id}')">
+>>>>>>> dbb6167 (CORREÇÃO DE CONFLITO)
               <i class="ph ph-trash"></i>
             </button>
           </td>
