@@ -1,5 +1,5 @@
 .adopt-list {
-  max-width: 1300px;
+  max-width: 1256px;
   margin: 0 auto;
   padding: 5rem;
 }
@@ -78,7 +78,7 @@
 
 .list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   margin: 3rem 0;
   gap: 2rem;
 }

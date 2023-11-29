@@ -20,13 +20,10 @@ function nameRole(role) {
   switch (role) {
     case "USER-DEFAULT":
       return "Usuário comum";
-      break;
     case "ADMIN":
-      "Admnistrador";
-      break;
+      return "Admnistrador";
     case "MODERATOR":
       return "Moderador";
-      break;
     default:
       "Usuário";
   }

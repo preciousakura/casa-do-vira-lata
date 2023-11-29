@@ -22,8 +22,13 @@ function createUserItem({ id, name, type, gender, size }) {
           <td class="table-actions">
             <a href="/admin/pets/${id}" class="edit-button">
               <i class="ph-fill ph-pencil"></i>
+<<<<<<< HEAD
             </a>
             <button class="delete-button"  onclick="deletePet(${id})">
+=======
+            </button>
+            <button class="delete-button"  onclick="deletePet('${id}')">
+>>>>>>> 828022c (correção remover)
               <i class="ph ph-trash"></i>
             </button>
           </td>
