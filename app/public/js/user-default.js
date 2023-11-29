@@ -22,7 +22,6 @@ async function submitModeratorRequest(event) {
 }
 
 function addFavoriteToLocalStorage(petId) {
-  console.log("foi?")
   let favorites = getFavoritesFromLocalStorage();
   if (!favorites.includes(petId)) {
     favorites.push(petId);
