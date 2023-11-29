@@ -22,6 +22,7 @@ async function submitModeratorRequest(event) {
 }
 
 function addFavoriteToLocalStorage(petId) {
+  console.log("foi?")
   let favorites = getFavoritesFromLocalStorage();
   if (!favorites.includes(petId)) {
     favorites.push(petId);
@@ -43,7 +44,7 @@ async function addToFavorites(petId) {
     try {
       const favorites = getFavoritesFromLocalStorage();
       const method = favorites.includes(petId) ? "DELETE" : "PUT";
-      const response =   fetch(`http://localhost:3001/pets/favorites?petId=${petId}`, { 
+      const response = await  fetch(`http://localhost:3001/pets/favorites?petId=${petId}`, { 
           method: method, 
           headers: { "Content-Type": "application/json", 
           Authorization: user.token
@@ -68,7 +69,7 @@ function removeFavoriteFromLocalStorage(petId) {
 }
 
 function toggleFavoriteIcon(petId) {
-  const favoriteIcons = document.querySelectorAll(`i[onclick='addToFavorites(${petId})']`);
+  const favoriteIcons = document.querySelectorAll(`i[onclick="addToFavorites('${petId}')"]`);
   favoriteIcons.forEach((icon) => {
     icon.classList.toggle("favorite");
   });
