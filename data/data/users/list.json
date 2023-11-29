@@ -28,6 +28,15 @@
       "password": "d2552fc3de5b850041833672d48516d31e2e234d89422c2782486690424ccc6c3b598581cb472ea1013bce391555db1aae805f304e3a6b4b1a1281a98999d530",
       "role": "USER-DEFAULT",
       "favorites": []
+    },
+    {
+      "id": "3c56a4ee-4073-4ab5-91c4-95d787306ed8",
+      "name": "Cinthia andrade",
+      "phone": "88999731591",
+      "email": "cinthiagatinha@gmail.com",
+      "password": "300ff9753012f69632240aa5f6c60e7aee57c34921f86b14176411c2cadaa23781731db750a627b80ab0c691dda57d57db5cb023dbd7c05b6b75c58899e94a75",
+      "role": "MODERATOR",
+      "favorites": []
     }
   ]
 }
