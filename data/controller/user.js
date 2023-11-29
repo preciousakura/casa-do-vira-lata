@@ -5,6 +5,7 @@ const jwt = require('jsonwebtoken');
 const { v4: uuidv4 } = require('uuid');
 const crypto = require('crypto')
 
+const allowedList = []
 const sha512 = (pwd, key) => {
     const hash = crypto.createHmac('sha512', key)
     hash.update(pwd)
@@ -38,6 +39,7 @@ function auth(req, res, next) {
 function verifyJWT(req, res, next) {
     const token = req.headers['authorization'];
     if (!token) return res.status(401).json({ auth: false, message: 'Sem token' });
+    if(allowedList.includes(token)) return res.status(401).json({ auth: false, message: 'Token expirado' });
     jwt.verify(token, process.env.SECRET, function(err, decoded) {
       if (err) return res.status(401).json({ auth: false, message: 'Falha na autenticação' });
       const { id, name, role } = decoded;
@@ -74,4 +76,4 @@ function register(req, res) {
     })
 }
 
-module.exports = { auth, verifyJWT, register }
+module.exports = { auth, verifyJWT, register, allowedList }
