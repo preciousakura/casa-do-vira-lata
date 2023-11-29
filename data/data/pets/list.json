@@ -12,8 +12,7 @@
       "status": "Disponível"
     },
     {
-      "id": "9462a1f3-449f-4ba9-b926-6b36d6e80ca5",
-      "name": "Jujuba",
+      "name": "Jujuba Doce",
       "age": "3",
       "gender": "Fêmea",
       "type": "Gato",
@@ -21,7 +20,7 @@
       "image": "https://i.imgur.com/Dmp3s8Bb.jpg",
       "castrated": "on",
       "vaccinated": "on",
-      "status": "Disponível"
+      "id": "9462a1f3-449f-4ba9-b926-6b36d6e80ca5"
     },
     {
       "id": "c8085f17-9481-4e80-82cd-9f29a0504830",

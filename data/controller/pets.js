@@ -101,11 +101,11 @@ async function adoptPet(req, res) {
                 const verify_exists = adoptions.items.find((item) => { return item.userId === userId && item.petId === petId });
                 if(verify_exists) return res.status(500).json({ error: "Já existe uma solicitação desse usuário para este pet." });
                 
-                adoptions.items.push({ status:'Em processo',  
-                                       ...req.body,
+                adoptions.items.push({ ...req.body,
                                        userId: userId, 
                                        petId: petId,  
                                        ...pet, 
+                                       status:'Em processo',  
                                        id: uuidv4(),  
                                        date: formatDate(new Date())
                                     });
